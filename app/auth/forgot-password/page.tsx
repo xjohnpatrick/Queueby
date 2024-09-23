@@ -54,32 +54,9 @@ const ForgotPassword = () => {
                         Reset Password
                     </h1>
                 <div className="flex flex-col gap-4 relative">
-                    <div className="flex relative items-center">
-                        <input
-                        className={`w-[324px]  h-[49px] py-2 pr-2 pl-10 text-lg ring-2 rounded-md ring-gray-300 outline-none font-sans ${poppins.className} placeholder:font-extralight`}
-                        type='text' 
-                        placeholder='Username'
-                        />
-                        <FaUser 
-                        size={22}
-                        className='absolute left-2'
-                        />
-                    </div>  
-                    <div className='flex relative items-center'>
-                        <input 
-                        className={`w-[324px] h-[49px] py-2 pr-2 pl-10 text-lg ring-2 rounded-md ring-gray-300 outline-none font-sans ${poppins.className} placeholder:font-extralight`}
-                        type='password' 
-                        placeholder='Password'
-                        />
-                        <IoMdLock 
-                        size={28}
-                        className='absolute left-2'
-                        />
-                    </div>
+                   <div>
                     
-                    <Link href="/auth/forgot-password">
-                        <a className={`underline text-blue-100 absolute bottom-[-30px] right-0 text-md ${poppins.className} font-extralight`}>Forgot your password?</a>
-                    </Link>  
+                    </div>  
                 </div>
                 <div className='flex mt-20'>
                     <Link href="/dashboard">
