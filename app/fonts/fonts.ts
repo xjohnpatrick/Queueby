@@ -1,4 +1,4 @@
-import { Bebas_Neue, Poppins } from 'next/font/google'
+import { Bebas_Neue, Poppins, Montserrat } from 'next/font/google'
 
 export const bebasNeue = Bebas_Neue({
   subsets: ['latin'],
@@ -10,3 +10,7 @@ export const poppins = Poppins({
   weight: ['100', '200', '400']
 })
 
+export const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['100', '200', '400']
+})

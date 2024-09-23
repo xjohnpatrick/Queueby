@@ -1,17 +1,15 @@
-'use client';
+'use client'
 
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link';
 
 import { bebasNeue, montserrat } from '@/app/fonts/fonts'
 
-import { FaArrowLeft } from "react-icons/fa";
-
 import { Button } from "@nextui-org/button";
 import {Input} from "@nextui-org/input";
 
 
-const ForgotPassword = () => {
+const ResetPassword = () => {
     const [isLg, setIsLg] = useState(false);
 
     // Check if the screen is large (lg) or not
@@ -19,6 +17,7 @@ const ForgotPassword = () => {
         const handleResize = () => {
             setIsLg(window.innerWidth >= 1024); // lg breakpoint in is 1024px
         };
+
         // Initial check
         handleResize();
 
@@ -28,7 +27,6 @@ const ForgotPassword = () => {
         // Clean up event listener on unmount
         return () => window.removeEventListener('resize', handleResize);
     }, []);
-
   return (
     <div className='flex h-screen w-full relative items-center justify-center bg-gradient-to-tr from-blue-200 to-blue-200'>
         <img className="object-cover h-full w-full absolute mix-blend-overlay opacity-50" src='/makatibg.jpg' alt='Makati Background'/>
@@ -68,43 +66,49 @@ const ForgotPassword = () => {
                 </div>             
             </div>
 
-            <div className="flex relative flex-col items-center justify-center w-[420px] h-[600px] sm:w-[520px] md:w-[620px] lg:w-[600px] lg:h-full lg:rounded-none lg:rounded-r-3xl bg-white rounded-b-3xl">  
-                <Link href="/auth/sign-in">
-                    <Button
-                    className={`absolute top-2 right-2 lg:left-2 lg:right-auto bg-white md:text-lg lg:text-xl text-blue-400 ${montserrat.className}`}
-                    size='sm'
-                    >
-                        <FaArrowLeft/>Back
-                    </Button>
-                </Link>
-                <div className={`flex flex-col gap-2 mb-5 items-center ${bebasNeue.className}`}>
-                    <h1 className='uppercase text-4xl lg:text-6xl'>
-                        Reset Password
+            <div className="flex flex-col items-center justify-center w-[420px] h-[600px] sm:w-[520px] md:w-[620px] lg:w-[600px] lg:h-full lg:rounded-none lg:rounded-r-3xl bg-white rounded-b-3xl">
+                <div className={`flex flex-col gap-2 mb-3 lg:mb-5 items-center ${bebasNeue.className}`}>
+                    <h1 className='uppercase text-4xl lg:text-5xl'>
+                        Create new password
                     </h1>
                 </div>
+
                 <div className="flex flex-col gap-4 relative">
-                     <div className='mx-10 sm:mx-14 lg:mx-24 text-justify text-gray md:text-lg lg:text-xl'>
-                        <span className={`flex ${montserrat.className}`}>Enter the email associated with your account and we&apos;ll send an email with instructions to reset your password.</span>
+                     <div className='mx-10 sm:mx-16 text-justify text-gray text-sm md:text-lg lg:text-xl'>
+                        <span className={`flex ${montserrat.className}`}>Your new password must be different from your previous passwords.</span>
                      </div>
                 </div>
-                <div className='flex flex-col mt-12 items-center'>
-                    <Input 
-                    className={`mb-10 lg:mb-[71px] lg:w-[415px] text-blue-200 ${montserrat.className}`}
-                    label='Email address'
-                    labelPlacement='outside'
-                    radius='full'
-                    size={isLg ? 'lg' : 'md'}
-                    type='email'
-                    placeholder='Enter your email address'
-                    />
 
-                    <Link href="/auth/verify-email">
+                <div className='flex flex-col mt-2 lg:mt-12 items-center'>
+                    <Input 
+                    className={`md:w-[415px] text-blue-200 ${montserrat.className}`}
+                    radius='sm'
+                    type='password'
+                    label='New Password'
+                    labelPlacement='outside'
+                    placeholder='New Password'
+                    size={isLg ? 'lg' : 'md'}
+                    />
+                    <label className={`text-gray text-sm md:text-lg lg:text-xl mb-6 lg:mb-[71px] ${montserrat.className}`}>Must be at least 8 characters</label>
+
+                    <Input 
+                    className={`lg:w-[415px] text-blue-200 ${montserrat.className}`}
+                    radius='sm'
+                    type='password'
+                    label='Confirm Password'
+                    labelPlacement='outside'
+                    placeholder='Confirm Password'
+                    size={isLg ? 'lg' : 'md'}
+                    />
+                    <label className={`text-gray text-sm md:text-lg lg:text-xl mb-2 lg:mb-[71px] ${montserrat.className}`}>Both passwords must match</label>
+
+                    <Link href="/auth/sign-in">
                         <Button 
                         className={`bg-blue-400 w-[280px] text-3xl text-white ${bebasNeue.className}`}
                         radius='sm'
-                        size='lg'
+                        size={isLg ? 'lg' : 'md'}
                         >
-                           Send Instructions
+                           Next
                         </Button>
                     </Link>
                 </div>
@@ -116,4 +120,4 @@ const ForgotPassword = () => {
   )
 }
 
-export default ForgotPassword
+export default ResetPassword

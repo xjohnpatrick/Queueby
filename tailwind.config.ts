@@ -12,6 +12,7 @@ const config: Config = {
     extend: {
       colors: {
         blue: {
+          DEFAULT: "#69b7e5",
           100: "#3BACF1",
           200: "#0358B6",
           300: "#2669D6",
@@ -19,6 +20,9 @@ const config: Config = {
         },
         white: {
           DEFAULT: "#FFFFFF",
+        },
+        gray: {
+          DEFAULT: "#928C8C"
         },
         background: "var(--background)",
         foreground: "var(--foreground)",

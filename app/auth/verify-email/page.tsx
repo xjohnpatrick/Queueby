@@ -1,14 +1,34 @@
-import React from 'react'
+'use client'
+
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link';
 
 import { bebasNeue, montserrat } from '@/app/fonts/fonts'
 
-import { FaUser } from "react-icons/fa6";
-import { IoMdLock } from "react-icons/io";
+import { FaArrowLeft } from "react-icons/fa";
+
 import { Button } from "@nextui-org/button";
+import {Input} from "@nextui-org/input";
 
 
-const SignIn = () => {
+const VerifyEmail = () => {
+    const [isLg, setIsLg] = useState(false);
+
+    // Check if the screen is large (lg) or not
+        useEffect(() => {
+        const handleResize = () => {
+            setIsLg(window.innerWidth >= 1024); // lg breakpoint in is 1024px
+        };
+
+        // Initial check
+        handleResize();
+
+        // Add resize event listener
+        window.addEventListener('resize', handleResize);
+
+        // Clean up event listener on unmount
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
   return (
     <div className='flex h-screen w-full relative items-center justify-center bg-gradient-to-tr from-blue-200 to-blue-200'>
         <img className="object-cover h-full w-full absolute mix-blend-overlay opacity-50" src='/makatibg.jpg' alt='Makati Background'/>
@@ -48,50 +68,42 @@ const SignIn = () => {
                 </div>             
             </div>
 
-            <div className="flex flex-col items-center justify-center w-[420px] h-[600px] sm:w-[520px] md:w-[620px] lg:w-[600px] lg:h-full lg:rounded-none lg:rounded-r-3xl bg-white rounded-b-3xl">  
-                <div className={`flex flex-col gap-2 mb-5 items-center ${bebasNeue.className}`}>
-                    <h1 className='uppercase text-4xl lg:text-6xl'>
-                        Welcome back,
-                    </h1>
-                    <h1 className='uppercase text-4xl lg:text-6xl'>
-                        sign in your account
-                    </h1>
+            <div className="flex relative flex-col items-center justify-center w-[420px] h-[600px] sm:w-[520px] md:w-[620px] lg:w-[600px] lg:h-full lg:rounded-none lg:rounded-r-3xl bg-white rounded-b-3xl">  
+                <Link href="/auth/forgot-password">
+                    <Button
+                    className={`absolute top-2 right-2 lg:left-2 lg:right-auto bg-white md:text-lg lg:text-xl text-blue-400 ${montserrat.className}`}
+                    size='sm'
+                    >
+                        <FaArrowLeft/>Back
+                    </Button>
+                </Link>
+                <div className={`flex flex-col gap-2 mb-3 lg:mb-5 items-center ${bebasNeue.className}`}>
+                    <img 
+                    src="/verifyemail.jpg" 
+                    alt="Verify Email Logo" 
+                    className='w-40 lg:w-60'
+                    />
                 </div>
                 <div className="flex flex-col gap-4 relative">
-                    <div className="flex relative items-center">
-                        <input
-                        className={`w-[324px] h-[49px] py-2 pr-2 pl-10 text-lg ring-2 rounded-md ring-gray-300 outline-none font-sans ${montserrat.className}`}
-                        type='text' 
-                        placeholder='Username'
-                        />
-                        <FaUser 
-                        size={22}
-                        className='absolute left-2'
-                        />
-                    </div>  
-                    <div className='flex relative items-center'>
-                        <input 
-                        className={`w-[324px] h-[49px] py-2 pr-2 pl-10 text-lg ring-2 rounded-md ring-gray-300 outline-none font-sans ${montserrat.className}`}
-                        type='password' 
-                        placeholder='Password'
-                        />
-                        <IoMdLock 
-                        size={28}
-                        className='absolute left-2'
-                        />
-                    </div>
-                    <Link href="/auth/forgot-password">
-                        <span className={`underline text-blue-100 absolute bottom-[-20px] right-0 text-md ${montserrat.className}`}>Forgot your password?</span>
-                    </Link>  
+                     <div className='mx-10 sm:mx-14 text-justify text-gray text-sm md:text-lg lg:text-xl'>
+                        <span className={`flex ${montserrat.className}`}>An email has been sent to user@gmail.com with instructions to reset password. If you have not received an email after a few minutes, check your spam folder.</span>
+                     </div>
                 </div>
-                <div className='flex mt-12'>
-                    <Link href="/dashboard">
+                <div className='flex flex-col mt-2 lg:mt-12 items-center'>
+                    <Input 
+                    className={`mb-6 lg:mb-[71px] lg:w-[415px] ${montserrat.className}`}
+                    radius='sm'
+                    type='text'
+                    size={isLg ? 'lg' : 'md'}
+                    />
+
+                    <Link href="/auth/reset-password">
                         <Button 
-                        className={`bg-blue-400 w-[170px] text-3xl text-white ${bebasNeue.className}`}
+                        className={`bg-blue-400 w-[280px] text-3xl text-white ${bebasNeue.className}`}
                         radius='sm'
-                        size='lg'
+                        size={isLg ? 'lg' : 'md'}
                         >
-                            Sign In
+                           Next
                         </Button>
                     </Link>
                 </div>
@@ -103,4 +115,4 @@ const SignIn = () => {
   )
 }
 
-export default SignIn
+export default VerifyEmail
