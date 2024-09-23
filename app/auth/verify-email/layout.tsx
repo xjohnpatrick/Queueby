@@ -6,10 +6,17 @@ export const metadata: Metadata = {
     "Verify Email Page",
 };
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function Layout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <>
-      {children}
-    </>
+    <html lang="en">
+      <body
+      >
+        {children}
+      </body>
+    </html>
   );
 }

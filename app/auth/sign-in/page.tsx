@@ -85,7 +85,7 @@ const SignIn = () => {
                     </Link>  
                 </div>
                 <div className='flex mt-12'>
-                    <Link href="/dashboard">
+                    <Link href="/main/dashboard">
                         <Button 
                         className={`bg-blue-400 w-[170px] text-3xl text-white ${bebasNeue.className}`}
                         radius='sm'

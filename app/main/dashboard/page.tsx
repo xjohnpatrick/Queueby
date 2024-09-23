@@ -2,11 +2,7 @@ import React from 'react'
 
 const Dashboard = () => {
   return (
-    <div>
-        <div>
-            
-        </div>
-    </div>
+    <div className='flex font-poppins text-xl'>Dashboard</div>
   )
 }
 
