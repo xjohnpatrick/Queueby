@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
 
@@ -17,7 +18,8 @@ export default function RootLayout({
         <div className="flex">
           <Sidebar /> 
           {children}
-        </div>  
+        </div> 
+        <Footer /> 
       </body>
     </html>
   );
