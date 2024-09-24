@@ -31,6 +31,7 @@ const config: Config = {
   },
   plugins: [
     nextui(),
+    require('@tailwindcss/forms'),
   ],
 };
 export default config;
