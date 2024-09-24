@@ -22,7 +22,21 @@ const config: Config = {
           DEFAULT: "#FFFFFF",
         },
         gray: {
-          DEFAULT: "#928C8C"
+          DEFAULT: "#dedde5",
+          50: "#4b4a52",
+          100: "#928C8C",
+        },
+        red: {
+          DEFAULT: "#fedcdb",
+          100: "#a14948",
+        },
+        green: {
+          DEFAULT: "#deecdf",
+          100: "#3a753d",
+        },
+        yellow: {
+          DEFAULT: "#f6deae",
+          100: "#9f7f32",
         },
         background: "var(--background)",
         foreground: "var(--foreground)",
@@ -31,7 +45,6 @@ const config: Config = {
   },
   plugins: [
     nextui(),
-    require('@tailwindcss/forms'),
   ],
 };
 export default config;

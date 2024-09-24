@@ -6,4 +6,5 @@ export const metadata: Metadata = {
   description:
     "Dashboard Page",
 };
+
 export default Dashboard;
