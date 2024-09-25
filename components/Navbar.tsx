@@ -72,15 +72,16 @@ const Navbar = () => {
             </button>
             </Link>
 
-            <button className='flex gap-2 px-4 py-8 rounded-xl hover:bg-blue-100 duration-400 ease-in-out items-center'>
-              <img 
-              src="/femaleProfile.png" 
-              alt="Female Default Profile" 
-              className='w-12 h-12'
-              />
-              Profile
-            </button>
-          
+            <Link href="/main/profile-page/profile">
+              <button className='flex gap-2 px-4 py-8 rounded-xl hover:bg-blue-100 duration-400 ease-in-out items-center'>
+                <img 
+                src="/femaleProfile.png" 
+                alt="Female Default Profile" 
+                className='w-12 h-12'
+                />
+                Profile
+              </button>
+            </Link>
           </div>
           
           </div>       
