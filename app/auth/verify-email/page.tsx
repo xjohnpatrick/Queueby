@@ -12,23 +12,6 @@ import {Input} from "@nextui-org/input";
 
 
 const VerifyEmail = () => {
-    const [isLg, setIsLg] = useState(false);
-
-    // Check if the screen is large (lg) or not
-        useEffect(() => {
-        const handleResize = () => {
-            setIsLg(window.innerWidth >= 1024); // lg breakpoint in is 1024px
-        };
-
-        // Initial check
-        handleResize();
-
-        // Add resize event listener
-        window.addEventListener('resize', handleResize);
-
-        // Clean up event listener on unmount
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
   return (
     <div className='flex h-screen w-full relative items-center justify-center bg-gradient-to-tr from-blue-200 to-blue-200'>
         <img className="object-cover h-full w-full absolute mix-blend-overlay opacity-50" src='/makatibg.jpg' alt='Makati Background'/>
@@ -85,23 +68,21 @@ const VerifyEmail = () => {
                     />
                 </div>
                 <div className="flex flex-col gap-4 relative">
-                     <div className='mx-10 sm:mx-14 text-justify text-gray text-sm md:text-lg lg:text-xl'>
+                     <div className='mx-10 sm:mx-14 text-justify text-gray-100 text-sm md:text-lg lg:text-xl'>
                         <span className={`flex ${montserrat.className}`}>An email has been sent to user@gmail.com with instructions to reset password. If you have not received an email after a few minutes, check your spam folder.</span>
                      </div>
                 </div>
                 <div className='flex flex-col mt-2 lg:mt-12 items-center'>
-                    <Input 
-                    className={`mb-6 lg:mb-[71px] lg:w-[415px] ${montserrat.className}`}
-                    radius='sm'
+                    <input 
+                    className={`mb-6 lg:mb-[71px] lg:w-[415px] h-12 rounded-lg border-2 border-gray px-4 ${montserrat.className}`}
                     type='text'
-                    size={isLg ? 'lg' : 'md'}
+                    placeholder='Input verification code here'
                     />
 
                     <Link href="/auth/reset-password">
                         <Button 
                         className={`bg-blue-400 w-[280px] text-3xl text-white ${bebasNeue.className}`}
                         radius='sm'
-                        size={isLg ? 'lg' : 'md'}
                         >
                            Next
                         </Button>

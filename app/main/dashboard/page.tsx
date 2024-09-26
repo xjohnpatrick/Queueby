@@ -24,7 +24,7 @@ const Dashboard = () => {
         </button>
         </div>
 
-      <div className='flex w-[80vw] h-[70vh] bg-white mb-24 '>
+      <div className='flex w-[80vw] h-[70vh] bg-white mb-24'>
         <DashboardTable />
       </div>
     </div>

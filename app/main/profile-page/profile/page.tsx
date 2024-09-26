@@ -41,24 +41,28 @@ const Profile = () => {
                         <Button 
                         size='lg'
                         radius='md'
-                        className='uppercase bg-blue-400 text-3xl text-white w-[380px]'>
+                        className='uppercase bg-blue-400 text-3xl text-white w-[280px] lg:w-[300px] xl:w-[380px]'>
                             Edit your profile
                         </Button>
                     </Link>
-                    <Button 
-                    size='lg'
-                    radius='md'
-                    className='uppercase bg-blue-400 text-3xl text-white w-[380px]'>
-                        Create Admin Account
-                    </Button>
-                        
-                    
-                    <Button 
-                    size='lg'
-                    radius='md'
-                    className='uppercase bg-blue-400 text-3xl text-white w-[380px]'>
-                        Change your password
-                    </Button> 
+
+                    <Link href="/main/profile-page/createAdminAcc">
+                        <Button 
+                        size='lg'
+                        radius='md'
+                        className='uppercase bg-blue-400 text-3xl text-white w-[280px] lg:w-[300px] xl:w-[380px]'>
+                            Create Admin Account
+                        </Button>
+                    </Link>
+
+                    <Link href="/main/profile-page/change-password">
+                        <Button 
+                        size='lg'
+                        radius='md'
+                        className='uppercase bg-blue-400 text-3xl text-white w-[280px] lg:w-[300px] xl:w-[380px]'>
+                            Change your password
+                        </Button> 
+                    </Link>
                 </div>
             </div>
 

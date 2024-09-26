@@ -10,19 +10,15 @@ import React, { useState } from 'react'
 import { FaArrowLeft } from "react-icons/fa";
 import { RiCloseFill } from "react-icons/ri";
 
+import { buttonValidation } from "@/app/main/profile-page/edit-profile/edit-profile-functions"
+
 const EditProfile = () => {
-    const [isDisable, setIsDisable] = useState(true);
-    const [visible, setVisible] = useState(false);
-
-    const toggleDisable = () => {
-        setIsDisable(false);
-        setVisible(true);
-    }
-
-    const handleClose = () => {
-        setIsDisable(true);
-        setVisible(false);
-    }
+    const {
+        isDisable,
+        visible,
+        toggleDisable,
+        handleClose,
+    } = buttonValidation();
   return (
     <div className='flex items-center justify-center h-screen w-full bg-blue-100'>
         <div className="flex relative justify-center bg-white w-[75vw] lg:w-[60vw] h-[80vh] rounded-md">
@@ -47,39 +43,43 @@ const EditProfile = () => {
                 )}
             <div className={`flex flex-col w-full lg:w-[40vw] items-center gap-12 lg:gap-24 ${bebasNeue.className}`}>
                 
-                <h1 className='flex text-5xl text-blue-400 mt-12 text-center'>Edit personal information</h1>
+                <h1 className='flex text-4xl xl:text-5xl text-blue-400 mt-16 text-center'>Edit personal information</h1>
 
                     <div className="flex flex-col text-blue-400 text-3xl w-full gap-4 lg:gap-8 xl:gap-12">
                         <div className="flex flex-col lg:flex-row items-center gap-4">
-                            <span className='text-nowrap'>First Name:</span>
+                            <label className='text-nowrap'>First Name:</label>
                             <input 
-                            className={`w-[240px] md:w-[300px] lg:w-[540px] placeholder:text-xl py-2 pl-3 border border-black rounded-lg ${montserrat.className}`}
+                            className={`w-[240px] md:w-[300px] lg:w-[540px] placeholder:text-xl text-xl px-3 py-2 border-2 border-gray shadow-md outline-none rounded-lg ${montserrat.className}`}
                             placeholder='Webster'
                             disabled={isDisable}
+                            type='text'
                             />
                         </div>
                         <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-5">
-                            <span className='text-nowrap'>Last Name:</span>
+                            <label className='text-nowrap'>Last Name:</label>
                             <input 
-                            className={`w-[240px] md:w-[300px] lg:w-[540px] placeholder:text-xl py-2 pl-3 border border-black rounded-lg ${montserrat.className}`}
+                            className={`w-[240px] md:w-[300px] lg:w-[540px] placeholder:text-xl text-xl px-3 py-2 border-2 border-gray shadow-md outline-none rounded-lg ${montserrat.className}`}
                             placeholder='Retardo'
                             disabled={isDisable}
+                            type='text'
                             />
                         </div>
                         <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-16">
-                            <span className='text-nowrap'>Email:</span>
+                            <label className='text-nowrap'>Email:</label>
                             <input 
-                            className={`w-[240px] md:w-[300px] lg:w-[540px] placeholder:text-xl py-2 pl-3 border border-black rounded-lg ${montserrat.className}`}
+                            className={`w-[240px] md:w-[300px] lg:w-[540px] placeholder:text-xl text-xl px-3 py-2 border-2 border-gray shadow-md outline-none rounded-lg ${montserrat.className}`}
                             placeholder='websterdalupangretardothethird@gmail.com'
                             disabled={isDisable}
+                            type='text'
                             />
                         </div>
                         <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-6">
-                            <span>Username:</span>
+                            <label>Username:</label>
                             <input 
-                            className={`w-[240px] md:w-[300px] lg:w-[540px] placeholder:text-xl py-2 pl-3 border border-black rounded-lg ${montserrat.className}`}
+                            className={`w-[240px] md:w-[300px] lg:w-[540px] placeholder:text-xl text-xl px-3 py-2 border-2 border-gray shadow-md outline-none rounded-lg ${montserrat.className}`}
                             placeholder='WebsterBorat'
                             disabled={isDisable}
+                            type='text'
                             />
                         </div>
                     </div>

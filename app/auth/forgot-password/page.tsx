@@ -12,23 +12,6 @@ import {Input} from "@nextui-org/input";
 
 
 const ForgotPassword = () => {
-    const [isLg, setIsLg] = useState(false);
-
-    // Check if the screen is large (lg) or not
-        useEffect(() => {
-        const handleResize = () => {
-            setIsLg(window.innerWidth >= 1024); // lg breakpoint in is 1024px
-        };
-        // Initial check
-        handleResize();
-
-        // Add resize event listener
-        window.addEventListener('resize', handleResize);
-
-        // Clean up event listener on unmount
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
-
   return (
     <div className='flex h-screen w-full relative items-center justify-center bg-gradient-to-tr from-blue-200 to-blue-200'>
         <img className="object-cover h-full w-full absolute mix-blend-overlay opacity-50" src='/makatibg.jpg' alt='Makati Background'/>
@@ -83,7 +66,7 @@ const ForgotPassword = () => {
                     </h1>
                 </div>
                 <div className="flex flex-col gap-4 relative">
-                     <div className='mx-10 sm:mx-14 lg:mx-24 text-justify text-gray md:text-lg lg:text-xl'>
+                     <div className='mx-10 sm:mx-14 lg:mx-24 text-justify text-gray-100 md:text-lg lg:text-xl'>
                         <span className={`flex ${montserrat.className}`}>Enter the email associated with your account and we&apos;ll send an email with instructions to reset your password.</span>
                      </div>
                 </div>
@@ -93,7 +76,6 @@ const ForgotPassword = () => {
                     label='Email address'
                     labelPlacement='outside'
                     radius='full'
-                    size={isLg ? 'lg' : 'md'}
                     type='email'
                     placeholder='Enter your email address'
                     />

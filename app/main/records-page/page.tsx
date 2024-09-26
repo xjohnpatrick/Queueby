@@ -10,7 +10,7 @@ const Records = () => {
     <div className="flex flex-col items-center w-full h-[1200px]"> 
       <h1 className={`flex text-4xl font-semibold my-8 ${montserrat.className}`}>Viewing All Records</h1>
 
-      <div className='flex flex-col w-[80vw] lg:w-[70vw] h-[100vh] border border-black'>
+      <div className='flex flex-col w-[80vw] lg:w-[70vw] h-[90vh] border border-black'>
         <div className='h-1/3'>
             <div className='flex relative items-center justify-center'>
               <img 
@@ -49,7 +49,7 @@ const Records = () => {
           <DashboardTable />
         </div>
       </div>
-      <div className={`flex my-5 ${bebasNeue.className}`}>
+      <div className={`flex my-10 ${bebasNeue.className}`}>
         <Button className='text-4xl bg-blue-400 text-white w-[151px] h-[57px] rounded-xl'>
           Print
         </Button>
