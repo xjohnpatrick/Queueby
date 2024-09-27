@@ -98,7 +98,7 @@ const BarangayPermit = () => {
             </div>
 
             <div className="flex flex-col items-center relative w-3/4">
-                <span className='italic text-sm absolute right-0 top-0 font-bold'>Date(<span contentEditable>mm</span>/<span contentEditable>dd</span>/<span contentEditable>yyyy</span>)</span>
+                <span className='italic text-sm absolute right-0 top-0 font-bold'>Date(<span contentEditable>mm</span>/<span contentEditable>dd</span>/<span contentEditable>yyyy</span>)<span className='text-red-500'>*</span></span>
                 <span className="text-2xl absolute right-0 top-5 font-bold italic uppercase">Barangay Certification</span>
               
               <div className='flex relative flex-col w-full h-full mt-6 py-12 pl-6'>
@@ -108,11 +108,11 @@ const BarangayPermit = () => {
                     {/*Editable Text*/}
                     <span
                       className='font-bold text-sm italic normal-case underline' contentEditable>
-                      ______________________________________
+                      ______________________________________<span className='text-red-500'>*</span>
                     </span>
                     <span className='font-bold text-sm italic lowercase'>
                         ,{" "}whose signature or right thumb mark appears herewith, is a bonafide of this Barangay with postal address
-                        {" "}<span className='normal-case underline' contentEditable>_________________________________</span>.
+                        {" "}<span className='normal-case underline' contentEditable>_________________________________<span className='text-red-500'>*</span></span>.
                     </span>
                 </span>
 
@@ -121,7 +121,7 @@ const BarangayPermit = () => {
                 
                 <div className='flex flex-col mt-6'>
                   <div className="flex h-[1px] w-full bg-gray-100"></div>
-                  <span className='flex font-bold italic uppercase my-5 justify-center text-sm text-center' contentEditable>No derogatory record</span>
+                  <span className='flex font-bold italic uppercase my-5 justify-center text-sm text-center' contentEditable>No derogatory record<span className='text-red-500'>*</span></span>
                   <div className="flex h-[1px] w-full bg-gray-100"></div>
 
                   <span className='flex justify-center italic font-bold text-sm mt-5'>This certification/clearance is issued upon request in connection with</span>
@@ -140,7 +140,7 @@ const BarangayPermit = () => {
 
 
                 <div className={`flex flex-col absolute bottom-28 left-16 ${montserrat.className}`}>
-                  <span className='text-sm italic font-bold uppercase text-center' contentEditable>Name/Signature of Applicant</span>
+                  <span className='text-sm italic font-bold uppercase text-center' contentEditable>Name/Signature of Applicant<span className='text-red-500'>*</span></span>
                   <span className='text-sm italic font-bold'>Community Tax Cert. <span contentEditable>________________</span></span>
                   <span className='text-sm italic font-bold'>Issued at Makati City <span contentEditable>________________</span></span>
                   <span className='text-sm italic font-bold'>Issued On <span contentEditable>____________________________</span></span>
