@@ -5,14 +5,22 @@ import { committeeMembers } from '@/app/users/brgy-members';
 
 import { Button } from '@nextui-org/button'
 
-import React, { useState } from 'react'
+import React, { useRef } from 'react'
+
+import { useReactToPrint } from 'react-to-print';
 
 const CertificateOfClearance = () => {
+
+  const componentRef = useRef<HTMLDivElement>(null);
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
+
   return (
-    <div className='flex flex-col h-[1350px] w-full items-center'>
+    <div className='flex flex-col h-[1550px] w-full items-center'>
       <h1 className={`flex text-4xl font-semibold my-8 ${montserrat.className}`}>Barangay Clearance</h1>
 
-      <div className='flex w-[800px] h-[1030px] border-blue-400 border-2 p-6'>
+      <div ref={componentRef} className='flex w-[805px] h-[1138px] shadow shadow-blue-400 p-6'>
 
         <div className="flex flex-col relative justify-center w-full">
 
@@ -90,21 +98,21 @@ const CertificateOfClearance = () => {
             </div>
 
             <div className="flex flex-col items-center relative w-3/4">
-                <span className='italic text-sm absolute right-0 top-0 font-bold'>Date(<span contentEditable>mm</span>/<span contentEditable>dd</span>/<span contentEditable>yyyy</span>)</span>
+                <span className='italic text-sm absolute right-0 top-0 font-bold'>Date(<span contentEditable>mm</span>/<span contentEditable>dd</span>/<span contentEditable>yyyy</span>)<span className='text-red-500'>*</span></span>
                 <span className="text-2xl absolute right-0 top-5 font-bold italic uppercase">Barangay Clearance</span>
               
-              <div className='flex flex-col w-full h-96 mt-6 py-12 pl-6'>
+              <div className='flex relative flex-col w-full h-full mt-6 py-12 pl-6'>
 
                 <div className="flex flex-col">
                 <span className='uppercase font-bold text-sm italic'>This is to certify that{" "}
                     {/*Editable Text*/}
                     <span
-                      className='font-bold text-sm italic normal-case' contentEditable>
-                      ______________________________________
+                      className='font-bold text-sm italic normal-case underline' contentEditable>
+                      ______________________________________<span className='text-red-500'>*</span>
                     </span>
                     <span className='font-bold text-sm italic lowercase'>
                         ,{" "}whose signature or right thumb mark appears herewith, is a bonafide of this Barangay with postal address
-                        {" "}<span className='normal-case' contentEditable>_________________________________</span>.
+                        {" "}<span className='normal-case underline' contentEditable>_________________________________<span className='text-red-500'>*</span></span>.
                     </span>
                 </span>
 
@@ -113,7 +121,7 @@ const CertificateOfClearance = () => {
                 
                 <div className='flex flex-col mt-6'>
                   <div className="flex h-[1px] w-full bg-gray-100"></div>
-                  <span className='flex font-bold italic uppercase my-5 justify-center text-sm' contentEditable>No derogatory record</span>
+                  <span className='flex font-bold italic uppercase my-5 justify-center text-sm text-center' contentEditable>No derogatory record<span className='text-red-500'>*</span></span>
                   <div className="flex h-[1px] w-full bg-gray-100"></div>
 
                   <span className='flex justify-center italic font-bold text-sm mt-5'>This certification/clearance is issued upon request in connection with</span>
@@ -121,24 +129,45 @@ const CertificateOfClearance = () => {
                   <div className="flex h-[3px] w-full bg-gray-100 mt-5"></div>
                 </div>
 
+                  {committeeMembers
+                  .filter(member => member.position === "Punong Barangay")
+                  .map(({ id, name, position }) => (
+                    <div key={id} className={`flex flex-col absolute right-0 bottom-80 ${montserrat.className}`}>
+                      <span className='text-medium italic font-bold'>{name}</span>
+                      <span className='text-sm italic font-bold text-center'>{position}</span>
+                    </div>
+                  ))}
+
+
+                <div className={`flex flex-col absolute bottom-28 left-16 ${montserrat.className}`}>
+                  <span className='text-sm italic font-bold uppercase text-center' contentEditable>Name/Signature of Applicant<span className='text-red-500'>*</span></span>
+                  <span className='text-sm italic font-bold'>Community Tax Cert. <span contentEditable>________________</span></span>
+                  <span className='text-sm italic font-bold'>Issued at Makati City <span contentEditable>________________</span></span>
+                  <span className='text-sm italic font-bold'>Issued On <span contentEditable>____________________________</span></span>
+                </div>
+
               </div>
             </div>
-
+            
+            
+          </div>
+          <div className={`flex ${montserrat.className}`}>
+            <span className='italic text-[12px] font-bold uppercase'>Not Valid Without Seal</span>
           </div>
         </div>
       </div>
 
       <div className={`flex my-10 ${bebasNeue.className}`}>
-        <Button className='text-4xl bg-blue-400 text-white w-[151px] h-[57px] rounded-xl'>
+        <Button onClick={handlePrint} className='text-4xl bg-blue-400 text-white w-[151px] h-[57px] rounded-xl'>
           Print
         </Button>
       </div>
-
+      
       <div className={`flex flex-col ${montserrat.className}`}>
-        <p className='italic text-xl'>Note: Clicking the print button will automatically</p>
-        <p className='italic text-xl text-center'>print two copies of this document.</p>
+          <p className='italic text-xl'>Note: Clicking the print button will automatically</p>
+          <p className='italic text-xl text-center'>print two copies of this document.</p>
       </div>
-
+  
     </div>
   )
 }
