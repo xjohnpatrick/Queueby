@@ -1,17 +1,27 @@
 'use client'
 
 import { bebasNeue, montserrat } from "@/app/fonts/fonts";
+
+import DashboardModal from "./Modal";
+
 import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, getKeyValue} from "@nextui-org/react";
 
 import { dashboardColumns } from "@/app/users/columns";
 import { dashboardRows } from "@/app/users/rows";
 
+import { useState } from "react";
+
 export default function DashboardTable() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedUser, setSelectedUser] = useState('');
+
   const handleUserIdClick = (userId: string) => {
-    alert(`User ID clicked: ${userId}`);
+    setIsModalOpen(true);
+    setSelectedUser(userId)
   };
 
   return (
+    <>
     <Table layout="auto" isStriped aria-label="Example table with dynamic content" style={{ height: "700px" }}>
       <TableHeader columns={dashboardColumns}>
         {(column) => <TableColumn key={column.key} align="center" className={`text-black text-xl ${bebasNeue.className}`}>{column.label}</TableColumn>}
@@ -23,7 +33,7 @@ export default function DashboardTable() {
               <TableCell className="w-20">
                 {columnKey === 'userId' ? (
                   <button 
-                    onClick={() => handleUserIdClick(item.userId)} 
+                    onClick={() => handleUserIdClick(getKeyValue(item, 'userId'))}
                     className="text-blue-600 hover:text-blue-800 underline focus:outline-none"
                   >
                     {getKeyValue(item, columnKey)}
@@ -41,6 +51,8 @@ export default function DashboardTable() {
         )}
       </TableBody>
     </Table>
+    <DashboardModal userId={selectedUser} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+    </>
   );
 }
 

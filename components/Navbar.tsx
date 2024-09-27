@@ -62,27 +62,27 @@ const Navbar = () => {
                   onClick={() => setDocumentOpen(!documentOpen)}
                   className='flex text-xl text-white bg-blue-400'>Document</Button>
                   {documentOpen && (
-                    <div className="md:hidden grid grid-cols-2 gap-4 bg-blue-100 p-4 rounded-md">
-                      <Link href="/main/documents-page/barangay-permit">
-                        <Button className='flex text-xl text-white bg-blue-400 col-span-1'>Barangay Permit</Button>
-                      </Link>
-
-                      <Link href="/main/documents-page/business-permit">
-                        <Button className='flex text-xl text-white bg-blue-400'>Business Permit</Button>
-                      </Link>
-
-                      <Link href="/main/documents-page/firstTimeJobSeeker">
-                        <Button className='flex text-xl text-white bg-blue-400 col-span-2'>Barangay Certificate For First Time Job Seeker</Button>
-                      </Link>
-
-                      <Link href="/main/documents-page/barangay-certification">
-                        <Button className='flex text-xl text-white bg-blue-400'>Barangay Certification</Button>
-                      </Link>
-
-                      <Link href="/main/documents-page/certificateOfClearance">
-                        <Button className='flex text-xl text-white bg-blue-400'>Certificate of Clearance</Button>
-                      </Link>
-
+                    <div className="md:hidden grid grid-cols-2 gap-4 bg-blue-100 p-4 rounded-md relative">
+                      
+                      <Button className='flex text-xl text-white bg-blue-400 col-span-1'><Link href="/main/documents-page/barangay-permit">Barangay Permit</Link></Button>
+              
+                      <Button className='flex text-xl text-white bg-blue-400'><Link href="/main/documents-page/business-permit">Business Permit</Link></Button>
+                      
+                      <Button className='flex text-xl text-white bg-blue-400 col-span-2'>
+                        <Link href="/main/documents-page/firstTimeJobSeeker">Barangay Certificate For First Time Job Seeker</Link>
+                      </Button>
+                      
+                      <Button className='flex text-xl text-white bg-blue-400'>
+                        <Link href="/main/documents-page/barangay-certification">
+                          Barangay Certification
+                        </Link>
+                      </Button>
+                      
+                      <Button className='flex text-xl text-white bg-blue-400'>
+                        <Link href="/main/documents-page/certificateOfClearance">
+                          Certificate of Clearance
+                        </Link>
+                      </Button>          
                     </div>
                   )}
                   <Link href="/main/records-page">

@@ -20,7 +20,7 @@ const BarangayPermit = () => {
     <div className='flex flex-col h-[1550px] w-full items-center'>
       <h1 className={`flex text-4xl font-semibold my-8 ${montserrat.className}`}>Barangay Certification</h1>
 
-      <div ref={componentRef} className='flex w-[805px] h-[1138px] shadow shadow-blue-400 p-6'>
+      <div ref={componentRef} className='flex w-[793px] h-[1123px] shadow shadow-blue-400 p-6'>
 
         <div className="flex flex-col relative justify-center w-full">
 

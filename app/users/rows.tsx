@@ -2,7 +2,7 @@ export const dashboardRows = [
     {
       key: "1",
       userId: "CB0",
-      fullName: "Ghen Paul Dulin",
+      fullName: "Ghen Paul D Dulin",
       address: "B55 L20 Aguho Comembo, Makati City NCR",
       contactNo: "09363390141",
       gender: "Male",
@@ -15,7 +15,7 @@ export const dashboardRows = [
     {
       key: "2",
       userId: "CB1",
-      fullName: "Ghen Paul Dulin",
+      fullName: "John Patrick C Isidoro",
       address: "B55 L20 Aguho Comembo, Makati City NCR",
       contactNo: "09363390141",
       gender: "Male",
@@ -28,7 +28,7 @@ export const dashboardRows = [
     {
       key: "3",
       userId: "CB2",
-      fullName: "Ghen Paul Dulin",
+      fullName: "Fernan R Retardo",
       address: "B55 L20 Aguho Comembo, Makati City NCR",
       contactNo: "09363390141",
       gender: "Male",
@@ -41,7 +41,7 @@ export const dashboardRows = [
     {
       key: "4",
       userId: "CB3",
-      fullName: "Ghen Paul Dulin",
+      fullName: "Webster D Tolosa III",
       address: "B55 L20 Aguho Comembo, Makati City NCR",
       contactNo: "09363390141",
       gender: "Male",
@@ -54,7 +54,7 @@ export const dashboardRows = [
     {
       key: "5",
       userId: "CB4",
-      fullName: "Ghen Paul Dulin",
+      fullName: "Edrianne Loise Agrava",
       address: "B55 L20 Aguho Comembo, Makati City NCR",
       contactNo: "09363390141",
       gender: "Male",
