@@ -18,25 +18,25 @@ const Records = () => {
               alt="Makati Logo" 
               className='absolute left-10 top-10 lg:w-32 lg:h-32 w-20 h-20'
               />
-              <div className={`flex flex-col mt-32 sm:mt-20 lg:mt-10  text-center ${montserrat.className}`}>
-                <label className='md:text-xl uppercase'>
+              <div className={`flex flex-col mt-32 sm:mt-20 lg:mt-10 text-center ${montserrat.className}`}>
+                <span className='md:text-xl uppercase'>
                   Republic of the Philippines
-                </label>
-                <label className='md:text-2xl uppercase font-bold'>
+                </span>
+                <span className='md:text-2xl uppercase font-bold'>
                   City of Makati
-                </label>
-                <label className='md:text-3xl uppercase font-bold'>
+                </span>
+                <span className='md:text-3xl uppercase font-bold'>
                   Barangay 28 - Comembo
-                </label>
-                <label className='md:text-xl uppercase'>
+                </span>
+                <span className='md:text-xl uppercase'>
                   Anahaw St., Comembo, Makati City
-                </label>
-                <label className='md:text-xl uppercase'>
+                </span>
+                <span className='md:text-xl uppercase'>
                   Tel. No. 7738-1883 / 7754-3045
-                </label>
-                <label className='md:text-4xl font-bold mt-10'>
+                </span>
+                <span className='md:text-4xl font-bold mt-10'>
                   All Records
-                </label>
+                </span>
               </div>
               <img 
               src="/comembo.png" 

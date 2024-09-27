@@ -2,7 +2,11 @@ import React from 'react'
 
 const BarangayPermit = () => {
   return (
-    <div className='flex h-screen w-full'>HAHA TITE</div>
+    <div className='flex h-screen w-full'>
+      <div>
+        
+      </div>
+    </div>
   )
 }
 
