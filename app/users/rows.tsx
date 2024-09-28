@@ -1,4 +1,6 @@
-export const dashboardRows = [
+import { User } from "@/components/types";
+
+export const dashboardRows: User[] = [
     {
       key: "1",
       userId: "CB0",

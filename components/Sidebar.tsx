@@ -2,26 +2,35 @@ import { bebasNeue } from '@/app/fonts/fonts'
 import { Button } from '@nextui-org/button'
 import React from 'react'
 
-const Sidebar = () => {
+// Define the type for a single button object
+interface ButtonProps {
+  text: string;
+  onClick?: () => void; // Optional onClick handler
+}
+
+// Define the type for the Sidebar props
+interface SidebarProps {
+  buttons?: ButtonProps[]; // Array of button objects
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ buttons = [] }) => {
   return (
-    <aside className='hidden lg:flex h-full w-56 bg-blue-400'>
+    <aside className='hidden lg:flex h-full w-60 bg-blue-400'>
         <div className={`flex flex-col w-full relative ${bebasNeue.className}`}>
-            <Button 
+        {buttons.map((button, index) => (
+          <>
+          <Button
+            key={index}
+            onClick={button.onClick}
             size='lg'
             radius='none'
-            className='bg-blue-400 text-white border-b-2 border-white hover:text-blue-400 hover:bg-white hover:!opacity-100 text-[40px] h-[88px] sticky top-0'>All</Button>
-            <Button 
-            size='lg'
-            radius='none'
-            className='bg-blue-400 text-white border-b-2 border-white hover:text-blue-400 hover:bg-white hover:!opacity-100 text-[40px] h-[88px] sticky top-[88px]'>Pending</Button>
-            <Button 
-            size='lg'
-            radius='none'
-            className='bg-blue-400 text-white border-b-2 border-white hover:text-blue-400 hover:bg-white hover:!opacity-100 text-[40px] h-[88px] sticky top-[176px]'>To Receive</Button>
-            <Button 
-            size='lg'
-            radius='none'
-            className='bg-blue-400 text-white border-b-2 border-white hover:text-blue-400 hover:bg-white hover:!opacity-100 text-[40px] h-[88px] sticky top-[264px]'>Completed</Button>
+            className='bg-blue-400 text-white border-b-2 border-white hover:text-blue-400 hover:bg-white hover:!opacity-100 text-[35px] h-[88px] sticky'
+            style={{ top: `${index * 88}px` }}
+          >
+            {button.text}
+          </Button>
+          </>
+          ))}
         </div>
     </aside>
   )
