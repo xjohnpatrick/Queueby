@@ -1,3 +1,4 @@
+//@/component/types
 export interface User {
     key: string;
     userId: string;

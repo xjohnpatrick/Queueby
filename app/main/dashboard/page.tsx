@@ -8,10 +8,9 @@ import { IoIosSearch } from "react-icons/io";
 
 import { Input } from '@nextui-org/input'
 
-import React, { useState} from 'react'
+import React, { useState } from 'react'
 
 const Dashboard = () => {
-  
   return (
     <div className="flex flex-col items-center justify-center w-full h-screen">
         <div className={`relative flex mb-14 w-[380px] lg:w-[580px] ${montserrat.className}`}>

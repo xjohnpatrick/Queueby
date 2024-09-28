@@ -1,5 +1,4 @@
 import { usePathname } from "next/navigation";
-import { onDashboardButtonClick } from "@/utils/dashboardSidebarUtils"
 
 export const useSidebar = () => {
     const pathname = usePathname();
@@ -20,10 +19,10 @@ const isSidebarHidden = () => {
 // Function to get buttons for the Dashboard
 const getDashboardButtons = () => {
     return [
-        { text: 'All', onClick: () => onDashboardButtonClick('All') },
-        { text: 'Pending', onClick: () => onDashboardButtonClick('Pending') },
-        { text: 'To Receive', onClick: () => onDashboardButtonClick('To Receive') },
-        { text: 'Completed', onClick: () => onDashboardButtonClick('Completed') },
+        { text: 'All', onClick: () => console.log('All') },
+        { text: 'Pending', onClick: () => console.log('Pending') },
+        { text: 'To Receive', onClick: () => console.log('To Receive') },
+        { text: 'Completed', onClick: () => console.log('Completed') },
     ];
 };
 

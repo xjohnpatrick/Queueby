@@ -7,9 +7,9 @@ import DashboardModal from "./Modal";
 import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, getKeyValue} from "@nextui-org/react";
 
 import { dashboardColumns } from "@/app/users/columns";
-import { dashboardRows } from "@/app/users/rows";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { dashboardRows } from "@/app/users/rows";
 
 export default function DashboardTable() {
   const [isModalOpen, setIsModalOpen] = useState(false);
