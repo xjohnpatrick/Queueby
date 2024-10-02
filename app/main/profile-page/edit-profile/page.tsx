@@ -77,7 +77,7 @@ const EditProfile = () => {
                             <label>Username:</label>
                             <input 
                             className={`w-[240px] md:w-[300px] lg:w-[540px] placeholder:text-xl text-xl px-3 py-2 border-2 border-gray shadow-md outline-none rounded-lg ${montserrat.className}`}
-                            placeholder='WebsterBorat'
+                            placeholder='Webweb'
                             disabled={isDisable}
                             type='text'
                             />

@@ -5,14 +5,13 @@ export const useSidebar = () => {
 
 //Hide Sidebar on documents page
 const sidebarHiddenPaths = 
-  ['/main/documents-page/certificateOfClearance', 
-    '/main/documents-page/barangay-certification', 
-    '/main/documents-page/barangay-permit', 
-    '/main/documents-page/business-permit', 
-    '/main/documents-page/firstTimeJobSeeker'];
+  [
+    '/main/profile-page',
+    '/main/documents-page'
+];
 
 const isSidebarHidden = () => {
-        return sidebarHiddenPaths.includes(pathname);
+        return sidebarHiddenPaths.some(path => pathname.startsWith(path));
       };
 
 
