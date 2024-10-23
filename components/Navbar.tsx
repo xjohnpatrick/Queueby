@@ -1,7 +1,5 @@
 "use client";
 
-import { bebasNeue } from "@/app/fonts/fonts";
-
 import Link from "next/link";
 
 import React, { useState } from "react";

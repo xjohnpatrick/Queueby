@@ -8,7 +8,7 @@ import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, getKeyV
 
 import { dashboardColumns } from "@/data/users/columns";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { dashboardRows } from "@/data/users/rows";
 
 export default function DashboardTable() {
