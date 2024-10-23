@@ -2,7 +2,7 @@ import {  Modal,   ModalContent,   ModalHeader,   ModalBody,   ModalFooter} from
 
 import { Button } from "@nextui-org/button";
 
-import { dashboardRows } from "@/app/users/rows";
+import { dashboardRows } from "@/data/users/rows";
 
 import { bebasNeue, montserrat } from "@/app/fonts/fonts";
 

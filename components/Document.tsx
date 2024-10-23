@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useRef } from "react";
-import { committeeMembers } from "@/app/users/brgy-members";
+import { committeeMembers } from "@/data/users/brgy-members";
 import { bebasNeue, montserrat } from "@/app/fonts/fonts";
 import { useReactToPrint } from "react-to-print";
 import { Button } from "@nextui-org/button";

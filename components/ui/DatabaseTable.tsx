@@ -4,8 +4,8 @@ import { bebasNeue, montserrat } from "@/app/fonts/fonts";
 
 import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, getKeyValue} from "@nextui-org/react";
 
-import { databaseColumns } from "@/app/users/columns";
-import { databaseRows } from "@/app/users/rows";
+import { databaseColumns } from "@/data/users/columns";
+import { databaseRows } from "@/data/users/rows";
 
 export default function DatabaseTable() {
     return (

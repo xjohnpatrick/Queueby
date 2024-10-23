@@ -1,5 +1,3 @@
-'use client'
-
 import { bebasNeue, montserrat } from '@/app/fonts/fonts'
 
 import { Button } from '@nextui-org/button'
