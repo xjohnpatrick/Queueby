@@ -1,4 +1,4 @@
-import { User } from "@/components/types";
+import { User } from "@/types/user";
 
 export const dashboardRows: User[] = [
     {

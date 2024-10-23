@@ -1,5 +1,3 @@
-'use client'
-
 import { montserrat } from '@/app/fonts/fonts'
 
 import DashboardTable from '@/components/ui/DashboardTable';
@@ -8,7 +6,7 @@ import { IoIosSearch } from "react-icons/io";
 
 import { Input } from '@nextui-org/input'
 
-import React, { useState } from 'react'
+import React from 'react'
 
 const Dashboard = () => {
   return (
