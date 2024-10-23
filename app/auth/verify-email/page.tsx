@@ -25,7 +25,7 @@ const VerifyEmail = () => {
                 alt="Makati Background" 
                 />
 
-                <div className={`flex flex-col gap-6 items-center justify-center w-full ${bebasNeue.className}`}>
+                <div className="flex flex-col gap-6 items-center justify-center w-full font-bebas">
                     <div className="flex gap-4">
                         <img 
                         className='w-20 h-20 lg:w-28 lg:h-28'
@@ -54,13 +54,13 @@ const VerifyEmail = () => {
             <div className="flex relative flex-col items-center justify-center w-[420px] h-[600px] sm:w-[520px] md:w-[620px] lg:w-[600px] lg:h-full lg:rounded-none lg:rounded-r-3xl bg-white rounded-b-3xl">  
                 <Link href="/auth/forgot-password">
                     <Button
-                    className={`absolute top-2 right-2 lg:left-2 lg:right-auto bg-white md:text-lg lg:text-xl text-blue-400 ${montserrat.className}`}
+                    className="absolute top-2 right-2 lg:left-2 lg:right-auto bg-white md:text-lg lg:text-xl text-blue-400 font-montserrat"
                     size='sm'
                     >
                         <FaArrowLeft/>Back
                     </Button>
                 </Link>
-                <div className={`flex flex-col gap-2 mb-3 lg:mb-5 items-center ${bebasNeue.className}`}>
+                <div className="flex flex-col gap-2 mb-3 lg:mb-5 items-center font-bebas">
                     <img 
                     src="/verifyemail.jpg" 
                     alt="Verify Email Logo" 
@@ -69,19 +69,19 @@ const VerifyEmail = () => {
                 </div>
                 <div className="flex flex-col gap-4 relative">
                      <div className='mx-10 sm:mx-14 text-justify text-gray-100 text-sm md:text-lg lg:text-xl'>
-                        <span className={`flex ${montserrat.className}`}>An email has been sent to user@gmail.com with instructions to reset password. If you have not received an email after a few minutes, check your spam folder.</span>
+                        <span className="flex font-montserrat">An email has been sent to user@gmail.com with instructions to reset password. If you have not received an email after a few minutes, check your spam folder.</span>
                      </div>
                 </div>
                 <div className='flex flex-col mt-2 lg:mt-12 items-center'>
                     <input 
-                    className={`mb-6 lg:mb-[71px] lg:w-[415px] h-12 rounded-lg border-2 border-gray px-4 ${montserrat.className}`}
+                    className="mb-6 lg:mb-[71px] lg:w-[415px] h-12 rounded-lg border-2 border-gray px-4 font-montserrat"
                     type='text'
                     placeholder='Input verification code here'
                     />
 
                     <Link href="/auth/reset-password">
                         <Button 
-                        className={`bg-blue-400 w-[280px] text-3xl text-white ${bebasNeue.className}`}
+                        className="bg-blue-400 w-[280px] text-3xl text-white font-bebas"
                         radius='sm'
                         >
                            Next

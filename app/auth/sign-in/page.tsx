@@ -22,7 +22,7 @@ const SignIn = () => {
                 alt="Makati Background" 
                 />
 
-                <div className={`flex flex-col gap-6 items-center justify-center w-full ${bebasNeue.className}`}>
+                <div className="flex flex-col gap-6 items-center justify-center w-full font-bebas">
                     <div className="flex gap-4">
                         <img 
                         className='w-20 h-20 lg:w-28 lg:h-28'
@@ -49,7 +49,7 @@ const SignIn = () => {
             </div>
 
             <div className="flex flex-col items-center justify-center w-[420px] h-[600px] sm:w-[520px] md:w-[620px] lg:w-[600px] lg:h-full lg:rounded-none lg:rounded-r-3xl bg-white rounded-b-3xl">  
-                <div className={`flex flex-col gap-2 mb-5 items-center ${bebasNeue.className}`}>
+                <div className="flex flex-col gap-2 mb-5 items-center font-bebas">
                     <h1 className='uppercase text-4xl lg:text-6xl'>
                         Welcome back,
                     </h1>
@@ -60,7 +60,7 @@ const SignIn = () => {
                 <div className="flex flex-col gap-4 relative">
                     <div className="flex relative items-center">
                         <input
-                        className={`w-[324px] h-[49px] py-2 pr-2 pl-10 text-lg ring-2 rounded-md ring-gray-300 outline-none font-sans ${montserrat.className}`}
+                        className="w-[324px] h-[49px] py-2 pr-2 pl-10 text-lg ring-2 rounded-md ring-gray-300 outline-none font-montserrat"
                         type='text' 
                         placeholder='Username'
                         />
@@ -71,7 +71,7 @@ const SignIn = () => {
                     </div>  
                     <div className='flex relative items-center'>
                         <input 
-                        className={`w-[324px] h-[49px] py-2 pr-2 pl-10 text-lg ring-2 rounded-md ring-gray-300 outline-none font-sans ${montserrat.className}`}
+                        className="w-[324px] h-[49px] py-2 pr-2 pl-10 text-lg ring-2 rounded-md ring-gray-300 outline-none font-montserrat"
                         type='password' 
                         placeholder='Password'
                         />
@@ -81,13 +81,13 @@ const SignIn = () => {
                         />
                     </div>
                     <Link href="/auth/forgot-password">
-                        <span className={`underline text-blue-100 absolute bottom-[-20px] right-0 text-md ${montserrat.className}`}>Forgot your password?</span>
+                        <span className="underline text-blue-100 absolute bottom-[-20px] right-0 text-md font-montserrat">Forgot your password?</span>
                     </Link>  
                 </div>
                 <div className='flex mt-12'>
                     <Link href="/main/dashboard">
                         <Button 
-                        className={`bg-blue-400 w-[170px] text-3xl text-white ${bebasNeue.className}`}
+                        className="bg-blue-400 w-[170px] text-3xl text-white font-bebas"
                         radius='sm'
                         size='lg'
                         >

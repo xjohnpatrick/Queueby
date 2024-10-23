@@ -32,7 +32,7 @@ const ResetPassword = () => {
                 alt="Makati Background" 
                 />
 
-                <div className={`flex flex-col gap-6 items-center justify-center w-full ${bebasNeue.className}`}>
+                <div className="flex flex-col gap-6 items-center justify-center w-full font-bebas">
                     <div className="flex gap-4">
                         <img 
                         className='w-20 h-20 lg:w-28 lg:h-28'
@@ -59,7 +59,7 @@ const ResetPassword = () => {
             </div>
 
             <div className="flex flex-col items-center justify-center w-[420px] h-[600px] sm:w-[520px] md:w-[620px] lg:w-[600px] lg:h-full lg:rounded-none lg:rounded-r-3xl bg-white rounded-b-3xl">
-                <div className={`flex flex-col gap-2 mb-3 lg:mb-5 items-center ${bebasNeue.className}`}>
+                <div className="flex flex-col gap-2 mb-3 lg:mb-5 items-center font-bebas">
                     <h1 className='uppercase text-4xl lg:text-5xl'>
                         Create new password
                     </h1>
@@ -67,13 +67,13 @@ const ResetPassword = () => {
 
                 <div className="flex flex-col gap-4 relative">
                      <div className='mx-10 sm:mx-16 text-justify text-gray-100 text-sm md:text-lg lg:text-xl'>
-                        <span className={`flex ${montserrat.className}`}>Your new password must be different from your previous passwords.</span>
+                        <span className="flex font-montserrat">Your new password must be different from your previous passwords.</span>
                      </div>
                 </div>
 
                 <div className='flex flex-col mt-2 lg:mt-12 items-center'>
                     <Input 
-                    className={`md:w-[415px] text-blue-200 ${montserrat.className}`}
+                    className="md:w-[415px] text-blue-200 font-montserrat"
                     radius='sm'
                     type='password'
                     label='New Password'
@@ -82,10 +82,10 @@ const ResetPassword = () => {
                     value={password}
                     onChange={handlePasswordChange}
                     />
-                    <label className={`text-gray-100 text-sm md:text-lg lg:text-xl mb-6 lg:mb-[71px] ${montserrat.className}`}>Must be at least 8 characters</label>
+                    <label className="text-gray-100 text-sm md:text-lg lg:text-xl mb-6 lg:mb-[71px] font-montserrat">Must be at least 8 characters</label>
 
                     <Input 
-                    className={`lg:w-[415px] text-blue-200 ${montserrat.className}`}
+                    className="lg:w-[415px] text-blue-200 font-montserrat"
                     radius='sm'
                     type='password'
                     label='Confirm Password'
@@ -94,12 +94,12 @@ const ResetPassword = () => {
                     value={confirmPassword}
                     onChange={handleConfirmPasswordChange}
                     />
-                    <label className={`text-gray-100 text-sm md:text-lg lg:text-xl mb-2 lg:mb-[71px] ${montserrat.className}`}>Both passwords must match</label>
+                    <label className="text-gray-100 text-sm md:text-lg lg:text-xl mb-2 lg:mb-[71px] font-montserrat">Both passwords must match</label>
 
                     <Link href="/auth/sign-in">
                         <Button
                         isDisabled={disable}
-                        className={`bg-blue-400 w-[280px] text-3xl text-white ${bebasNeue.className}`}
+                        className="bg-blue-400 w-[280px] text-3xl text-white font-bebas"
                         radius='sm'
                         >
                            Next
@@ -107,7 +107,7 @@ const ResetPassword = () => {
                     </Link>
 
                     {error && (
-                     <div className={`flex absolute text-white bg-red-500 rounded-md p-4 text-sm bottom-4 right-6 ${montserrat.className}`}>
+                     <div className="flex absolute text-white bg-red-500 rounded-md p-4 text-sm bottom-4 right-6 font-montserrat">
                         <p>{error}</p>
                     </div>
                     )}

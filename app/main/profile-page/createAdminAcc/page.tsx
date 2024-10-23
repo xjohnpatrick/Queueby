@@ -1,15 +1,12 @@
 "use client";
 
-import { bebasNeue, montserrat } from "@/app/fonts/fonts";
-
 import { Button } from "@nextui-org/button";
 
 import Link from "next/link";
 import React from "react";
 
-import { FaArrowLeft } from "react-icons/fa";
-
 import { usePasswordValidation } from "@/app/main/profile-page/createAdminAcc/createAdminFunctions";
+import BackButton from "@/components/buttons/BackButton";
 
 const CreateAdmin = () => {
   const {
@@ -24,19 +21,8 @@ const CreateAdmin = () => {
   return (
     <div className="flex items-center justify-center h-screen w-full bg-blue-100">
       <div className="flex relative justify-center bg-white w-[75vw] lg:w-[60vw] h-[90vh] lg:h-[80vh] rounded-md">
-        <Link href="/main/profile-page/profile">
-          <Button
-            className={`absolute top-2 left-2 lg:top-5 lg:left-5 bg-white md:text-lg lg:text-xl text-blue-400 ${montserrat.className}`}
-            size="sm"
-          >
-            <FaArrowLeft />
-            Back
-          </Button>
-        </Link>
-
-        <div
-          className={`flex flex-col w-full lg:w-[50vw] items-center lg:gap-12 ${bebasNeue.className}`}
-        >
+        <BackButton />
+        <div className="flex flex-col w-full lg:w-[50vw] items-center lg:gap-12 font-bebas">
           <h1 className="flex text-4xl xl:text-5xl text-blue-400 mt-12 mb-4 text-center">
             Create Admin Account
           </h1>
@@ -45,28 +31,28 @@ const CreateAdmin = () => {
             <div className="flex flex-col lg:flex-row items-center gap-2 lg:gap-[84px] xl:gap-[108px]">
               <label className="text-nowrap">First Name:</label>
               <input
-                className={`w-[240px] md:w-[320px] xl:w-[420px] placeholder:text-xl text-xl px-3 py-2 border-2 border-gray rounded-lg shadow-md outline-none ${montserrat.className}`}
+                className="w-[240px] md:w-[320px] xl:w-[420px] placeholder:text-xl text-xl px-3 py-2 border-2 border-gray rounded-lg shadow-md outline-none font-montserrat"
                 type="text"
               />
             </div>
             <div className="flex flex-col lg:flex-row items-center gap-2 lg:gap-[90px] xl:gap-[114px]">
               <label className="text-nowrap">Last Name:</label>
               <input
-                className={`w-[240px] md:w-[320px] xl:w-[420px] placeholder:text-xl text-xl px-3 py-2 border-2 border-gray rounded-lg shadow-md outline-none ${montserrat.className}`}
+                className="w-[240px] md:w-[320px] xl:w-[420px] placeholder:text-xl text-xl px-3 py-2 border-2 border-gray rounded-lg shadow-md outline-none font-montserrat"
                 type="text"
               />
             </div>
             <div className="flex flex-col lg:flex-row items-center gap-2 lg:gap-[93px] xl:gap-[115px]">
               <label>Username:</label>
               <input
-                className={`w-[240px] md:w-[320px] xl:w-[420px] placeholder:text-xl text-xl px-3 py-2 border-2 border-gray rounded-lg shadow-md outline-none ${montserrat.className}`}
+                className="w-[240px] md:w-[320px] xl:w-[420px] placeholder:text-xl text-xl px-3 py-2 border-2 border-gray rounded-lg shadow-md outline-none font-montserrat"
                 type="text"
               />
             </div>
             <div className="flex flex-col lg:flex-row items-center gap-2 lg:gap-[136px] xl:gap-[158px]">
               <label className="text-nowrap">Email:</label>
               <input
-                className={`w-[240px] md:w-[320px] xl:w-[420px] placeholder:text-xl text-xl px-3 py-2 border-2 border-gray rounded-lg shadow-md outline-none ${montserrat.className}`}
+                className="w-[240px] md:w-[320px] xl:w-[420px] placeholder:text-xl text-xl px-3 py-2 border-2 border-gray rounded-lg shadow-md outline-none font-montserrat"
                 type="email"
               />
             </div>
@@ -75,7 +61,7 @@ const CreateAdmin = () => {
               <input
                 onChange={handlePasswordChange}
                 value={password}
-                className={`w-[240px] md:w-[320px] xl:w-[420px] placeholder:text-xl text-xl px-3 py-2 border-2 border-gray rounded-lg shadow-md outline-none ${montserrat.className}`}
+                className="w-[240px] md:w-[320px] xl:w-[420px] placeholder:text-xl text-xl px-3 py-2 border-2 border-gray rounded-lg shadow-md outline-none font-montserrat"
                 type="password"
               />
             </div>
@@ -84,15 +70,13 @@ const CreateAdmin = () => {
               <input
                 onChange={handleConfirmPasswordChange}
                 value={confirmPassword}
-                className={`w-[240px] md:w-[320px] xl:w-[420px] placeholder:text-xl text-xl px-3 py-2 border-2 border-gray rounded-lg shadow-md outline-none ${montserrat.className}`}
+                className="w-[240px] md:w-[320px] xl:w-[420px] placeholder:text-xl text-xl px-3 py-2 border-2 border-gray rounded-lg shadow-md outline-none font-montserrat"
                 type="password"
               />
             </div>
 
             {error && (
-              <div
-                className={`flex absolute text-white bg-red-500 rounded-md p-4 text-sm bottom-4 right-6 ${montserrat.className}`}
-              >
+              <div className="flex absolute text-white bg-red-500 rounded-md p-4 text-sm bottom-4 right-6 font-montserrat">
                 <p>{error}</p>
               </div>
             )}

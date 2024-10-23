@@ -10,13 +10,18 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        bebas: ["var(--font-bebas)"],
+        poppins: ["var(--font-poppins)"],
+        montserrat: ['var(--font-montserrat)']
+      },
       colors: {
         blue: {
           DEFAULT: "#69b7e5",
           100: "#3BACF1",
           200: "#0358B6",
           300: "#2669D6",
-          400: "#132540"
+          400: "#132540",
         },
         white: {
           DEFAULT: "#FFFFFF",
@@ -43,8 +48,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [
-    nextui(),
-  ],
+  plugins: [nextui()],
 };
 export default config;

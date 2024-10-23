@@ -1,8 +1,7 @@
-'use client'
+"use client";
 
 import React, { useRef } from "react";
 import { committeeMembers } from "@/data/users/brgy-members";
-import { bebasNeue, montserrat } from "@/app/fonts/fonts";
 import { useReactToPrint } from "react-to-print";
 import { Button } from "@nextui-org/button";
 
@@ -22,7 +21,7 @@ export default function Document({ title }: DocumentTextProps) {
         className="flex w-[793px] h-[1123px] shadow shadow-blue-400 p-6"
       >
         <div className="flex flex-col relative justify-center w-full">
-          <div className={`flex flex-col text-center ${montserrat.className}`}>
+          <div className="flex flex-col text-center font-montserrat">
             <div className="flex absolute left-0">
               <img src="/makati.png" alt="Makati Logo" className="w-24 h-24" />
             </div>
@@ -50,7 +49,7 @@ export default function Document({ title }: DocumentTextProps) {
             </div>
           </div>
 
-          <div className={`flex w-full h-full pt-12 ${montserrat.className}`}>
+          <div className="flex w-full h-full pt-12 font-montserrat">
             <div className="flex flex-col w-1/4">
               {committeeMembers.map(({ id, name, position, committees }) => (
                 <div className="flex flex-col mb-3" key={id}>
@@ -172,7 +171,7 @@ export default function Document({ title }: DocumentTextProps) {
                   .map(({ id, name, position }) => (
                     <div
                       key={id}
-                      className={`flex flex-col absolute right-0 bottom-80 ${montserrat.className}`}
+                      className="flex flex-col absolute right-0 bottom-80 font-montserrat"
                     >
                       <span className="text-medium italic font-bold">
                         {name}
@@ -183,9 +182,7 @@ export default function Document({ title }: DocumentTextProps) {
                     </div>
                   ))}
 
-                <div
-                  className={`flex flex-col absolute bottom-28 left-16 ${montserrat.className}`}
-                >
+                <div className="flex flex-col absolute bottom-28 left-16 font-montserrat">
                   <span
                     className="text-sm italic font-bold uppercase text-center"
                     contentEditable
@@ -209,7 +206,7 @@ export default function Document({ title }: DocumentTextProps) {
               </div>
             </div>
           </div>
-          <div className={`flex ${montserrat.className}`}>
+          <div className="flex font-montserrat">
             <span className="italic text-[12px] font-bold uppercase">
               Not Valid Without Seal
             </span>
@@ -217,7 +214,7 @@ export default function Document({ title }: DocumentTextProps) {
         </div>
       </div>
 
-      <div className={`flex my-10 ${bebasNeue.className}`}>
+      <div className="flex my-10 ${bebasNeue.className}">
         <Button
           onClick={handlePrint}
           className="text-4xl bg-blue-400 text-white w-[151px] h-[57px] rounded-xl"
@@ -226,7 +223,7 @@ export default function Document({ title }: DocumentTextProps) {
         </Button>
       </div>
 
-      <div className={`flex flex-col ${montserrat.className}`}>
+      <div className="flex flex-col font-montserrat">
         <p className="italic text-xl">
           Note: Clicking the print button will automatically
         </p>

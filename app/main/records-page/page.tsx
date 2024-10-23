@@ -1,4 +1,3 @@
-import { bebasNeue, montserrat } from '@/app/fonts/fonts'
 import DashboardTable from '@/components/ui/DashboardTable'
 import { Button } from '@nextui-org/button'
 
@@ -8,7 +7,7 @@ const Records = () => {
 
   return (
     <div className="flex flex-col items-center w-full h-[1200px]"> 
-      <h1 className={`flex text-4xl font-semibold my-8 ${montserrat.className}`}>Viewing All Records</h1>
+      <h1 className="flex text-4xl font-semibold my-8 font-montserrat">Viewing All Records</h1>
 
       <div className='flex flex-col w-[80vw] lg:w-[70vw] h-[90vh] border border-black'>
         <div className='h-1/3'>
@@ -18,7 +17,7 @@ const Records = () => {
               alt="Makati Logo" 
               className='absolute left-10 top-10 lg:w-32 lg:h-32 w-20 h-20'
               />
-              <div className={`flex flex-col mt-32 sm:mt-20 lg:mt-10 text-center ${montserrat.className}`}>
+              <div className="flex flex-col mt-32 sm:mt-20 lg:mt-10 text-center font-montserrat">
                 <span className='md:text-xl uppercase'>
                   Republic of the Philippines
                 </span>
@@ -49,7 +48,7 @@ const Records = () => {
           <DashboardTable />
         </div>
       </div>
-      <div className={`flex my-10 ${bebasNeue.className}`}>
+      <div className="flex my-10 font-bebas">
         <Button className='text-4xl bg-blue-400 text-white w-[151px] h-[57px] rounded-xl'>
           Print
         </Button>
