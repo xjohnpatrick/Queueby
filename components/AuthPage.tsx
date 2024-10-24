@@ -7,11 +7,12 @@ import makatiLogo from "@/public/makati.png";
 import comemboLogo from "@/public/comembo.png";
 
 interface AuthPageProps {
-  heading?: string;
+  heading1?: string;
+  heading2?: string;
   content?: React.ReactNode;
 }
 
-export default function AuthPage({ heading, content }: AuthPageProps) {
+export default function AuthPage({ heading1, heading2, content }: AuthPageProps) {
   return (
     <div>
       <div className="flex h-screen w-full relative items-center justify-center bg-gradient-to-tr from-blue-200 to-blue-200">
@@ -44,18 +45,20 @@ export default function AuthPage({ heading, content }: AuthPageProps) {
               </div>
               <div className="flex flex-col text-white text-center gap-4 mx-4">
                 <div className="flex lg:flex-col gap-1 leading-8">
-                  <h1 className="text-xl lg:text-5xl uppercase">
+                  <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl uppercase">
                     Barangay Comembo
                   </h1>
-                  <h1 className="text-xl lg:text-5xl uppercase">
+                  <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl uppercase">
                     Information System
                   </h1>
                 </div>
                 <div className="flex lg:flex-col gap-1 leading-8 justify-center">
-                  <h1 className="text-xl lg:text-3xl uppercase">
+                  <h1 className="text-xl sm:text-2xl md:text-3xl uppercase">
                     in collaboration with
                   </h1>
-                  <h1 className="text-xl lg:text-3xl uppercase">queueby</h1>
+                  <h1 className="text-xl sm:text-2xl md:text-3xl uppercase">
+                    queueby
+                  </h1>
                 </div>
               </div>
             </div>
@@ -64,13 +67,14 @@ export default function AuthPage({ heading, content }: AuthPageProps) {
           <div className="flex flex-col items-center justify-center w-full h-[600px] sm:w-[520px] md:w-[620px] lg:w-[600px] lg:h-full lg:rounded-none lg:rounded-r-3xl bg-white rounded-b-3xl p-auto relative">
             <div className="flex flex-col gap-2 mb-5 items-center font-bebas">
               <h1 className="uppercase text-4xl lg:text-6xl text-center">
-                {heading}
+                {heading1}
+              </h1>
+              <h1 className="uppercase text-4xl lg:text-6xl text-center">
+                {heading2}
               </h1>
             </div>
 
             {content}
-
-            
           </div>
         </div>
       </div>

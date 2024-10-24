@@ -12,7 +12,7 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ buttons = [] }) => {
   return (
-    <aside className='hidden lg:flex h-full w-60 bg-blue-400'>
+    <aside className='hidden lg:flex h-screen w-60 bg-blue-400'>
         <div className="flex flex-col w-full relative font-bebas">
         {buttons.map((button, index) => (
           <>
