@@ -89,13 +89,13 @@ const Navbar = () => {
                       </Link>
                     </Button>
 
-                    <Button className="flex text-lg sm:text-xl text-white bg-blue-400">
+                    <Button className="flex text-sm sm:text-xl text-white bg-blue-400">
                       <Link href="/main/documents-page/barangay-certification">
                         Barangay Certification
                       </Link>
                     </Button>
 
-                    <Button className="flex text-lg sm:text-xl text-white bg-blue-400">
+                    <Button className="flex text-sm sm:text-xl text-white bg-blue-400">
                       <Link href="/main/documents-page/certificateOfClearance">
                         Certificate of Clearance
                       </Link>
