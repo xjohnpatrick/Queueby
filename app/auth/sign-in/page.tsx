@@ -14,7 +14,7 @@ const SignIn = () => {
         alt="Makati Background"
       />
 
-      <div className="flex h-[65vh] flex-col lg:flex-row items-center z-10 shadow-lg shadow-slate-800 rounded-3xl w-[320px] sm:w-auto">
+      <div className="flex flex-col lg:flex-row items-center z-10 shadow-lg shadow-slate-800 rounded-3xl w-[320px] sm:w-auto h-[600px]">
         <div className="flex w-full h-[400px] sm:w-[520px] md:w-[620px] lg:w-[400px] lg:h-full bg-gradient-to-br from-blue-100 to-blue rounded-t-3xl lg:rounded-none lg:rounded-l-3xl relative mx-auto">
           <img
             className="object-cover h-full w-full absolute mix-blend-overlay opacity-40 rounded-t-3xl lg:rounded-none lg:rounded-l-3xl"
@@ -22,7 +22,7 @@ const SignIn = () => {
             alt="Makati Background"
           />
 
-          <div className="flex flex-col gap-6 items-center justify-center w-full font-bebas">
+          <div className="flex flex-col gap-6 items-center justify-center w-full font-bebas p-auto">
             <div className="flex gap-4">
               <img
                 className="w-20 h-20 lg:w-28 lg:h-28"
@@ -54,7 +54,7 @@ const SignIn = () => {
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-center w-full h-[600px] sm:w-[520px] md:w-[620px] lg:w-[600px] lg:h-full lg:rounded-none lg:rounded-r-3xl bg-white rounded-b-3xl">
+        <div className="flex flex-col items-center justify-center w-full h-[600px] sm:w-[520px] md:w-[620px] lg:w-[600px] lg:h-full lg:rounded-none lg:rounded-r-3xl bg-white rounded-b-3xl p-auto">
           <div className="flex flex-col gap-2 mb-5 items-center font-bebas">
             <h1 className="uppercase text-4xl lg:text-6xl">Welcome back,</h1>
             <h1 className="uppercase text-4xl lg:text-6xl">
