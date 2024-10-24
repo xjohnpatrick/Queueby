@@ -83,7 +83,7 @@ const Navbar = () => {
                       </Link>
                     </Button>
 
-                    <Button className="flex text-xl text-white bg-blue-400 col-span-2">
+                    <Button className="flex text-lg sm:text-xl text-white bg-blue-400 col-span-2">
                       <Link href="/main/documents-page/firstTimeJobSeeker">
                         Barangay Certificate For First Time Job Seeker
                       </Link>
