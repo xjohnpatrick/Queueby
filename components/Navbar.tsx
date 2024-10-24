@@ -46,7 +46,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="md:hidden absolute right-10">
+          <div className="md:hidden absolute right-4">
             <Button
               isIconOnly
               onClick={() => setProfileIsOpen(!profileIsOpen)}
