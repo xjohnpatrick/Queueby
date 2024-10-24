@@ -23,7 +23,7 @@ const Navbar = () => {
         <div
           className="flex text-white w-full items-center font-bebas"
         >
-          <div className="flex md:flex-col lg:flex-row items-center absolute left-10 gap-4 md:gap-0 lg:gap-4">
+          <div className="flex md:flex-col lg:flex-row items-center absolute left-4 gap-4 md:gap-0 lg:gap-4">
             <div className="flex gap-2">
               <img
                 src="/makati.png"
