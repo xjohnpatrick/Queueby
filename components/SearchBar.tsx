@@ -6,7 +6,7 @@ import React from "react";
 export default function SearchBar() {
   return (
     <div>
-      <div className="relative flex mb-14 w-[320px] sm:w-[380px] md:w-[450px] lg:w-[580px] font-montserrat">
+      <div className="relative flex my-10 w-[320px] sm:w-[380px] md:w-[450px] lg:w-[580px] font-montserrat">
         <Input
           className=""
           placeholder="Search Here"
