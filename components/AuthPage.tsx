@@ -61,7 +61,7 @@ export default function AuthPage({ heading, content }: AuthPageProps) {
             </div>
           </div>
 
-          <div className="flex flex-col items-center justify-center w-full h-[600px] sm:w-[520px] md:w-[620px] lg:w-[600px] lg:h-full lg:rounded-none lg:rounded-r-3xl bg-white rounded-b-3xl p-auto">
+          <div className="flex flex-col items-center justify-center w-full h-[600px] sm:w-[520px] md:w-[620px] lg:w-[600px] lg:h-full lg:rounded-none lg:rounded-r-3xl bg-white rounded-b-3xl p-auto relative">
             <div className="flex flex-col gap-2 mb-5 items-center font-bebas">
               <h1 className="uppercase text-4xl lg:text-6xl text-center">
                 {heading}

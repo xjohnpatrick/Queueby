@@ -21,7 +21,7 @@ const ResetPassword = () => {
     <div>
       <AuthPage
         content={
-          <div className="flex flex-col items-center justify-center w-[320px] h-[440px] sm:w-[520px] md:w-[620px] lg:w-[600px] lg:h-full lg:rounded-none lg:rounded-r-3xl bg-white rounded-b-3xl">
+          <>
             <div className="flex flex-col gap-2 mb-3 lg:mb-5 items-center font-bebas">
               <h1 className="uppercase text-4xl lg:text-5xl">
                 Create new password
@@ -69,7 +69,7 @@ const ResetPassword = () => {
               <Link href="/auth/sign-in">
                 <Button
                   isDisabled={disable}
-                  className="bg-blue-400 w-[280px] text-3xl text-white font-bebas"
+                  className="bg-blue-400 w-[280px] text-3xl text-white font-bebas my-4"
                   radius="sm"
                 >
                   Next
@@ -82,7 +82,7 @@ const ResetPassword = () => {
                 </div>
               )}
             </div>
-          </div>
+          </>
         }
       />
     </div>

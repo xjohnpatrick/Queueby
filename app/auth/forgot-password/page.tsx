@@ -11,17 +11,17 @@ const ForgotPassword = () => {
     <div>
       <AuthPage
         content={
-          <div className="flex relative flex-col items-center justify-center w-[320px] h-[440px] sm:w-[520px] md:w-[620px] lg:w-[600px] lg:h-full lg:rounded-none lg:rounded-r-3xl bg-white rounded-b-3xl">
+          <>
             <Link href="/auth/sign-in">
               <Button
-                className="absolute -top-3 right-2 lg:left-2 lg:right-auto bg-white md:text-lg lg:text-xl text-blue-400 font-montserrat"
+                className="absolute top-1.5 right-2 lg:left-2 lg:right-auto bg-white md:text-lg lg:text-xl text-blue-400 font-montserrat"
                 size="sm"
               >
                 <FaArrowLeft />
                 Back
               </Button>
             </Link>
-            <div className="flex flex-col gap-2 mb-5 items-center font-bebas">
+            <div className="flex flex-col gap-2 my-5 items-center font-bebas">
               <h1 className="uppercase text-4xl lg:text-6xl">Reset Password</h1>
             </div>
             <div className="flex flex-col gap-4 relative">
@@ -44,7 +44,7 @@ const ForgotPassword = () => {
 
               <Link href="/auth/verify-email">
                 <Button
-                  className="bg-blue-400 w-[280px] text-3xl text-white font-bebas"
+                  className="bg-blue-400 w-[280px] text-3xl text-white font-bebas mb-4"
                   radius="sm"
                   size="lg"
                 >
@@ -52,7 +52,7 @@ const ForgotPassword = () => {
                 </Button>
               </Link>
             </div>
-          </div>
+          </>
         }
       />
     </div>

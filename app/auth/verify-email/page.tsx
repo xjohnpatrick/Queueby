@@ -11,10 +11,10 @@ const VerifyEmail = () => {
     <div>
       <AuthPage
         content={
-          <div className="flex relative flex-col items-center justify-center w-[320px] h-[420px] sm:w-[520px] md:w-[620px] lg:w-[600px] lg:h-full lg:rounded-none lg:rounded-r-3xl bg-white rounded-b-3xl">
+          <>
             <Link href="/auth/forgot-password">
               <Button
-                className="absolute -top-2 right-2 lg:left-2 lg:right-auto bg-white md:text-lg lg:text-xl text-blue-400 font-montserrat"
+                className="absolute top-1.5 right-2 lg:left-2 lg:right-auto bg-white md:text-lg lg:text-xl text-blue-400 font-montserrat"
                 size="sm"
               >
                 <FaArrowLeft />
@@ -46,14 +46,14 @@ const VerifyEmail = () => {
 
               <Link href="/auth/reset-password">
                 <Button
-                  className="bg-blue-400 w-[280px] text-3xl text-white font-bebas"
+                  className="bg-blue-400 w-[280px] text-3xl text-white font-bebas my-4"
                   radius="sm"
                 >
                   Next
                 </Button>
               </Link>
             </div>
-          </div>
+          </>
         }
       />
     </div>
