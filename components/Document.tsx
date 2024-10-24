@@ -220,7 +220,7 @@ export default function Document({ title }: DocumentTextProps) {
             </div>
           </div>
           <div className="flex font-montserrat">
-            <span className="italic text-[6px] sm:text-[7px] md:text-[10px] lg:text-[12px] font-bold uppercase">
+            <span className="italic text-[5px] sm:text-[7px] md:text-[10px] lg:text-[12px] font-bold uppercase">
               Not Valid Without Seal
             </span>
           </div>
