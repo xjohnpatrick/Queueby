@@ -1,22 +1,8 @@
 import { Metadata } from "next";
+import ForgotPassword from "./page";
 
 export const metadata: Metadata = {
-  title: 'Forgot Password',
-  description:
-    "Forgot Password Page",
+  title: "Forgot Password",
+  description: "Forgot Password Page",
 };
-
-export default function Layout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
-      <body
-      >
-        {children}
-      </body>
-    </html>
-  );
-}
+export default ForgotPassword;

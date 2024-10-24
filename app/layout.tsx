@@ -15,9 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${bebasNeue.variable} ${montserrat.variable}`}>
-      <body
-      >
+    <html lang="en">
+      <body className={`${bebasNeue.variable} ${montserrat.variable}`}>
         {children}
       </body>
     </html>

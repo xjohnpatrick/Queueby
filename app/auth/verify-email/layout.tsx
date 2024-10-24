@@ -1,22 +1,8 @@
 import { Metadata } from "next";
+import VerifyEmail from "./page";
 
 export const metadata: Metadata = {
-  title: 'Verify Email',
-  description:
-    "Verify Email Page",
+  title: "Verify Email",
+  description: "Verify Email Page",
 };
-
-export default function Layout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
-      <body
-      >
-        {children}
-      </body>
-    </html>
-  );
-}
+export default VerifyEmail;
