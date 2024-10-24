@@ -84,7 +84,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="flex text-white text-2xl w-full justify-center font-bebas">
+      <div className="flex text-white text-lg sm:text-2xl w-full justify-center font-bebas">
         © COPYRIGHT 2023 ALL RIGHTS RESERVED QUEUEBY
       </div>
     </footer>
