@@ -14,8 +14,8 @@ const SignIn = () => {
         alt="Makati Background"
       />
 
-      <div className="flex h-[65vh] flex-col lg:flex-row items-center z-10 shadow-lg shadow-slate-800 rounded-3xl">
-        <div className="flex w-[420px] h-[400px] sm:w-[520px] md:w-[620px] lg:w-[400px] lg:h-full bg-gradient-to-br from-blue-100 to-blue rounded-t-3xl lg:rounded-none lg:rounded-l-3xl relative">
+      <div className="flex h-[65vh] flex-col lg:flex-row items-center z-10 shadow-lg shadow-slate-800 rounded-3xl w-[380px]">
+        <div className="flex w-full h-[400px] sm:w-[520px] md:w-[620px] lg:w-[400px] lg:h-full bg-gradient-to-br from-blue-100 to-blue rounded-t-3xl lg:rounded-none lg:rounded-l-3xl relative mx-auto">
           <img
             className="object-cover h-full w-full absolute mix-blend-overlay opacity-40 rounded-t-3xl lg:rounded-none lg:rounded-l-3xl"
             src="/makatibg.jpg"
@@ -37,10 +37,10 @@ const SignIn = () => {
             </div>
             <div className="flex flex-col text-white text-center gap-4">
               <div className="flex lg:flex-col gap-1 leading-8">
-                <h1 className="text-3xl lg:text-5xl uppercase">
+                <h1 className="text-2xl lg:text-5xl uppercase">
                   Barangay Comembo
                 </h1>
-                <h1 className="text-3xl lg:text-5xl uppercase">
+                <h1 className="text-2xl lg:text-5xl uppercase">
                   Information System
                 </h1>
               </div>
@@ -54,7 +54,7 @@ const SignIn = () => {
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-center w-[420px] h-[600px] sm:w-[520px] md:w-[620px] lg:w-[600px] lg:h-full lg:rounded-none lg:rounded-r-3xl bg-white rounded-b-3xl">
+        <div className="flex flex-col items-center justify-center w-full h-[600px] sm:w-[520px] md:w-[620px] lg:w-[600px] lg:h-full lg:rounded-none lg:rounded-r-3xl bg-white rounded-b-3xl">
           <div className="flex flex-col gap-2 mb-5 items-center font-bebas">
             <h1 className="uppercase text-4xl lg:text-6xl">Welcome back,</h1>
             <h1 className="uppercase text-4xl lg:text-6xl">
