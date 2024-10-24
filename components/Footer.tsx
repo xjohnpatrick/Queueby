@@ -3,23 +3,23 @@ import React from "react";
 const Footer = () => {
   return (
     <footer className="flex flex-col bg-blue-200">
-      <div className="flex">
-        <div className="hidden sm:flex flex-col gap-2 h-full py-8 pl-10 w-[650px]">
+      <div className="grid lg:grid-cols-2 xl:grid-cols-3">
+        <div className="hidden lg:flex flex-col gap-2 h-full py-8 pl-10 w-full">
           <div className="flex gap-2">
             <img
               src="/makati.png"
               alt="Makati Logo"
-              className="hidden sm:flex sm:w-16 sm:h-16 lg:w-20 lg:h-20"
+              className="sm:w-16 sm:h-16 lg:w-20 lg:h-20"
             />
             <img
               src="/comembo.png"
               alt="Comembo Logo"
-              className="hidden sm:flex sm:w-16 sm:h-16 lg:w-20 lg:h-20"
+              className="sm:w-16 sm:h-16 lg:w-20 lg:h-20"
             />
             <img
               src="/queueby.png"
               alt="Queueby Logo"
-              className="hidden sm:flex sm:w-16 sm:h-16 lg:w-20 lg:h-20"
+              className="sm:w-16 sm:h-16 lg:w-20 lg:h-20"
             />
           </div>
           <div className="flex flex-col text-white font-bebas">
@@ -35,42 +35,40 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="hidden md:flex py-8 pl-4 h-full w-1/2">
-          <div className="flex flex-col text-right">
-            <span className="uppercase text-xl text-white font-bebas">
+        <div className="hidden lg:flex py-8 pl-4 h-full w-full">
+          <div className="flex flex-col text-right text-lg">
+            <span className="uppercase text-white font-bebas">
               Contact Number:
             </span>
-            <span className="uppercase text-xl text-white font-bebas">
-              Address:
-            </span>
-            <span className="uppercase mt-[56px] text-xl text-white font-bebas">
+            <span className="uppercase text-white font-bebas">Address:</span>
+            <span className="uppercase mt-[56px] text-white font-bebas">
               Email:
             </span>
-            <span className="uppercase text-xl text-white font-bebas">
+            <span className="uppercase text-white font-bebas">
               Office Hours:
             </span>
           </div>
-          <div className="flex flex-col text-white">
-            <span className="text-lg ml-4 font-montserrat">277381883</span>
-            <span className="text-lg ml-4 font-montserrat">
+          <div className="flex flex-col text-white text-lg">
+            <span className="ml-4 font-montserrat">277381883</span>
+            <span className="ml-4 font-montserrat">
               Comembo Barangay Hall, Anahaw
             </span>
-            <span className="text-lg ml-4 font-montserrat">
+            <span className="ml-4 font-montserrat">
               St., City Of Makati, NCR, Fourth
             </span>
-            <span className="text-lg ml-4 font-montserrat">
+            <span className="ml-4 font-montserrat">
               District, National Capital Region
             </span>
-            <span className="text-lg ml-4 mr-[200px] font-montserrat">
+            <span className="ml-4 mr-[200px] font-montserrat">
               barangaycomembo28@gmail.com
             </span>
-            <span className="text-lg ml-4 mr-[200px] font-montserrat">
+            <span className="ml-4 mr-[200px] font-montserrat">
               8:00 AM to 5:00 PM, Monday to Friday
             </span>
           </div>
         </div>
 
-        <div className="hidden xl:flex flex-col w-1/2 text-white">
+        <div className="hidden xl:flex flex-col w-full h-full text-white">
           <span className="text-lg text-justify pt-8 pr-4 font-montserrat">
             Thank you for using our scheduling system! It is our utmost pleasure
             to assist you in staying organized and keeping your appointments in
@@ -84,7 +82,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="flex text-white text-lg sm:text-2xl w-full justify-center font-bebas">
+      <div className="flex text-white text-lg sm:text-xl md:text-2xl w-full justify-center font-bebas">
         © COPYRIGHT 2023 ALL RIGHTS RESERVED QUEUEBY
       </div>
     </footer>

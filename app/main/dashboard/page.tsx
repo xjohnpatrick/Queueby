@@ -9,7 +9,7 @@ import React from "react";
 const Dashboard = () => {
   return (
     <div className="flex flex-col items-center justify-center w-full h-screen">
-      <div className="relative flex mb-14 w-[380px] lg:w-[580px] font-montserrat">
+      <div className="relative flex mb-14 w-[320px] sm:w-[380px] md:w-[450px] lg:w-[580px] font-montserrat">
         <Input
           className=""
           placeholder="Search Here"
