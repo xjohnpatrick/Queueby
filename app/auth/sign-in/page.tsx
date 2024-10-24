@@ -14,7 +14,7 @@ const SignIn = () => {
         alt="Makati Background"
       />
 
-      <div className="flex h-[65vh] flex-col lg:flex-row items-center z-10 shadow-lg shadow-slate-800 rounded-3xl w-[380px] sm:w-auto">
+      <div className="flex h-[65vh] flex-col lg:flex-row items-center z-10 shadow-lg shadow-slate-800 rounded-3xl w-[320px] sm:w-auto">
         <div className="flex w-full h-[400px] sm:w-[520px] md:w-[620px] lg:w-[400px] lg:h-full bg-gradient-to-br from-blue-100 to-blue rounded-t-3xl lg:rounded-none lg:rounded-l-3xl relative mx-auto">
           <img
             className="object-cover h-full w-full absolute mix-blend-overlay opacity-40 rounded-t-3xl lg:rounded-none lg:rounded-l-3xl"
@@ -35,20 +35,20 @@ const SignIn = () => {
                 alt="Makati Logo"
               />
             </div>
-            <div className="flex flex-col text-white text-center gap-4">
+            <div className="flex flex-col text-white text-center gap-4 mx-4">
               <div className="flex lg:flex-col gap-1 leading-8">
-                <h1 className="text-2xl lg:text-5xl uppercase">
+                <h1 className="text-xl lg:text-5xl uppercase">
                   Barangay Comembo
                 </h1>
-                <h1 className="text-2xl lg:text-5xl uppercase">
+                <h1 className="text-xl lg:text-5xl uppercase">
                   Information System
                 </h1>
               </div>
               <div className="flex lg:flex-col gap-1 leading-8 justify-center">
-                <h1 className="text-2xl lg:text-3xl uppercase">
+                <h1 className="text-xl lg:text-3xl uppercase">
                   in collaboration with
                 </h1>
-                <h1 className="text-2xl lg:text-3xl uppercase">queueby</h1>
+                <h1 className="text-xl lg:text-3xl uppercase">queueby</h1>
               </div>
             </div>
           </div>
@@ -64,7 +64,7 @@ const SignIn = () => {
           <div className="flex flex-col gap-4 relative">
             <div className="flex relative items-center">
               <input
-                className="w-[324px] h-[49px] py-2 pr-2 pl-10 text-lg ring-2 rounded-md ring-gray-300 outline-none font-montserrat"
+                className="w-full h-[49px] py-2 pr-2 pl-10 text-lg ring-2 rounded-md ring-gray-300 outline-none font-montserrat mx-auto"
                 type="text"
                 placeholder="Username"
               />
@@ -72,7 +72,7 @@ const SignIn = () => {
             </div>
             <div className="flex relative items-center">
               <input
-                className="w-[324px] h-[49px] py-2 pr-2 pl-10 text-lg ring-2 rounded-md ring-gray-300 outline-none font-montserrat"
+                className="w-full h-[49px] py-2 pr-2 pl-10 text-lg ring-2 rounded-md ring-gray-300 outline-none font-montserrat"
                 type="password"
                 placeholder="Password"
               />
