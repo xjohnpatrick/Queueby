@@ -1,28 +1,23 @@
+import { logo } from "@/data/logo";
+import Image from "next/image";
 import React from "react";
 
 const Footer = () => {
   return (
     <footer className="flex flex-col bg-blue-200">
-      <div className="grid lg:grid-cols-2 xl:grid-cols-3">
-        <div className="hidden lg:flex flex-col gap-2 h-full py-8 pl-10 w-full">
-          <div className="flex gap-2">
-            <img
-              src="/makati.png"
-              alt="Makati Logo"
-              className="sm:w-16 sm:h-16 lg:w-20 lg:h-20"
-            />
-            <img
-              src="/comembo.png"
-              alt="Comembo Logo"
-              className="sm:w-16 sm:h-16 lg:w-20 lg:h-20"
-            />
-            <img
-              src="/queueby.png"
-              alt="Queueby Logo"
-              className="sm:w-16 sm:h-16 lg:w-20 lg:h-20"
-            />
+      <div className="grid sm:grid-cols-2 md:grid-cols-3">
+        <div className="flex flex-col gap-2 h-full w-full">
+          <div className="flex gap-2 mx-4 mt-4 lg:mx-12 lg:mt-10">
+            {logo.map((item) => (
+              <div
+                key={item.id}
+                className="relative w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20"
+              >
+                <Image src={item.img} alt={item.alt} fill />
+              </div>
+            ))}
           </div>
-          <div className="flex flex-col text-white font-bebas">
+          <div className="flex flex-col text-white font-bebas mx-4 mb-4 lg:mx-12">
             <span className="uppercase text-3xl">
               Barangay Comembo Application
             </span>
@@ -35,48 +30,56 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="hidden lg:flex py-8 pl-4 h-full w-full">
-          <div className="flex flex-col text-right text-lg">
-            <span className="uppercase text-white font-bebas">
-              Contact Number:
-            </span>
-            <span className="uppercase text-white font-bebas">Address:</span>
-            <span className="uppercase mt-[56px] text-white font-bebas">
-              Email:
-            </span>
-            <span className="uppercase text-white font-bebas">
-              Office Hours:
-            </span>
-          </div>
-          <div className="flex flex-col text-white text-lg">
-            <span className="ml-4 font-montserrat">277381883</span>
-            <span className="ml-4 font-montserrat">
-              Comembo Barangay Hall, Anahaw
-            </span>
-            <span className="ml-4 font-montserrat">
-              St., City Of Makati, NCR, Fourth
-            </span>
-            <span className="ml-4 font-montserrat">
-              District, National Capital Region
-            </span>
-            <span className="ml-4 mr-[200px] font-montserrat">
-              barangaycomembo28@gmail.com
-            </span>
-            <span className="ml-4 mr-[200px] font-montserrat">
-              8:00 AM to 5:00 PM, Monday to Friday
-            </span>
+        <div className="flex h-full w-full">
+          <div className="flex text-lg m-4 lg:mt-10 w-full">
+            <div className="flex flex-col gap-1">
+              {[
+                {
+                  label: "Contact Number:",
+                  info: "277381883",
+                },
+                {
+                  label: "Address:",
+                  info: "Comembo Barangay Hall, Anahaw",
+                  info1: "St., City Of Makati, NCR, Fourth",
+                  info2: "District, National Capital Region",
+                },
+                {
+                  label: "Email:",
+                  info: "barangaycomembo28@gmail.com",
+                },
+                {
+                  label: "Office Hours:",
+                  info: "8:00 AM to 5:00 PM, Monday to Friday",
+                },
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="grid grid-cols-[100px_auto] lg:grid-cols-[150px_300px] uppercase text-white font-bebas gap-2"
+                >
+                  <span className="text-start lg:text-right text-sm sm:text-base lg:text-xl mr-4">
+                    {item.label}
+                  </span>
+                  <div className="grid grid-cols-1 text-sm sm:text-base lg:text-xl">
+                    <span>{item.info}</span>
+                    <span>{item.info1}</span>
+                    <span>{item.info2}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
-        <div className="hidden xl:flex flex-col w-full h-full text-white">
-          <span className="text-lg text-justify pt-8 pr-4 font-montserrat">
+        <div className="flex flex-col w-full h-full sm:col-span-3 md:col-span-1 text-white p-4 lg:mt-4">
+          <span className="text-sm md:text-base lg:text-lg font-montserrat text-justify">
             Thank you for using our scheduling system! It is our utmost pleasure
             to assist you in staying organized and keeping your appointments in
             order. Please feel free to reach out to us if you require any
             assistance or have any inquiries about the application. We assure
             you that we are always here to assist you in any way possible
           </span>
-          <span className="text-lg mt-6 font-montserrat">
+          <span className="text-sm lg:text-lg mt-4 font-montserrat">
             Best Regards, Queueby
           </span>
         </div>

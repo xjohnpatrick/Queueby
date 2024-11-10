@@ -11,6 +11,8 @@ import { RiDatabaseLine } from "react-icons/ri";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 
 import { Button } from "@nextui-org/button";
+import Image from "next/image";
+import defaultFemaleImg from '@/public/femaleProfile.png';
 
 const Navbar = () => {
   const [documentIsOpen, setDocumentIsOpen] = useState(false);
@@ -20,9 +22,7 @@ const Navbar = () => {
   return (
     <nav className="flex flex-col">
       <div className="flex h-32 bg-blue-200">
-        <div
-          className="flex text-white w-full items-center font-bebas"
-        >
+        <div className="flex text-white w-full items-center font-bebas">
           <div className="flex md:flex-col lg:flex-row items-center absolute left-4 gap-4 md:gap-0 lg:gap-4">
             <div className="flex gap-2">
               <img
@@ -171,11 +171,13 @@ const Navbar = () => {
                   profileIsOpen ? "bg-blue-100" : ""
                 }`}
               >
-                <img
-                  src="/femaleProfile.png"
-                  alt="Female Default Profile"
-                  className="w-10 h-10 lg:w-12 lg:h-12"
-                />
+                <div className="w-10 h-10 lg:w-12 lg:h-12 relative">
+                  <Image
+                    src={defaultFemaleImg}
+                    alt="Female Default Profile"
+                    fill
+                  />
+                </div>
                 Profile
               </button>
               {profileIsOpen && (
