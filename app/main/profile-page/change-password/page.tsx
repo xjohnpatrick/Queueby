@@ -1,55 +1,53 @@
 import BackButton from "@/components/buttons/BackButton";
+import Wrapper from "@/components/Wrapper";
 import { Button } from "@nextui-org/button";
 import React from "react";
 
 const ChangePassword = () => {
   return (
-    <div className="flex items-center justify-center h-screen w-full bg-blue-100">
-      <div className="flex relative justify-center bg-white w-[75vw] lg:w-[60vw] h-[80vh] xl:h-[70vh] rounded-md">
+    <Wrapper>
+      <div className="flex relative justify-center bg-white w-full lg:w-[1000px] h-[700px] xl:h-[650px] rounded-md mx-4">
         <BackButton />
 
-        <div
-          className="flex flex-col w-full lg:w-[45vw] items-center gap-12 lg:gap-24 font-bebas"
-        >
-          <h1 className="flex text-4xl xl:text-5xl text-blue-400 mt-16 text-center">
+        <div className="flex flex-col w-full lg:w-[45vw] items-center font-bebas gap-4">
+          <h1 className="flex text-4xl xl:text-5xl text-blue-400 mt-16 mb-10 text-center">
             Change Password
           </h1>
 
-          <div className="flex flex-col text-blue-400 text-3xl w-full gap-12">
-            <div className="flex flex-col xl:flex-row items-center gap-4 xl:gap-16">
-              <label className="text-nowrap">Current Password:</label>
-              <input
-                className="w-[300px] md:w-[400px] lg:w-[540px] placeholder:text-xl text-xl py-2 px-3 border border-black rounded-lg font-montserrat"
-                type="password"
-              />
-            </div>
-
-            <div className="flex flex-col xl:flex-row items-center gap-4 xl:gap-[106px]">
-              <label className="text-nowrap">New Password:</label>
-              <input
-                className="w-[300px] md:w-[400px] lg:w-[540px] placeholder:text-xl text-xl py-2 px-3 border border-black rounded-lg font-montserrat"
-                type="password"
-              />
-            </div>
-
-            <div className="flex flex-col xl:flex-row items-center gap-4 xl:gap-5">
-              <label className="text-nowrap">Confirm New Password:</label>
-              <input
-                className="w-[300px] md:w-[400px] lg:w-[540px] placeholder:text-xl text-xl py-2 px-3 border border-black rounded-lg font-montserrat"
-                type="password"
-              />
-            </div>
+          <div className="flex flex-col items-center text-blue-400 w-full gap-4">
+            {[
+              {
+                label: "Current Password:",
+              },
+              {
+                label: "New Password:",
+              },
+              {
+                label: "Confirm New Password:",
+              },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="grid grid-cols-1 lg:grid-cols-[200px_auto] justify-center lg:flex-row items-center gap-2 text-2xl mt-4"
+              >
+                <label className="text-nowrap">{item.label}</label>
+                <input
+                  className="w-[240px] sm:w-[400px] lg:w-[540px] placeholder:text-xl text-xl px-3 py-2 border-2 border-gray shadow-md outline-none rounded-lg font-montserrat"
+                  type="password"
+                />
+              </div>
+            ))}
           </div>
 
           <Button
-            className="bg-blue-400 text-white text-3xl w-[250px] md:w-[300px] lg:w-[320px]"
+            className="bg-blue-400 text-white text-3xl w-[250px] md:w-[300px] lg:w-[320px] mt-14"
             size="lg"
           >
             Change Password
           </Button>
         </div>
       </div>
-    </div>
+    </Wrapper>
   );
 };
 

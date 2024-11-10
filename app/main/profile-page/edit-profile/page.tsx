@@ -1,11 +1,11 @@
-import EditProfileInfo from "@/components/EditProfileInfo";
-import ProfilePage from "@/components/ProfilePage";
+import EditProfilePage from "@/components/profile/EditProfilePage";
+import Wrapper from "@/components/Wrapper";
 import React from "react";
 
 export default function EditProfile() {
   return (
-    <ProfilePage>
-      <EditProfileInfo/>
-    </ProfilePage>
+    <Wrapper>
+      <EditProfilePage />
+    </Wrapper>
   );
 }

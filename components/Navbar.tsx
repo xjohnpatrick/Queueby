@@ -117,11 +117,6 @@ const Navbar = () => {
                     Profile
                   </Button>
                 </Link>
-                <Link href="/main/profile-page/edit-profile">
-                  <Button className="flex text-xl text-white bg-blue-400 w-full">
-                    Settings
-                  </Button>
-                </Link>
                 <Link href="/auth/sign-in">
                   <Button className="flex text-xl text-white bg-blue-400 w-full">
                     Logout
@@ -165,40 +160,22 @@ const Navbar = () => {
             </Link>
 
             <div className="flex">
-              <button
-                onClick={() => setProfileIsOpen(!profileIsOpen)}
-                className={`flex gap-2 md:px-2 md:py-4 xl:py-8 rounded-xl hover:bg-blue-100 duration-400 ease-in-out items-center ${
-                  profileIsOpen ? "bg-blue-100" : ""
-                }`}
-              >
-                <div className="w-10 h-10 lg:w-12 lg:h-12 relative">
-                  <Image
-                    src={defaultFemaleImg}
-                    alt="Female Default Profile"
-                    fill
-                  />
-                </div>
-                Profile
-              </button>
-              {profileIsOpen && (
-                <div
-                  onMouseEnter={() => setProfileIsOpen(true)}
-                  onMouseLeave={() => setProfileIsOpen(false)}
-                  className="flex absolute -bottom-36 w-[176px] h-[120px] flex-col rounded-xl items-center justify-center gap-4 bg-blue-200"
+              <Link href="/main/profile-page/profile">
+                <button
+                  className={`flex gap-2 md:px-2 md:py-4 xl:py-8 rounded-xl hover:bg-blue-100 duration-400 ease-in-out items-center ${
+                    profileIsOpen ? "bg-blue-100" : ""
+                  }`}
                 >
-                  <Link href="/main/profile-page/profile">
-                    <span className="py-1 px-3 hover:bg-blue-100 rounded-lg">
-                      Settings
-                    </span>
-                  </Link>
-
-                  <Link href="/auth/sign-in">
-                    <span className="py-1 px-3 hover:bg-blue-100 rounded-lg">
-                      Logout
-                    </span>
-                  </Link>
-                </div>
-              )}
+                  <div className="w-10 h-10 lg:w-12 lg:h-12 relative">
+                    <Image
+                      src={defaultFemaleImg}
+                      alt="Female Default Profile"
+                      fill
+                    />
+                  </div>
+                  Profile
+                </button>
+              </Link>
             </div>
           </div>
         </div>

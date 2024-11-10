@@ -5,7 +5,7 @@ import React from "react";
 const Footer = () => {
   return (
     <footer className="flex flex-col bg-blue-200">
-      <div className="grid sm:grid-cols-2 md:grid-cols-3">
+      <div className="grid sm:grid-cols-[250px_auto] md:grid-cols-2 xl:grid-cols-3">
         <div className="flex flex-col gap-2 h-full w-full">
           <div className="flex gap-2 mx-4 mt-4 lg:mx-12 lg:mt-10">
             {logo.map((item) => (
@@ -30,7 +30,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex h-full w-full">
+        <div className="flex h-full w-full items-center">
           <div className="flex text-lg m-4 lg:mt-10 w-full">
             <div className="flex flex-col gap-1">
               {[
@@ -47,6 +47,7 @@ const Footer = () => {
                 {
                   label: "Email:",
                   info: "barangaycomembo28@gmail.com",
+                  className: "text-xs"
                 },
                 {
                   label: "Office Hours:",
@@ -55,12 +56,12 @@ const Footer = () => {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="grid grid-cols-[100px_auto] lg:grid-cols-[150px_300px] uppercase text-white font-bebas gap-2"
+                  className="grid grid-cols-[100px_auto] lg:grid-cols-[150px_300px] text-white gap-2"
                 >
-                  <span className="text-start lg:text-right text-sm sm:text-base lg:text-xl mr-4">
+                  <span className="text-start lg:text-right text-sm lg:text-base xl:text-lg mr-4 font-bebas">
                     {item.label}
                   </span>
-                  <div className="grid grid-cols-1 text-sm sm:text-base lg:text-xl">
+                  <div className="grid grid-cols-1 text-xs lg:text-base font-montserrat">
                     <span>{item.info}</span>
                     <span>{item.info1}</span>
                     <span>{item.info2}</span>
@@ -71,15 +72,15 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex flex-col w-full h-full sm:col-span-3 md:col-span-1 text-white p-4 lg:mt-4">
-          <span className="text-sm md:text-base lg:text-lg font-montserrat text-justify">
+        <div className="flex flex-col w-full h-full sm:col-span-3 xl:col-span-1 text-white p-4 lg:mt-4">
+          <span className="text-sm lg:text-base xl:text-lg font-montserrat text-center xl:text-justify">
             Thank you for using our scheduling system! It is our utmost pleasure
             to assist you in staying organized and keeping your appointments in
             order. Please feel free to reach out to us if you require any
             assistance or have any inquiries about the application. We assure
             you that we are always here to assist you in any way possible
           </span>
-          <span className="text-sm lg:text-lg mt-4 font-montserrat">
+          <span className="text-sm lg:text-lg mt-4 font-montserrat text-center xl:text-start">
             Best Regards, Queueby
           </span>
         </div>

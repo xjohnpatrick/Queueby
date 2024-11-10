@@ -3,13 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import defaultFemaleImg from "@/public/female.png";
-import ProfilePage from "@/components/ProfilePage";
+import Wrapper from "@/components/Wrapper";
 
 const Profile = () => {
   return (
-    <ProfilePage>
+    <Wrapper>
       <div className="flex flex-col justify-center lg:flex-row h-[700px] lg:h-[600px] w-full sm:w-[630px] md:w-[758px] lg:w-[1200px] mx-4 bg-white rounded-md lg:py-16">
-        <div className="flex flex-col justify-center lg:justify-normal lg:w-1/2 lg:border-r-medium lg:border-b-0 border-b-medium border-blue-400 h-3/4 lg:h-full">
+        <div className="flex flex-col justify-center lg:justify-normal lg:w-1/2 lg:border-r-medium lg:border-b-0 border-b-medium border-blue-400 h-3/4 lg:h-full mx-4">
           <div className="flex flex-col items-center mb-4">
             <h1 className="uppercase text-blue-400 text-4xl mt-4 font-bebas text-center">
               Personal Information
@@ -66,7 +66,7 @@ const Profile = () => {
           ))}
         </div>
       </div>
-    </ProfilePage>
+    </Wrapper>
   );
 };
 

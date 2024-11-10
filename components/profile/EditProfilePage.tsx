@@ -4,7 +4,7 @@ import { RiCloseFill } from "react-icons/ri";
 import BackButton from "@/components/buttons/BackButton";
 import { Button } from "@nextui-org/button";
 
-export default function EditProfileInfo() {
+export default function EditProfilePage() {
   const [isDisable, setIsDisable] = useState(true);
   const [visible, setVisible] = useState(false);
 
@@ -38,22 +38,22 @@ export default function EditProfileInfo() {
         <div className="flex flex-col items-center text-blue-400 w-full gap-4">
           {[
             {
-              label: "First Name",
+              label: "First Name:",
               type: "text",
               placeholder: "Webster",
             },
             {
-              label: "Last Name",
+              label: "Last Name:",
               type: "text",
               placeholder: "Dalupang",
             },
             {
-              label: "Email",
+              label: "Email:",
               type: "email",
               placeholder: "websterdalupang@gmail.com",
             },
             {
-              label: "Username",
+              label: "Username:",
               type: "text",
               placeholder: "Bewbew",
             },
