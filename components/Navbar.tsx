@@ -12,7 +12,7 @@ import { HiOutlineMenuAlt3 } from "react-icons/hi";
 
 import { Button } from "@nextui-org/button";
 import Image from "next/image";
-import defaultFemaleImg from '@/public/femaleProfile.png';
+import defaultFemaleImg from "@/public/female.png";
 
 const Navbar = () => {
   const [documentIsOpen, setDocumentIsOpen] = useState(false);
