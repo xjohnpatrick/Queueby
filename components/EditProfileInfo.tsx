@@ -18,7 +18,7 @@ export default function EditProfileInfo() {
     setVisible(false);
   };
   return (
-    <div className="flex relative justify-center bg-white w-[75vw] lg:w-[60vw] h-[80vh] rounded-md">
+    <div className="flex flex-col justify-center lg:flex-row h-[700px] w-full sm:w-[630px] md:w-[758px] lg:w-[900px] mx-4 px-4 bg-white rounded-md lg:py-16 relative">
       <BackButton />
       {visible && (
         <Button
@@ -30,52 +30,51 @@ export default function EditProfileInfo() {
           <RiCloseFill size={24} />
         </Button>
       )}
-      <div className="flex flex-col w-full lg:w-[40vw] items-center gap-12 lg:gap-24 font-bebas">
-        <h1 className="flex text-4xl xl:text-5xl text-blue-400 mt-16 text-center">
+      <div className="flex flex-col w-full lg:w-[40vw] items-center justify-center font-bebas px-2">
+        <h1 className="flex text-2xl sm:text-4xl xl:text-5xl text-blue-400 text-center mb-4">
           Edit personal information
         </h1>
 
-        <div className="flex flex-col text-blue-400 text-3xl w-full gap-4 lg:gap-8 xl:gap-12">
-          <div className="flex flex-col lg:flex-row items-center gap-4">
-            <label className="text-nowrap">First Name:</label>
-            <input
-              className={`w-[240px] md:w-[300px] lg:w-[540px] placeholder:text-xl text-xl px-3 py-2 border-2 border-gray shadow-md outline-none rounded-lg font-montserrat`}
-              placeholder="Webster"
-              disabled={isDisable}
-              type="text"
-            />
-          </div>
-          <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-5">
-            <label className="text-nowrap">Last Name:</label>
-            <input
-              className="w-[240px] md:w-[300px] lg:w-[540px] placeholder:text-xl text-xl px-3 py-2 border-2 border-gray shadow-md outline-none rounded-lg font-montserrat"
-              placeholder="Retardo"
-              disabled={isDisable}
-              type="text"
-            />
-          </div>
-          <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-16">
-            <label className="text-nowrap">Email:</label>
-            <input
-              className="w-[240px] md:w-[300px] lg:w-[540px] placeholder:text-xl text-xl px-3 py-2 border-2 border-gray shadow-md outline-none rounded-lg font-montserrat"
-              placeholder="websterdalupangretardothethird@gmail.com"
-              disabled={isDisable}
-              type="text"
-            />
-          </div>
-          <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-6">
-            <label>Username:</label>
-            <input
-              className="w-[240px] md:w-[300px] lg:w-[540px] placeholder:text-xl text-xl px-3 py-2 border-2 border-gray shadow-md outline-none rounded-lg font-montserrat"
-              placeholder="Webweb"
-              disabled={isDisable}
-              type="text"
-            />
-          </div>
+        <div className="flex flex-col items-center text-blue-400 w-full gap-4">
+          {[
+            {
+              label: "First Name",
+              type: "text",
+              placeholder: "Webster",
+            },
+            {
+              label: "Last Name",
+              type: "text",
+              placeholder: "Dalupang",
+            },
+            {
+              label: "Email",
+              type: "email",
+              placeholder: "websterdalupang@gmail.com",
+            },
+            {
+              label: "Username",
+              type: "text",
+              placeholder: "Bewbew",
+            },
+          ].map((item, index) => (
+            <div
+              key={index}
+              className="grid grid-cols-1 lg:grid-cols-[100px_auto] justify-center lg:flex-row items-center gap-2 text-2xl mt-4"
+            >
+              <label className="text-nowrap">{item.label}</label>
+              <input
+                className="w-[240px] sm:w-[400px] lg:w-[540px] placeholder:text-xl text-xl px-3 py-2 border-2 border-gray shadow-md outline-none rounded-lg font-montserrat"
+                placeholder={item.placeholder}
+                disabled={isDisable}
+                type={item.type}
+              />
+            </div>
+          ))}
         </div>
         <Button
           onClick={toggleDisable}
-          className="bg-blue-400 text-white text-3xl lg:w-[320px]"
+          className="bg-blue-400 text-white text-2xl md:text-3xl lg:text-4xl w-[180px] lg:w-[320px] mt-10"
           size="lg"
         >
           Edit Profile

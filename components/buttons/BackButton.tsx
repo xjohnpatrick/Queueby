@@ -10,7 +10,7 @@ export default function BackButton() {
     <div>
       <Link href="/main/profile-page/profile">
         <Button
-          className={`absolute top-2 left-2 lg:top-5 lg:left-5 bg-white md:text-lg lg:text-xl text-blue-400 ${montserrat.className}`}
+          className={`absolute top-2 left-2 lg:top-5 lg:left-5 bg-white md:text-lg text-blue-400 ${montserrat.className}`}
           size="sm"
         >
           <FaArrowLeft />
