@@ -22,7 +22,7 @@ export default function Document({ title }: DocumentTextProps) {
     <div className="flex flex-col items-center">
       <div
         ref={componentRef}
-        className="flex w-[350px] h-[450px] sm:w-[400px] sm:h-[600px] md:w-[600px] md:h-[800px] lg:w-[793px] lg:h-[1123px] shadow shadow-blue-400 p-6 mx-auto"
+        className="flex w-[340px] h-[450px] sm:w-[400px] sm:h-[600px] md:w-[600px] md:h-[800px] lg:w-[793px] lg:h-[1123px] shadow shadow-blue-400 p-6 mx-auto"
       >
         <div className="flex flex-col relative justify-center w-full">
           <div className="flex flex-col text-center font-montserrat">
@@ -133,7 +133,7 @@ export default function Document({ title }: DocumentTextProps) {
 
               <div className="flex relative flex-col w-full h-full mt-2 sm:mt-4 md:mt-6 py-2 md:py-6 lg:py-12 pl-2 sm:pl-4 md:pl-5 lg:pl-6">
                 <div className="flex flex-col">
-                  <span className="uppercase font-bold text-[5px] sm:text-[7px] md:text-[10px] lg:text-sm italic mt-2">
+                  <span className="uppercase font-bold text-[5px] sm:text-[7px] md:text-[10px] lg:text-sm italic mt-4">
                     This is to certify that {/*Editable Text*/}
                     <span
                       className="font-bold text-[5px] sm:text-[7px] md:text-[10px] lg:text-sm italic normal-case underline"
@@ -237,10 +237,10 @@ export default function Document({ title }: DocumentTextProps) {
       </div>
 
       <div className="flex flex-col font-montserrat md:mb-4">
-        <p className="italic text-xl text-center">
+        <p className="italic text-sm lg:text-xl text-center">
           Note: Clicking the print button will automatically
         </p>
-        <p className="italic text-xl text-center">
+        <p className="italic text-sm lg:text-xl text-center">
           print two copies of this document.
         </p>
       </div>
