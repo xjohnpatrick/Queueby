@@ -53,6 +53,10 @@ const Profile = () => {
               href: "/main/profile-page/change-password",
               text: "Change your password",
             },
+            {
+              href: "/auth/sign-in",
+              text: "Logout",
+            },
           ].map((item, index) => (
             <Link href={item.href} key={index}>
               <Button
