@@ -3,6 +3,7 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
+import { bebasNeue, montserrat } from "@/app/fonts/fonts";
 
 import { useSidebar } from '@/utils/sidebarUtils'
 
@@ -14,19 +15,15 @@ export default function RootLayout({
 
   const { isSidebarHidden, getSidebarButtons } = useSidebar();
 
-  return (  
+  return (
     <html lang="en">
-      <body
-      className="flex flex-col h-screen"
-      >
-        <div>
+      <body className={`${bebasNeue.variable} ${montserrat.variable}`}>
           <Navbar />
-        </div>
         <div className="flex">
           {!isSidebarHidden() && <Sidebar buttons={getSidebarButtons()} />}
           {children}
-        </div> 
-        <Footer /> 
+        </div>
+        <Footer />
       </body>
     </html>
   );
