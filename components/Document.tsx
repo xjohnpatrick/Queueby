@@ -1,8 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
 import { committeeMembers } from "@/data/users/brgy-members";
-import { useReactToPrint } from "react-to-print";
 import { Button } from "@nextui-org/button";
 import Image from "next/image";
 
@@ -14,15 +12,10 @@ interface DocumentTextProps {
 }
 
 export default function Document({ title }: DocumentTextProps) {
-  const componentRef = useRef<HTMLDivElement>(null);
-  const handlePrint = useReactToPrint({
-    content: () => componentRef.current,
-  });
   return (
     <div className="flex flex-col items-center">
       <div
-        ref={componentRef}
-        className="flex w-[340px] h-[450px] sm:w-[400px] sm:h-[600px] md:w-[600px] md:h-[800px] lg:w-[793px] lg:h-[1123px] shadow shadow-blue-400 p-6 mx-auto"
+        className="print-body flex w-[340px] h-[450px] sm:w-[400px] sm:h-[600px] md:w-[600px] md:h-[800px] lg:w-[793px] lg:h-[1123px] shadow shadow-blue-400 p-6 mx-auto"
       >
         <div className="flex flex-col relative justify-center w-full">
           <div className="flex flex-col text-center font-montserrat">
@@ -30,23 +23,23 @@ export default function Document({ title }: DocumentTextProps) {
               <Image
                 src={makatiLogo}
                 alt="Makati Logo"
-                className="w-12 sm:w-14 md:w-20 lg:w-24"
+                className="w-12 sm:w-14 md:w-20 lg:w-24 print-w-24"
               />
             </div>
-            <div className="flex flex-col leading-4">
-              <span className="text-[10px] sm:text-[12px] md:text-lg uppercase">
+            <div className="flex flex-col">
+              <span className="text-[10px] sm:text-[12px] md:text-lg uppercase print-lg-text">
                 Republic of the Philippines
               </span>
-              <span className="text-[10px] sm:text-[12px] md:text-xl uppercase font-bold">
+              <span className="text-[10px] sm:text-[12px] md:text-xl uppercase font-bold print-xl-text">
                 City of Makati
               </span>
-              <span className="text-[10px] sm:text-[12px] md:text-2xl uppercase font-bold">
+              <span className="text-[10px] sm:text-[12px] md:text-2xl uppercase font-bold print-2xl-text">
                 Barangay 28 - Comembo
               </span>
-              <span className="text-[10px] sm:text-[12px] md:text-medium uppercase">
+              <span className="text-[10px] sm:text-[12px] md:text-base uppercase print-text-base">
                 Anahaw St., Comembo, Makati City
               </span>
-              <span className="text-[10px] sm:text-[12px] md:text-lg">
+              <span className="text-[10px] sm:text-[12px] md:text-lg print-lg-text">
                 Tel. No. 7738-1883 / 7754-3045
               </span>
             </div>
@@ -54,7 +47,7 @@ export default function Document({ title }: DocumentTextProps) {
               <Image
                 src={comemboLogo}
                 alt="Brgy Comembo Logo"
-                className="w-12 sm:w-14 md:w-20 lg:w-24"
+                className="w-12 sm:w-14 md:w-20 lg:w-24 print-w-24"
               />
             </div>
           </div>
@@ -229,7 +222,6 @@ export default function Document({ title }: DocumentTextProps) {
 
       <div className="flex my-10 font-bebas">
         <Button
-          onClick={handlePrint}
           className="text-4xl bg-blue-400 text-white w-[151px] h-[57px] rounded-xl"
         >
           Print

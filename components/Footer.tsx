@@ -18,13 +18,13 @@ const Footer = () => {
             ))}
           </div>
           <div className="flex flex-col text-white font-bebas mx-4 mb-4 lg:mx-12">
-            <span className="uppercase text-3xl">
+            <span className="uppercase text-3xl xl:text-4xl">
               Barangay Comembo Application
             </span>
-            <span className="uppercase text-2xl">
+            <span className="uppercase text-2xl xl:text-3xl">
               City Government of Makati
             </span>
-            <span className="uppercase text-xl">
+            <span className="uppercase text-xl xl:text-2xl">
               In collaboration with queueby
             </span>
           </div>
