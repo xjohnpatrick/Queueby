@@ -39,7 +39,7 @@ const Profile = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-4 font-bebas items-center justify-center lg:w-1/2 h-1/4 lg:h-full my-4">
+        <div className="flex flex-col sm:flex sm:flex-col md:grid grid-cols-2 md:place-items-center lg:flex lg:flex-col gap-2 lg:gap-4 font-bebas items-center justify-center lg:w-1/2 h-1/4 lg:h-full m-4 lg:my-0">
           {[
             {
               href: "/main/profile-page/edit-profile",
@@ -56,18 +56,18 @@ const Profile = () => {
             {
               href: "/auth/sign-in",
               text: "Logout",
-              className: "hidden lg:flex"
+              className: "hidden md:flex",
             },
           ].map((item, index) => (
-            <Link href={item.href} key={index}>
-              <Button
-                size="lg"
-                radius="md"
-                className={`uppercase bg-blue-400 text-3xl text-white w-[280px] lg:w-[300px] xl:w-[380px] ${item.className}`}
-              >
-                {item.text}
-              </Button>
-            </Link>
+              <Link href={item.href} key={index}>
+                <Button
+                  size="lg"
+                  radius="md"
+                  className={`uppercase bg-blue-400 text-3xl text-white w-[280px] lg:w-[300px] xl:w-[380px] ${item.className}`}
+                >
+                  {item.text}
+                </Button>
+              </Link>
           ))}
         </div>
       </div>
