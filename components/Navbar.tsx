@@ -13,11 +13,16 @@ import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { Button } from "@nextui-org/button";
 import Image from "next/image";
 import defaultFemaleImg from "@/public/female.png";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [documentIsOpen, setDocumentIsOpen] = useState(false);
   const [profileIsOpen, setProfileIsOpen] = useState(false);
   const [documentOpen, setDocumentOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (linkPath: string) =>
+    pathname === linkPath || pathname.startsWith(linkPath) ? "bg-blue-100" : "";
 
   return (
     <nav className="flex flex-col no-print">
@@ -59,43 +64,63 @@ const Navbar = () => {
             <div className="md:hidden text-2xl absolute left-0 top-32 w-full z-10 bg-blue-200">
               <div className="flex flex-col gap-4 p-4">
                 <Link href="/main/dashboard">
-                  <Button className="flex text-xl text-white bg-blue-400 w-full">
+                  <Button
+                    className="flex text-xl text-white bg-blue-400 w-full"
+                    onClick={() => setProfileIsOpen(false)}
+                  >
                     Dashboard
                   </Button>
                 </Link>
                 <Button
-                  onClick={() => setDocumentOpen(!documentOpen)}
+                  onClick={() => {
+                    setDocumentOpen(!documentOpen);
+                  }}
                   className="flex text-xl text-white bg-blue-400"
                 >
                   Document
                 </Button>
                 {documentOpen && (
                   <div className="md:hidden grid grid-cols-2 gap-4 bg-blue-100 p-4 rounded-md relative">
-                    <Button className="flex text-xl text-white bg-blue-400 col-span-1">
+                    <Button
+                      className="flex text-xl text-white bg-blue-400 col-span-1"
+                      onClick={() => setProfileIsOpen(false)}
+                    >
                       <Link href="/main/documents-page/barangay-permit">
                         Barangay Permit
                       </Link>
                     </Button>
 
-                    <Button className="flex text-xl text-white bg-blue-400">
+                    <Button
+                      className="flex text-xl text-white bg-blue-400"
+                      onClick={() => setProfileIsOpen(false)}
+                    >
                       <Link href="/main/documents-page/business-permit">
                         Business Permit
                       </Link>
                     </Button>
 
-                    <Button className="flex text-lg sm:text-xl text-white bg-blue-400 col-span-2">
+                    <Button
+                      className="flex text-lg sm:text-xl text-white bg-blue-400 col-span-2"
+                      onClick={() => setProfileIsOpen(false)}
+                    >
                       <Link href="/main/documents-page/firstTimeJobSeeker">
                         Barangay Certificate For First Time Job Seeker
                       </Link>
                     </Button>
 
-                    <Button className="flex text-sm sm:text-xl text-white bg-blue-400">
+                    <Button
+                      className="flex text-sm sm:text-xl text-white bg-blue-400"
+                      onClick={() => setProfileIsOpen(false)}
+                    >
                       <Link href="/main/documents-page/barangay-certification">
                         Barangay Certification
                       </Link>
                     </Button>
 
-                    <Button className="flex text-sm sm:text-xl text-white bg-blue-400">
+                    <Button
+                      className="flex text-sm sm:text-xl text-white bg-blue-400"
+                      onClick={() => setProfileIsOpen(false)}
+                    >
                       <Link href="/main/documents-page/certificateOfClearance">
                         Certificate of Clearance
                       </Link>
@@ -103,22 +128,34 @@ const Navbar = () => {
                   </div>
                 )}
                 <Link href="/main/records-page">
-                  <Button className="flex text-xl text-white bg-blue-400 w-full">
+                  <Button
+                    className="flex text-xl text-white bg-blue-400 w-full"
+                    onClick={() => setProfileIsOpen(false)}
+                  >
                     Records
                   </Button>
                 </Link>
                 <Link href="/main/database-page">
-                  <Button className="flex text-xl text-white bg-blue-400 w-full">
+                  <Button
+                    className="flex text-xl text-white bg-blue-400 w-full"
+                    onClick={() => setProfileIsOpen(false)}
+                  >
                     Database
                   </Button>
                 </Link>
                 <Link href="/main/profile-page/profile">
-                  <Button className="flex text-xl text-white bg-blue-400 w-full">
+                  <Button
+                    className="flex text-xl text-white bg-blue-400 w-full"
+                    onClick={() => setProfileIsOpen(false)}
+                  >
                     Profile
                   </Button>
                 </Link>
                 <Link href="/auth/sign-in">
-                  <Button className="flex text-xl text-white bg-blue-400 w-full">
+                  <Button
+                    className="flex text-xl text-white bg-blue-400 w-full"
+                    onClick={() => setProfileIsOpen(false)}
+                  >
                     Logout
                   </Button>
                 </Link>
@@ -128,7 +165,11 @@ const Navbar = () => {
 
           <div className="hidden md:flex text-xl xl:text-3xl 2xl:text-4xl 2xl:gap-7 items-center absolute right-10">
             <Link href="/main/dashboard">
-              <button className="flex gap-2 md:px-2 md:py-4 xl:py-8 rounded-xl hover:bg-blue-100 duration-400 ease-in-out">
+              <button
+                className={`flex gap-2 md:px-2 md:py-4 xl:py-8 rounded-xl hover:bg-blue-100 duration-400 ease-in-out ${isActive(
+                  "/main/dashboard"
+                )}`}
+              >
                 <MdSpaceDashboard />
                 Dashboard
               </button>
@@ -136,9 +177,9 @@ const Navbar = () => {
 
             <button
               onClick={() => setDocumentIsOpen(!documentIsOpen)}
-              className={`flex relative gap-2 md:px-2 md:py-4 xl:py-8 rounded-xl hover:bg-blue-100 duration-400 ease-in-out ${
-                documentIsOpen ? "bg-blue-100" : ""
-              }`}
+              className={`flex relative gap-2 md:px-2 md:py-4 xl:py-8 rounded-xl hover:bg-blue-100 duration-400 ease-in-out ${isActive(
+                "/main/documents-page"
+              )}`}
             >
               <ImFileText />
               Document
@@ -146,37 +187,43 @@ const Navbar = () => {
             </button>
 
             <Link href="/main/records-page">
-              <button className="flex gap-2 md:px-2 md:py-4 xl:py-8 rounded-xl hover:bg-blue-100 duration-400 ease-in-out">
+              <button
+                className={`flex gap-2 md:px-2 md:py-4 xl:py-8 rounded-xl hover:bg-blue-100 duration-400 ease-in-out ${isActive(
+                  "/main/records-page"
+                )}`}
+              >
                 <LuFiles />
                 Records
               </button>
             </Link>
 
             <Link href="/main/database-page">
-              <button className="flex gap-2 md:px-2 md:py-4 xl:py-8 rounded-xl hover:bg-blue-100 duration-400 ease-in-out">
+              <button
+                className={`flex gap-2 md:px-2 md:py-4 xl:py-8 rounded-xl hover:bg-blue-100 duration-400 ease-in-out ${isActive(
+                  "/main/database-page"
+                )}`}
+              >
                 <RiDatabaseLine />
                 Database
               </button>
             </Link>
 
-            <div className="flex">
-              <Link href="/main/profile-page/profile">
-                <button
-                  className={`flex gap-2 md:px-2 md:py-4 xl:py-8 rounded-xl hover:bg-blue-100 duration-400 ease-in-out items-center ${
-                    profileIsOpen ? "bg-blue-100" : ""
-                  }`}
-                >
-                  <div className="w-10 h-10 lg:w-12 lg:h-12 relative">
-                    <Image
-                      src={defaultFemaleImg}
-                      alt="Female Default Profile"
-                      fill
-                    />
-                  </div>
-                  Profile
-                </button>
-              </Link>
-            </div>
+            <Link href="/main/profile-page/profile">
+              <button
+                className={`flex gap-2 md:px-2 md:py-4 xl:py-8 rounded-xl hover:bg-blue-100 duration-400 ease-in-out items-center ${isActive(
+                  "/main/profile-page/profile"
+                )}`}
+              >
+                <div className="w-10 h-10 lg:w-12 lg:h-12 relative">
+                  <Image
+                    src={defaultFemaleImg}
+                    alt="Female Default Profile"
+                    fill
+                  />
+                </div>
+                Profile
+              </button>
+            </Link>
           </div>
         </div>
       </div>
