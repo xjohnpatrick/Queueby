@@ -132,7 +132,7 @@ export default function Document({ title }: DocumentTextProps) {
                 {title}
               </span>
 
-              <div className="flex relative flex-col w-full h-full mt-2 sm:mt-4 md:mt-6 py-2 md:py-6 lg:py-12 pl-2 sm:pl-4 md:pl-5 lg:pl-6 print-pl-6 print-py-12">
+              <div className="flex relative flex-col w-full h-full mt-2 sm:mt-4 md:mt-6 py-2 md:py-6 lg:py-12 pl-2 sm:pl-4 md:pl-5 lg:pl-6 print-pl-6 print-py-12 print-mt-6">
                 <div className="flex flex-col">
                   <span className="uppercase font-bold text-[5px] sm:text-[7px] md:text-[10px] lg:text-sm italic mt-4 print-sm-text">
                     This is to certify that {/*Editable Text*/}
