@@ -56,13 +56,14 @@ const Profile = () => {
             {
               href: "/auth/sign-in",
               text: "Logout",
+              className: "hidden lg:flex"
             },
           ].map((item, index) => (
             <Link href={item.href} key={index}>
               <Button
                 size="lg"
                 radius="md"
-                className="uppercase bg-blue-400 text-3xl text-white w-[280px] lg:w-[300px] xl:w-[380px]"
+                className={`uppercase bg-blue-400 text-3xl text-white w-[280px] lg:w-[300px] xl:w-[380px] ${item.className}`}
               >
                 {item.text}
               </Button>
