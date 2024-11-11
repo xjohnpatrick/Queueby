@@ -177,7 +177,7 @@ const Navbar = () => {
 
             <button
               onClick={() => setDocumentIsOpen(!documentIsOpen)}
-              className={`flex relative gap-2 md:px-2 md:py-4 xl:py-8 rounded-xl hover:bg-blue-100 duration-400 ease-in-out ${isActive(
+              className={`flex relative gap-2 md:px-2 md:py-4 xl:py-8 rounded-xl hover:bg-blue-100 duration-400 ease-in-out ${documentIsOpen ? "bg-blue-400" : ""} ${isActive(
                 "/main/documents-page"
               )}`}
             >
