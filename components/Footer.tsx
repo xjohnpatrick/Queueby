@@ -4,7 +4,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col bg-blue-200">
+    <footer className="flex flex-col bg-blue-200 no-print">
       <div className="grid sm:grid-cols-[250px_auto] md:grid-cols-2 xl:grid-cols-3">
         <div className="flex flex-col gap-2 h-full w-full">
           <div className="flex gap-2 mx-4 mt-4 lg:mx-12 lg:mt-10">

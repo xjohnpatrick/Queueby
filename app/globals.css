@@ -3,16 +3,23 @@
 @tailwind utilities;
 
 @media print {
-  .print-body {
-    width: 793px !important;  /* Ensure the print size is applied */
-    height: 1123px !important;  /* Ensure the print size is applied */
+  @page {
+    size: A4; /* Set page size to A4 */
   }
-  
+
+  .print-body {
+    width: 793px !important; /* Ensure the print size is applied */
+    height: 1123px !important; /* Ensure the print size is applied */
+  }
+
   /* Hide elements that shouldn't be printed */
   .no-print {
     display: none;
   }
 
+  .print-sm-text {
+    font-size: 14px !important;
+  }
   .print-lg-text {
     font-size: 18px !important;
   }
@@ -25,10 +32,52 @@
   .print-text-base {
     font-size: 16px !important;
   }
+  .print-text-10 {
+    font-size: 10px !important;
+  }
+  .print-text-12 {
+    font-size: 12px !important;
+  }
   .print-w-24 {
     width: 96px !important;
   }
   .print-leading-4 {
     line-height: 1rem !important;
+  }
+  .print-pt-12 {
+    padding-top: 3rem !important;
+  }
+  .print-py-12 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+  .print-pl-6 {
+    padding-left: 1.5rem !important;
+  }
+  .print-mt-6 {
+    margin-top: 1.5rem !important;
+  }
+  .print-mt-5 {
+    margin-top: 1.25rem !important;
+  }
+  .print-my-5 {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+  .print-top-pos {
+    position: absolute;
+    top: 1.25rem;
+  }
+  .print-bottom-pos-80 {
+    position: absolute;
+    bottom: 20rem;
+  }
+  .print-left-pos {
+    position: absolute;
+    left: 4rem;
+  }
+  .print-bottom-pos-28 {
+    position: absolute;
+    bottom: 7rem;
   }
 }

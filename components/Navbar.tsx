@@ -20,7 +20,7 @@ const Navbar = () => {
   const [documentOpen, setDocumentOpen] = useState(false);
 
   return (
-    <nav className="flex flex-col">
+    <nav className="flex flex-col no-print">
       <div className="flex h-32 bg-blue-200">
         <div className="flex text-white w-full items-center font-bebas">
           <div className="flex md:flex-col lg:flex-row items-center absolute left-4 gap-4 md:gap-0 lg:gap-4">
