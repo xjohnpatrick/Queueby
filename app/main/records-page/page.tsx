@@ -10,13 +10,13 @@ import { dashboardRows } from '@/data/users/rows';
 const Records = () => {
 
   return (
-    <div className="flex flex-col items-center justify-center w-full h-[1000px] lg:h-[1800px]">
+    <div className="flex flex-col items-center justify-center w-full h-[1000px] sm:h-[1100px] lg:h-[1500px]">
       <div className="flex flex-col items-center w-[340px] sm:w-[600px] lg:w-[780px] xl:w-[1000px] 2xl:w-[1200px]">
         <h1 className="flex text-4xl font-semibold my-8 font-montserrat text-center">
           Viewing All Records
         </h1>
 
-        <div className="flex flex-col w-full h-[700px] lg:h-[1250px] border border-black">
+        <div className="flex flex-col w-full h-[700px] sm:h-[800px] lg:h-[1250px] border border-black">
           <div className="h-1/4">
             <div className="flex relative items-center justify-center">
               <div className="absolute left-2 sm:left-4 lg:left-10 top-10">
