@@ -9,13 +9,19 @@ import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, getKeyV
 import { dashboardColumns } from "@/data/users/columns";
 
 import { useState } from "react";
-import { dashboardRows } from "@/data/users/rows";
+
 
 interface DashboardTableProps {
   removeWrapper?: boolean;
+  dashboardRows?: Array<{
+    key: string;
+    fullName: string;
+    status: string;
+    userId: string;
+  }>;
 }
 
-export default function DashboardTable({ removeWrapper }: DashboardTableProps) {
+export default function DashboardTable({ removeWrapper, dashboardRows }: DashboardTableProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedUser, setSelectedUser] = useState('');
 

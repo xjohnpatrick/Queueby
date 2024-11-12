@@ -1,5 +1,5 @@
 //@/types
-export interface User {
+export interface DashboardUser {
     key: string;
     userId: string;
     fullName: string;
@@ -11,4 +11,20 @@ export interface User {
     status: string;
     date: string;
     officialReceipt: string;
+  }
+
+  export interface DatabaseUser {
+    key: string;
+    userId: string;
+    firstName: string;
+    middleName: string;
+    lastName: string;
+    suffix: string;
+    birthDate: string;
+    gender: string;
+    email: string;
+    contactNo: string;
+    noStreet: string;
+    barangay: string;
+    city: string;
   }

@@ -3,22 +3,37 @@ import { Input } from "@nextui-org/input";
 import { IoIosSearch } from "react-icons/io";
 import React from "react";
 
-export default function SearchBar() {
+interface SearchBarProps {
+  filterValue: string;
+  onSearchChange: (value: string) => void;
+}
+
+export default function SearchBar({
+  filterValue,
+  onSearchChange,
+}: SearchBarProps) {
+  const onClear = React.useCallback(() => {
+    onSearchChange("");
+  }, []);
+
   return (
     <div>
       <div className="relative flex my-10 w-[320px] sm:w-[380px] md:w-[450px] lg:w-[580px] font-montserrat">
         <Input
-          className=""
-          placeholder="Search Here"
+          placeholder="Search Name Here"
           variant="bordered"
+          value={filterValue}
+          onClear={onClear}
+          onValueChange={onSearchChange}
           size="lg"
+          color="primary"
         />
-        <button
+        <div
           aria-label="Search"
           className="flex items-center justify-center w-10 h-7 absolute right-1 top-1/2 transform -translate-y-1/2 border-l border-gray-400"
         >
           <IoIosSearch size={22} color="#928C8C" />
-        </button>
+        </div>
       </div>
     </div>
   );

@@ -1,18 +1,10 @@
-import DashboardTable from "@/components/ui/DashboardTable";
+import DashboardPage from '@/components/dashboard-page/DashboardPage'
+import React from 'react'
 
-import React from "react";
-import SearchBar from "@/components/SearchBar";
-
-const Dashboard = () => {
+export default function Dashboard() {
   return (
-    <div className="flex flex-col items-center justify-center w-full h-screen">
-      <SearchBar />
-
-      <div className="flex w-[80vw] h-[70vh] bg-white mb-24">
-        <DashboardTable />
-      </div>
+    <div className='flex w-full'>
+      <DashboardPage />
     </div>
-  );
-};
-
-export default Dashboard;
+  )
+}

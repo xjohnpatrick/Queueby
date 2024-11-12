@@ -36,7 +36,6 @@ const Navbar = () => {
                 <Image
                   src={makatiImg}
                   alt="Makati Logo"
-                  placeholder="blur"
                   fill
                 />
               </div>
@@ -44,7 +43,6 @@ const Navbar = () => {
                 <Image
                   src={comemboImg}
                   alt="Comembo Logo"
-                  placeholder="blur"
                   fill
                 />
               </div>
@@ -212,7 +210,6 @@ const Navbar = () => {
                   <Image
                     src={defaultFemaleImg}
                     alt="Female Default Profile"
-                    placeholder="blur"
                     fill
                   />
                 </div>

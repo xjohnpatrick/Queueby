@@ -5,9 +5,16 @@ import { bebasNeue, montserrat } from "@/app/fonts/fonts";
 import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, getKeyValue} from "@nextui-org/react";
 
 import { databaseColumns } from "@/data/users/columns";
-import { databaseRows } from "@/data/users/rows";
 
-export default function DatabaseTable() {
+interface DatabaseTableProps {
+  databaseRows?: Array<{
+    key: string;
+    firstName: string;
+    userId: string;
+  }>;
+}
+
+export default function DatabaseTable({ databaseRows }: DatabaseTableProps) {
     return (
       <Table layout="auto" isStriped aria-label="Example table with dynamic content" style={{ height: "700px" }}>
         <TableHeader columns={databaseColumns}>

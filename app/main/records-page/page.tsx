@@ -5,6 +5,7 @@ import makatiImg from "@/public/makati.png"
 import comemboImg from "@/public/comembo.png"
 
 import React from 'react'
+import { dashboardRows } from '@/data/users/rows';
 
 const Records = () => {
 
@@ -51,7 +52,7 @@ const Records = () => {
             </div>
           </div>
           <div className="flex-grow h-3/4 items-center justify-center m-4 lg:mx-10 overflow-y-scroll scrollbar-hide bgre">
-            <DashboardTable removeWrapper/>
+            <DashboardTable removeWrapper dashboardRows={dashboardRows}/>
           </div>
         </div>
         <div className="flex mt-4 font-bebas">
