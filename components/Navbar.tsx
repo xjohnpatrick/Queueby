@@ -33,18 +33,10 @@ const Navbar = () => {
           <div className="flex md:flex-col lg:flex-row items-center absolute left-4 gap-4 md:gap-0 lg:gap-4">
             <div className="flex gap-2">
               <div className="w-14 h-14 lg:w-16 lg:h-16 xl:w-20 xl:h-20 relative">
-                <Image
-                  src={makatiImg}
-                  alt="Makati Logo"
-                  fill
-                />
+                <Image src={makatiImg} alt="Makati Logo" fill />
               </div>
               <div className="w-14 h-14 lg:w-16 lg:h-16 xl:w-20 xl:h-20 relative">
-                <Image
-                  src={comemboImg}
-                  alt="Comembo Logo"
-                  fill
-                />
+                <Image src={comemboImg} alt="Comembo Logo" fill />
               </div>
             </div>
             <div className="flex mt-2 lg:mt-3">
@@ -122,21 +114,26 @@ const Navbar = () => {
                       {
                         label: "Barangay Permit",
                         className: "col-span-1",
+                        href: "/main/documents-page/barangay-permit",
                       },
                       {
                         label: "Business Permit",
+                        href: "/main/documents-page/business-permit",
                       },
                       {
                         label: "Barangay Certificate For First Time Job Seeker",
                         className: "col-span-2 text-base",
+                        href: "/main/documents-page/firstTimeJobSeeker",
                       },
                       {
                         label: "Barangay Certification",
-                        className: "text-sm"
+                        className: "text-sm",
+                        href: "/main/documents-page/barangay-certification",
                       },
                       {
                         label: "Certificate of Clearance",
-                        className: "text-sm"
+                        className: "text-sm",
+                        href: "/main/documents-page/certificateOfClearance",
                       },
                     ].map((item, index) => (
                       <Button
@@ -144,7 +141,7 @@ const Navbar = () => {
                         onClick={() => setProfileIsOpen(false)}
                         key={index}
                       >
-                        <Link href="/main/documents-page/barangay-permit">
+                        <Link href={item.href}>
                           {item.label}
                         </Link>
                       </Button>
@@ -238,8 +235,7 @@ const Navbar = () => {
               {
                 label: "Barangay Certificate For First Time Job Seeker",
                 href: "/main/documents-page/firstTimeJobSeeker",
-                className:
-                  "md:px-4 xl:text-xl 2xl:text-2xl",
+                className: "md:px-4 xl:text-xl 2xl:text-2xl",
               },
               {
                 label: "Barangay Certification",
@@ -248,8 +244,7 @@ const Navbar = () => {
               {
                 label: "Certificate of Clearance",
                 href: "/main/documents-page/certificateOfClearance",
-                className:
-                  "md:px-4 xl:text-xl 2xl:text-2xl",
+                className: "md:px-4 xl:text-xl 2xl:text-2xl",
               },
             ].map((item, index) => (
               <Link href={item.href} key={index}>

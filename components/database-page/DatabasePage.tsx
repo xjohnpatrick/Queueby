@@ -1,8 +1,9 @@
 "use client";
 import { databaseRows } from '@/data/users/rows';
-import React, { useMemo, useState } from 'react'
+import React, { Suspense, useMemo, useState } from 'react'
 import SearchBar from '../SearchBar';
 import DatabaseTable from '../ui/DatabaseTable';
+import Loading from '@/components/ui/loading-ui/SpinnerLoading';
 
 export default function DatabasePage() {
     const [filterValue, setFilterValue] = useState("");
@@ -20,9 +21,11 @@ export default function DatabasePage() {
     <div className="flex flex-col items-center justify-center w-full h-screen">
       <SearchBar filterValue={filterValue} onSearchChange={onSearchChange} />
 
-      <div className="flex w-[80vw] h-[70vh] bg-white mb-24 ">
-        <DatabaseTable databaseRows={filteredItems} />
-      </div>
+      <Suspense fallback={<Loading />}>
+        <div className="flex w-[80vw] h-[70vh] bg-white mb-24 ">
+          <DatabaseTable databaseRows={filteredItems} />
+        </div>
+      </Suspense>
     </div>
   );
 }

@@ -1,5 +1,6 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Document from "@/components/Document";
+import Loading from "../../../../components/ui/loading-ui/SpinnerLoading";
 
 const CertificateOfClearance = () => {
   return (
@@ -8,7 +9,9 @@ const CertificateOfClearance = () => {
         Barangay Clearance
       </h1>
 
-      <Document title="Barangay Clearance" />
+      <Suspense fallback={<Loading />}>
+        <Document title="Business Clearance" />
+      </Suspense>
     </div>
   );
 };

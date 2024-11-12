@@ -23,7 +23,7 @@ export default function Document({ title }: DocumentTextProps) {
     <div className="flex flex-col items-center">
       <div
         ref={componentRef}
-        className="print-body flex w-[340px] h-[450px] sm:w-[400px] sm:h-[600px] md:w-[600px] md:h-[800px] lg:w-[793px] lg:h-[1123px] shadow shadow-blue-400 p-6 mx-auto"
+        className="print-body flex w-[340px] sm:w-[400px] md:w-[600px] lg:w-[793px] h-[450px] sm:h-[600px] md:h-[800px] lg:h-[1123px] shadow shadow-blue-400 p-6 mx-auto"
       >
         <div className="flex flex-col relative justify-center w-full">
           <div className="flex flex-col text-center">

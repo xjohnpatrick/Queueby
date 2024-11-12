@@ -19,15 +19,20 @@ interface DashboardTableProps {
     status: string;
     userId: string;
   }>;
+  isUserIdClickable?: boolean;
 }
 
-export default function DashboardTable({ removeWrapper, dashboardRows }: DashboardTableProps) {
+export default function DashboardTable({
+  removeWrapper,
+  dashboardRows,
+  isUserIdClickable = true,
+}: DashboardTableProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedUser, setSelectedUser] = useState('');
+  const [selectedUser, setSelectedUser] = useState("");
 
   const handleUserIdClick = (userId: string) => {
     setIsModalOpen(true);
-    setSelectedUser(userId)
+    setSelectedUser(userId);
   };
 
   return (
@@ -62,14 +67,18 @@ export default function DashboardTable({ removeWrapper, dashboardRows }: Dashboa
               {(columnKey) => (
                 <TableCell className="w-20">
                   {columnKey === "userId" ? (
-                    <button
-                      onClick={() =>
-                        handleUserIdClick(getKeyValue(item, "userId"))
-                      }
-                      className="text-blue-600 hover:text-blue-800 underline focus:outline-none"
-                    >
-                      {getKeyValue(item, columnKey)}
-                    </button>
+                    isUserIdClickable ? ( // Conditionally render based on prop
+                      <button
+                        onClick={() =>
+                          handleUserIdClick(getKeyValue(item, "userId"))
+                        }
+                        className="text-blue-600 hover:text-blue-800 underline focus:outline-none"
+                      >
+                        {getKeyValue(item, columnKey)}
+                      </button>
+                    ) : (
+                      <span>{getKeyValue(item, columnKey)}</span> // Display as plain text
+                    )
                   ) : columnKey === "status" ? (
                     <span
                       className={`px-2 py-1 rounded ${getStatusClass(

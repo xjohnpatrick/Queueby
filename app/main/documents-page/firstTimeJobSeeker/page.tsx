@@ -1,5 +1,6 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Document from "@/components/Document";
+import Loading from "../../../../components/ui/loading-ui/SpinnerLoading";
 
 const BarangayCertFirstTimeJobSeeker = () => {
   return (
@@ -8,7 +9,9 @@ const BarangayCertFirstTimeJobSeeker = () => {
         Barangay Certicate for First Time Job Seeker
       </h1>
 
+      <Suspense fallback={<Loading />}>
         <Document title="Barangay Certicate for First Time Job Seeker" />
+      </Suspense>
     </div>
   );
 };

@@ -1,5 +1,6 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Document from "@/components/Document";
+import Loading from "../../../../components/ui/loading-ui/SpinnerLoading";
 
 const BusinessPermit = () => {
   return (
@@ -7,8 +8,9 @@ const BusinessPermit = () => {
       <h1 className="flex text-4xl font-semibold my-8 font-montserrat text-center no-print">
         Business Permit
       </h1>
-
-      <Document title="Business Permit" />
+      <Suspense fallback={<Loading />}>
+        <Document title="Business Permit" />
+      </Suspense>
     </div>
   );
 };
