@@ -18,41 +18,41 @@ const Records = () => {
         </h1>
         <Suspense fallback={<Loading />}>
           <div className="flex flex-col w-full h-[700px] sm:h-[800px] lg:h-[1250px] border border-black">
-            <div className="h-1/4">
+            <div className="h-1/5 lg:h-1/4">
               <div className="flex relative items-center justify-center">
-                <div className="absolute left-2 sm:left-4 lg:left-10 top-10">
+                <div className="absolute left-2 sm:left-4 lg:left-10 top-4 sm:top-6 lg:top-10">
                   <div className="lg:w-28 lg:h-28 w-14 h-14 sm:w-20 sm:h-20 relative">
                     <Image src={makatiImg} alt="Makati Logo" fill />
                   </div>
                 </div>
-                <div className="flex flex-col mt-10 text-center font-montserrat">
-                  <span className="text-xs sm:text-base lg:text-xl uppercase">
+                <div className="flex flex-col mt-4 lg:mt-10 text-center font-montserrat">
+                  <span className="text-[10px] sm:text-base lg:text-xl uppercase">
                     Republic of the Philippines
                   </span>
-                  <span className="text-xs sm:text-base lg:text-2xl uppercase font-bold">
+                  <span className="text-[10px] sm:text-base lg:text-2xl uppercase font-bold">
                     City of Makati
                   </span>
-                  <span className="text-xs sm:text-base lg:text-3xl uppercase font-bold">
+                  <span className="text-[10px] sm:text-base lg:text-3xl uppercase font-bold">
                     Barangay 28 - Comembo
                   </span>
-                  <span className="text-xs sm:text-base lg:text-xl uppercase">
+                  <span className="text-[10px] sm:text-base lg:text-xl uppercase">
                     Anahaw St., Comembo, Makati City
                   </span>
-                  <span className="text-xs sm:text-base lg:text-xl uppercase">
+                  <span className="text-[10px] sm:text-base lg:text-xl uppercase">
                     Tel. No. 7738-1883 / 7754-3045
                   </span>
-                  <span className="text-sm sm:text-base lg:text-4xl font-bold mt-4 lg:mt-10">
+                  <span className="text-base lg:text-4xl font-bold mt-6 sm:mt-4 lg:mt-10">
                     All Records
                   </span>
                 </div>
-                <div className="absolute right-2 sm:right-4 lg:right-10 top-10">
+                <div className="absolute right-2 sm:right-4 lg:right-10 top-4 sm:top-6 lg:top-10">
                   <div className="relative lg:w-28 lg:h-28 w-14 h-14 sm:w-20 sm:h-20">
                     <Image src={comemboImg} alt="Comembo Logo" fill />
                   </div>
                 </div>
               </div>
             </div>
-            <div className="flex-grow h-3/4 items-center justify-center m-4 lg:mx-10 overflow-y-scroll scrollbar-hide bgre">
+            <div className="flex-grow h-4/5 lg:h-3/4 items-center justify-center m-4 sm:mt-8 lg:mx-10 overflow-y-scroll scrollbar-hide">
               <DashboardTable
                 removeWrapper
                 dashboardRows={dashboardRows}
