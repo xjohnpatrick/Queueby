@@ -14,7 +14,7 @@ const Records = () => {
         Viewing All Records
       </h1>
 
-      <div className="flex flex-col w-[340px] sm:w-[600px] lg:w-[780px] xl:w-[1000px] h-[780px] border border-black">
+      <div className="flex flex-col w-[340px] sm:w-[600px] lg:w-[780px] xl:w-[1200px] h-[780px] border border-black">
         <div className="h-1/4 lg:h-1/3">
           <div className="flex relative items-center justify-center">
             <div className="absolute left-2 sm:left-4 lg:left-10 top-10">
