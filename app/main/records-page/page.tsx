@@ -12,7 +12,7 @@ const Records = () => {
 
   return (
     <div className="flex flex-col items-center justify-center w-full h-[1000px] sm:h-[1100px] lg:h-[1500px]">
-      <div className="flex flex-col items-center w-[340px] sm:w-[600px] lg:w-[780px] xl:w-[1000px] 2xl:w-[1200px]">
+      <div className="flex flex-col items-center w-[90vw] lg:w-[70vw] xl:w-[60vw]">
         <h1 className="flex text-4xl font-semibold my-8 font-montserrat text-center">
           Viewing All Records
         </h1>

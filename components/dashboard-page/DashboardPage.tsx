@@ -23,7 +23,7 @@ export default function DashboardPage() {
       <SearchBar filterValue={filterValue} onSearchChange={onSearchChange} />
 
       <Suspense fallback={<Loading />}>
-        <div className="flex w-[80vw] h-[70vh] bg-white mb-24">
+        <div className="flex w-[90vw] lg:w-[70vw] xl:w-[75vw] 2xl:w-[80vw] h-[70vh] bg-white mb-24">
           <DashboardTable dashboardRows={filteredItems} />
         </div>
       </Suspense>
