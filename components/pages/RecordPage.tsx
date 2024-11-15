@@ -5,7 +5,7 @@ import Image from "next/image";
 import makatiImg from "@/public/makati.png";
 import comemboImg from "@/public/comembo.png";
 
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense, useEffect, useMemo, useState } from "react";
 import { dashboardRows } from "@/data/users/rows";
 import Loading from "@/components/ui/loading-ui/SpinnerLoading";
 import { useButtonContext } from "@/context/ButtonContext";
@@ -13,51 +13,45 @@ import { useButtonContext } from "@/context/ButtonContext";
 export default function RecordPage() {
   const { setButtons } = useButtonContext();
   const [activeButton, setActiveButton] = useState<string>("");
+  const [statusFilter, setStatusFilter] = useState("ALL");
 
   useEffect(() => {
     setButtons([
       {
         text: "All Records",
-        onClick: () => {
-          console.log("All Records");
-          setActiveButton("All Records");
-        },
+        onClick: () => setStatusFilter("ALL"),
         isActive: activeButton === "All Records",
       },
       {
         text: "Pending Records",
-        onClick: () => {
-          console.log("Pending Records");
-          setActiveButton("Pending Records");
-        },
+        onClick: () => setStatusFilter("PENDING"),
         isActive: activeButton === "Pending Records",
       },
       {
         text: "Completed Records",
-        onClick: () => {
-          console.log("Completed Records");
-          setActiveButton("Completed Records");
-        },
+        onClick: () => setStatusFilter("COMPLETED"),
         isActive: activeButton === "Completed Records",
       },
       {
         text: "To Receive Records",
-        onClick: () => {
-          console.log("To Receive Records");
-          setActiveButton("To Receive Records");
-        },
+        onClick: () => setStatusFilter("TO RECEIVE"),
         isActive: activeButton === "To Receive Records",
       },
       {
         text: "Declined Records",
-        onClick: () => {
-          console.log("Declined Records");
-          setActiveButton("Declined Records");
-        },
+        onClick: () => setStatusFilter("DECLINED"),
         isActive: activeButton === "Declined Records",
       },
     ]);
-  }, [setButtons]);
+  }, [statusFilter]);
+
+  const filteredItems = useMemo(() => {
+    return dashboardRows.filter((user) => {
+      const matchesStatus =
+        statusFilter === "ALL" || user.status === statusFilter;
+      return matchesStatus;
+    });
+  }, [statusFilter]);
 
   return (
     <div className="flex flex-col items-center justify-center w-full h-[1000px] sm:h-[1100px] lg:h-[1500px]">
@@ -104,7 +98,7 @@ export default function RecordPage() {
             <div className="flex-grow h-4/5 lg:h-3/4 items-center justify-center m-4 sm:mt-8 lg:mx-10 overflow-y-scroll scrollbar-hide">
               <DashboardTable
                 removeWrapper
-                dashboardRows={dashboardRows}
+                dashboardRows={filteredItems}
                 isUserIdClickable={false}
               />
             </div>

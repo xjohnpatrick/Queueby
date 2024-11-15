@@ -5,6 +5,7 @@ interface ButtonProps {
   isActive: boolean;
   text: string;
   onClick?: () => void;
+  href?: string;
 }
 
 interface ButtonContextType {
@@ -41,5 +42,6 @@ export const useButtonContext = (): ButtonContextType => {
   if (!context) {
     throw new Error("useButtonContext must be used within a ButtonProvider");
   }
+  
   return context;
 };

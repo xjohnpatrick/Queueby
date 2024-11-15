@@ -78,7 +78,7 @@ const Navbar = () => {
                   },
                   {
                     label: "Database",
-                    href: "/main/database-page",
+                    href: "/main/user-information",
                   },
                   {
                     label: "Profile",
@@ -141,9 +141,7 @@ const Navbar = () => {
                         onClick={() => setProfileIsOpen(false)}
                         key={index}
                       >
-                        <Link href={item.href}>
-                          {item.label}
-                        </Link>
+                        <Link href={item.href}>{item.label}</Link>
                       </Button>
                     ))}
                   </div>
@@ -186,10 +184,10 @@ const Navbar = () => {
               </button>
             </Link>
 
-            <Link href="/main/database-page">
+            <Link href="/main/user-information">
               <button
                 className={`flex gap-2 md:px-2 md:py-4 xl:py-8 rounded-xl hover:bg-blue-100 duration-400 ease-in-out ${isActive(
-                  "/main/database-page"
+                  "/main/user-information"
                 )}`}
               >
                 <RiDatabaseLine />

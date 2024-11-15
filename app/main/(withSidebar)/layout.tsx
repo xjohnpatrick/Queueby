@@ -10,6 +10,7 @@ export default function WithSidebarLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  
   return (
     <ButtonProvider>
       <html lang="en">
