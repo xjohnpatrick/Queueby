@@ -6,7 +6,12 @@ import SearchBar from "@/components/SearchBar";
 import { dashboardRows } from "@/data/users/rows";
 import Loading from "@/components/ui/loading-ui/SpinnerLoading";
 
-export default function DashboardPage() {
+interface DashboardPageProps {
+  statusFilter: string; 
+  setStatusFilter: (filter: string) => void; 
+}
+
+export default function DashboardPage({ statusFilter }: DashboardPageProps) {
   const [filterValue, setFilterValue] = useState("");
 
   const onSearchChange = (value: string) => {
@@ -14,10 +19,18 @@ export default function DashboardPage() {
   };
 
   const filteredItems = useMemo(() => {
-    return dashboardRows.filter((user) =>
-      user.fullName.toLowerCase().includes(filterValue.toLowerCase())
-    );
-  }, [filterValue]);
+    const filtered = dashboardRows.filter((user) => {
+      const matchesSearch = user.fullName
+        .toLowerCase()
+        .includes(filterValue.toLowerCase());
+      const matchesStatus =
+        statusFilter === "ALL" || user.status === statusFilter;
+      return matchesSearch && matchesStatus;
+    });
+
+    return filtered;
+  }, [filterValue, statusFilter]);
+
   return (
     <div className="flex flex-col items-center justify-center w-full h-screen">
       <SearchBar filterValue={filterValue} onSearchChange={onSearchChange} />
