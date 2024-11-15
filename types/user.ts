@@ -1,5 +1,6 @@
 //@/types
 export interface DashboardUser {
+  id: number,
     key: string;
     userId: string;
     fullName: string;

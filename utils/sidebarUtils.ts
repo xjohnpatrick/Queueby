@@ -13,10 +13,11 @@ export const useSidebar = () => {
   // Function to get buttons for the Dashboard
   const getDashboardButtons = () => {
     return [
-      { text: "All", onClick: () => console.log("All") },
-      { text: "Pending", onClick: () => console.log("Pending") },
-      { text: "To Receive", onClick: () => console.log("To Receive") },
-      { text: "Completed", onClick: () => console.log("Completed") },
+      { text: "ALL", onClick: () => console.log("ALL") },
+      { text: "PENDING", onClick: () => console.log("PENDING") },
+      { text: "TO RECEIVE", onClick: () => console.log("TO RECEIVE") },
+      { text: "COMPLETED", onClick: () => console.log("COMPLETED") },
+      { text: "DECLINED", onClick: () => console.log("DECLINED") },
     ];
   };
 
@@ -70,5 +71,8 @@ export const useSidebar = () => {
     return [];
   };
 
-  return { isSidebarHidden, getSidebarButtons };
+  return {
+    isSidebarHidden,
+    getSidebarButtons,
+  };
 };

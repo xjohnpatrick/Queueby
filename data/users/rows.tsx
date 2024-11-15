@@ -2,6 +2,7 @@ import { DashboardUser, DatabaseUser } from "@/types/user";
 
 export const dashboardRows: DashboardUser[] = [
   {
+    id: 0,
     key: "1",
     userId: "CB0",
     fullName: "Ghen Paul D Dulin",
@@ -15,6 +16,7 @@ export const dashboardRows: DashboardUser[] = [
     officialReceipt: "N/A",
   },
   {
+    id: 1,
     key: "2",
     userId: "CB1",
     fullName: "John Patrick C Isidoro",
@@ -28,6 +30,7 @@ export const dashboardRows: DashboardUser[] = [
     officialReceipt: "N/A",
   },
   {
+    id: 2,
     key: "3",
     userId: "CB2",
     fullName: "Fernan R Retardo",
@@ -41,6 +44,7 @@ export const dashboardRows: DashboardUser[] = [
     officialReceipt: "N/A",
   },
   {
+    id: 3,
     key: "4",
     userId: "CB3",
     fullName: "Webster D Tolosa III",
@@ -54,6 +58,7 @@ export const dashboardRows: DashboardUser[] = [
     officialReceipt: "N/A",
   },
   {
+    id: 4,
     key: "5",
     userId: "CB4",
     fullName: "Edrianne Loise Agrava",
@@ -67,6 +72,7 @@ export const dashboardRows: DashboardUser[] = [
     officialReceipt: "N/A",
   },
   {
+    id: 5,
     key: "6",
     userId: "CB5",
     fullName: "Emmanuel Christian Dalida",
@@ -80,6 +86,7 @@ export const dashboardRows: DashboardUser[] = [
     officialReceipt: "N/A",
   },
   {
+    id: 6,
     key: "7",
     userId: "CB6",
     fullName: "Juan Dela Cruz",

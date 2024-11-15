@@ -14,10 +14,18 @@ import { useState } from "react";
 interface DashboardTableProps {
   removeWrapper?: boolean;
   dashboardRows?: Array<{
+    id: number;
     key: string;
-    fullName: string;
-    status: string;
     userId: string;
+    fullName: string;
+    address: string;
+    contactNo: string;
+    gender: string;
+    age: string;
+    purpose: string;
+    status: string;
+    date: string;
+    officialReceipt: string;
   }>;
   isUserIdClickable?: boolean;
 }
@@ -29,7 +37,7 @@ export default function DashboardTable({
 }: DashboardTableProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedUser, setSelectedUser] = useState("");
-
+  
   const handleUserIdClick = (userId: string) => {
     setIsModalOpen(true);
     setSelectedUser(userId);
