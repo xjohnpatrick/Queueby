@@ -5,7 +5,7 @@ import { Button } from "@nextui-org/button";
 import Link from "next/link";
 import React from "react";
 
-import { usePasswordValidation } from "@/app/main/profile-page/createAdminAcc/createAdminFunctions";
+import { usePasswordValidation } from "@/app/main/(withoutSidebar)/profile-page/createAdminAcc/createAdminFunctions";
 import BackButton from "@/components/buttons/BackButton";
 
 export default function CreateAdminAccPage() {

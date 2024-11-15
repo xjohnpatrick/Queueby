@@ -1,6 +1,6 @@
 import React from "react";
 
-import AuthPage from "@/components/AuthPage";
+import AuthPage from "@/components/pages/AuthPage";
 import Link from "next/link";
 import { Button } from "@nextui-org/button";
 import { FaArrowLeft } from "react-icons/fa";

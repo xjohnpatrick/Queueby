@@ -4,7 +4,7 @@ import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa";
 
 import { Button } from "@nextui-org/button";
-import AuthPage from "@/components/AuthPage";
+import AuthPage from "@/components/pages/AuthPage";
 
 const VerifyEmail = () => {
   return (
