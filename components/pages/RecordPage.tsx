@@ -12,7 +12,6 @@ import { useButtonContext } from "@/context/ButtonContext";
 
 export default function RecordPage() {
   const { setButtons } = useButtonContext();
-  const [activeButton, setActiveButton] = useState<string>("");
   const [statusFilter, setStatusFilter] = useState("ALL");
 
   useEffect(() => {
@@ -20,27 +19,27 @@ export default function RecordPage() {
       {
         text: "All Records",
         onClick: () => setStatusFilter("ALL"),
-        isActive: activeButton === "All Records",
+        isActive: statusFilter === "All Records",
       },
       {
         text: "Pending Records",
         onClick: () => setStatusFilter("PENDING"),
-        isActive: activeButton === "Pending Records",
+        isActive: statusFilter === "Pending Records",
       },
       {
         text: "Completed Records",
         onClick: () => setStatusFilter("COMPLETED"),
-        isActive: activeButton === "Completed Records",
+        isActive: statusFilter === "Completed Records",
       },
       {
         text: "To Receive Records",
         onClick: () => setStatusFilter("TO RECEIVE"),
-        isActive: activeButton === "To Receive Records",
+        isActive: statusFilter === "To Receive Records",
       },
       {
         text: "Declined Records",
         onClick: () => setStatusFilter("DECLINED"),
-        isActive: activeButton === "Declined Records",
+        isActive: statusFilter === "Declined Records",
       },
     ]);
   }, [statusFilter]);
