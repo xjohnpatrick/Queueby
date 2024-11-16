@@ -5,6 +5,7 @@ type CommitteeMember = {
   name: string[]; // Array of names
   position: string;
   committees: string[];
+  img: string[],
   role: string;
 };
 
@@ -15,6 +16,7 @@ export const committeeMembers: CommitteeMember[] = [
     name: ["Richard V. Peralta"],
     position: "Punong Barangay",
     role: "",
+    img: ["/male.jpg"],
     committees: ["Education and Culture", "Social Services", "Women & Family"],
   },
 
@@ -24,6 +26,7 @@ export const committeeMembers: CommitteeMember[] = [
     name: ["Ma Meldy Antes-Tiamzon", "Edgardo P Cleofas"],
     position: "Kagawad",
     role: "",
+    img: ["/female3.jpg", "/male.jpg"],
     committees: ["Livelihood"],
   },
 
@@ -32,6 +35,7 @@ export const committeeMembers: CommitteeMember[] = [
     id: 4,
     name: ["Dexter Croox"],
     position: "",
+    img: ["/male.jpg"],
     role: "Committee",
     committees: [
       "Peace and Order",
@@ -42,6 +46,7 @@ export const committeeMembers: CommitteeMember[] = [
     id: 5,
     name: ["Virgilio M. Jara "],
     position: "",
+    img: ["/male.jpg"],
     role: "Committee",
     committees: ["Public Works & Infrastructure"],
   },
@@ -49,6 +54,7 @@ export const committeeMembers: CommitteeMember[] = [
     id: 6,
     name: ["Bugz Manego Cabagyo"],
     position: "",
+    img: ["/male.jpg"],
     role: "Committee",
     committees: ["Budget, Finance & Appropriation"],
   },
@@ -56,6 +62,7 @@ export const committeeMembers: CommitteeMember[] = [
     id: 7,
     name: ["Angelita S. De Vera"],
     position: "",
+    img: ["/female3.jpg"],
     role: "Committee",
     committees: ["Ways & Means"],
   },
@@ -63,6 +70,7 @@ export const committeeMembers: CommitteeMember[] = [
     id: 8,
     name: ["Joven S. Gaspar"],
     position: "",
+    img: ["/male.jpg"],
     role: "Committee",
     committees: ["Clean & Green", "Rules & Ethics"],
   },
@@ -70,6 +78,7 @@ export const committeeMembers: CommitteeMember[] = [
     id: 9,
     name: ["Kimberly S. Estrada"],
     position: "SK/Chairman",
+    img: ["/female3.jpg"],
     role: "Committee",
     committees: ["Youth & Sports Development"],
   },
@@ -79,6 +88,7 @@ export const committeeMembers: CommitteeMember[] = [
     id: 10,
     name: ["Ruth Majal C. Orfano"],
     position: "Barangay Secretary",
+    img: ["/female3.jpg"],
     role: "Committee",
     committees: [""],
   },
@@ -88,6 +98,7 @@ export const committeeMembers: CommitteeMember[] = [
     id: 11,
     name: ["Beatriz C. Dulay"],
     position: "Barangay Treasurer",
+    img: ["/female3.jpg"],
     role: "Committee",
     committees: [""],
   },
