@@ -38,7 +38,7 @@ export default function BarangayOfficials() {
                     key={`${kagawad.id}-${index}`}
                     className="flex flex-col w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-52 lg:h-52 bg-slate-200 relative justify-center items-center"
                   >
-                    <Image src={kagawad.img[index]} alt="Default Female Img" fill />
+                    <Image src={kagawad.img[index]} alt="Default Img" fill />
                     <label className="flex text-xs sm:text-sm md:text-base lg:text-xl z-50 text-white absolute -bottom-[0.5px] lg:bottom-0.5 text-nowrap">
                       {individualName}
                     </label>
