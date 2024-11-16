@@ -49,7 +49,7 @@ export default function BarangayOfficials() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-2 items-center">
+          <div className="flex flex-col mt-4 gap-2 items-center">
             <label className="text-blue-400 text-2xl lg:text-3xl">
               Committee Members
             </label>
