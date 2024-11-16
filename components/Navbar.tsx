@@ -225,6 +225,7 @@ const Navbar = () => {
                     src={defaultFemaleImg}
                     alt="Female Default Profile"
                     fill
+                    className="rounded-md"
                   />
                 </div>
                 Profile
