@@ -1,102 +1,95 @@
 //Change the name section for any updates
 
-export const committeeMembers = [
+type CommitteeMember = {
+  id: number;
+  name: string[]; // Array of names
+  position: string;
+  committees: string[];
+  role: string;
+};
 
-//Punong Barangay
+export const committeeMembers: CommitteeMember[] = [
+  //Punong Barangay
   {
     id: 1,
-    name: "Richard V. Peralta",
+    name: ["Richard V. Peralta"],
     position: "Punong Barangay",
-    committees: [
-      "Education and Culture",
-      "Social Services",
-      "Women & Family",
-    ],
+    role: "",
+    committees: ["Education and Culture", "Social Services", "Women & Family"],
   },
 
-//Kagawad Members
+  //Kagawad Members
   {
     id: 2,
-    name: [
-      "Ma Meldy Antes-Tiamzon",
-      "Edgardo P Cleofas"
-    ],
+    name: ["Ma Meldy Antes-Tiamzon", "Edgardo P Cleofas"],
     position: "Kagawad",
-    committees: [
-      "Livelihood",
-    ], 
+    role: "",
+    committees: ["Livelihood"],
   },
 
-//Committee Members
+  //Committee Members
   {
     id: 4,
-    name: "Dexter Croox",
+    name: ["Dexter Croox"],
     position: "",
+    role: "Committee",
     committees: [
       "Peace and Order",
-      "Barangay Disaster Risk Reduction Management"
+      "Barangay Disaster Risk Reduction Management",
     ],
   },
   {
     id: 5,
-    name: "Virgilio M. Jara ",
+    name: ["Virgilio M. Jara "],
     position: "",
-    committees: [
-      "Public Works & Infrastructure",
-    ],
+    role: "Committee",
+    committees: ["Public Works & Infrastructure"],
   },
   {
     id: 6,
-    name: "Bugz Manego Cabagyo",
+    name: ["Bugz Manego Cabagyo"],
     position: "",
-    committees: [
-      "Budget, Finance & Appropriation",
-    ],
+    role: "Committee",
+    committees: ["Budget, Finance & Appropriation"],
   },
   {
     id: 7,
-    name: "Angelita S. De Vera",
+    name: ["Angelita S. De Vera"],
     position: "",
-    committees: [
-      "Ways & Means",
-    ],
+    role: "Committee",
+    committees: ["Ways & Means"],
   },
   {
     id: 8,
-    name: "Joven S. Gaspar",
+    name: ["Joven S. Gaspar"],
     position: "",
-    committees: [
-      "Clean & Green",
-      "Rules & Ethics",
-    ],
+    role: "Committee",
+    committees: ["Clean & Green", "Rules & Ethics"],
   },
   {
     id: 9,
-    name: "Kimberly S. Estrada",
+    name: ["Kimberly S. Estrada"],
     position: "SK/Chairman",
-    committees: [
-      "Youth & Sports Development",
-    ],
+    role: "Committee",
+    committees: ["Youth & Sports Development"],
   },
 
-//Barangay Secretary
+  //Barangay Secretary
   {
     id: 10,
-    name: "Ruth Majal C. Orfano",
+    name: ["Ruth Majal C. Orfano"],
     position: "Barangay Secretary",
-    committees: [
-      "",
-    ],
+    role: "Committee",
+    committees: [""],
   },
 
-//Barangay Treasurer
+  //Barangay Treasurer
   {
     id: 11,
-    name: "Beatriz C. Dulay",
+    name: ["Beatriz C. Dulay"],
     position: "Barangay Treasurer",
-    committees: [
-      "",
-    ],
+    role: "Committee",
+    committees: [""],
   },
-]
+];
 

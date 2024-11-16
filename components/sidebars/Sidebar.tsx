@@ -1,13 +1,17 @@
 "use client";
 import { Button } from "@nextui-org/button";
 import React, { useState } from "react";
-import { useButtonContext } from "../context/ButtonContext";
+import { useButtonContext } from "../../context/ButtonContext";
 
-const Sidebar: React.FC = () => {
+export default function Sidebar() {
   const { buttons, toggleButtonActive } = useButtonContext();
   const [activeButton, setActiveButton] = useState<string | null>(null);
 
-  const handleButtonClick = (buttonText: string, href?: string, onClick?: () => void) => {
+  const handleButtonClick = (
+    buttonText: string,
+    href?: string,
+    onClick?: () => void
+  ) => {
     setActiveButton(buttonText);
     onClick?.();
     if (href) {
@@ -40,6 +44,5 @@ const Sidebar: React.FC = () => {
       </div>
     </aside>
   );
-};
+}
 
-export default Sidebar;

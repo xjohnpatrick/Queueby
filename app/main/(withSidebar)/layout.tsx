@@ -1,6 +1,6 @@
 import { bebasNeue, montserrat } from "@/app/fonts/fonts";
 import { ButtonProvider } from "@/context/ButtonContext";
-import Sidebar from "@/components/Sidebar";
+import Sidebar from "@/components/sidebars/Sidebar";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import "@/app/globals.css";

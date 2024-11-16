@@ -21,10 +21,24 @@ const Navbar = () => {
   const [documentIsOpen, setDocumentIsOpen] = useState(false);
   const [profileIsOpen, setProfileIsOpen] = useState(false);
   const [documentOpen, setDocumentOpen] = useState(false);
-  const pathname = usePathname();
+  
+  const isActive = (linkPath: string | string[]) => {
+    const pathname = usePathname();
 
-  const isActive = (linkPath: string) =>
-    pathname === linkPath || pathname.startsWith(linkPath) ? "bg-blue-100" : "";
+    // If linkPath is an array, check if any of the paths match or start with the current pathname
+    if (Array.isArray(linkPath)) {
+      return linkPath.some(
+        (path) => pathname === path || pathname.startsWith(path)
+      )
+        ? "bg-blue-100"
+        : "";
+    }
+
+    // If linkPath is a single string, compare directly
+    return pathname === linkPath || pathname.startsWith(linkPath)
+      ? "bg-blue-100"
+      : "";
+  };
 
   return (
     <nav className="flex flex-col no-print">
@@ -186,9 +200,14 @@ const Navbar = () => {
 
             <Link href="/main/user-information">
               <button
-                className={`flex gap-2 md:px-2 md:py-4 xl:py-8 rounded-xl hover:bg-blue-100 duration-400 ease-in-out ${isActive(
-                  "/main/user-information"
-                )}`}
+                className={`flex gap-2 md:px-2 md:py-4 xl:py-8 rounded-xl hover:bg-blue-100 duration-400 ease-in-out 
+                  ${isActive([
+                    "/main/user-information",
+                    "/main/user-transaction",
+                    "/main/announcement",
+                    "/main/barangay-officials",
+                  ])}
+                `}
               >
                 <RiDatabaseLine />
                 Database
