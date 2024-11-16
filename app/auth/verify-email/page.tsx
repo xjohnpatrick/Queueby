@@ -5,6 +5,8 @@ import { FaArrowLeft } from "react-icons/fa";
 
 import { Button } from "@nextui-org/button";
 import AuthPage from "@/components/pages/AuthPage";
+import Image from "next/image";
+import verifyEmailImg from "@/public/verifyemail.jpg"
 
 const VerifyEmail = () => {
   return (
@@ -22,11 +24,9 @@ const VerifyEmail = () => {
               </Button>
             </Link>
             <div className="flex flex-col gap-2 mb-3 lg:mb-5 items-center font-bebas">
-              <img
-                src="/verifyemail.jpg"
-                alt="Verify Email Logo"
-                className="w-40 lg:w-60"
-              />
+              <div className="w-40 lg:w-60 relative">
+                <Image src={verifyEmailImg} alt="Verify Email Logo" fill />
+              </div>
             </div>
             <div className="flex flex-col gap-4 relative">
               <div className="mx-10 sm:mx-14 text-justify text-gray-100 text-sm md:text-lg lg:text-xl">
