@@ -4,14 +4,14 @@ import { committeeMembers } from "@/data/users/brgy-members";
 
 export default function BarangayOfficials() {
   return (
-    <div className="flex items-center justify-center bg-white h-[950px] lg:h-[1100px] mx-4 w-full">
-      <div className="flex flex-col font-bebas w-full h-auto items-center gap-10">
+    <div className="flex bg-white h-[950px] lg:h-[1050px] xl:h-[1000px] mx-4 w-full">
+      <div className="flex flex-col font-bebas w-full h-auto items-center gap-4 lg:gap-10">
         {committeeMembers
           .filter((member) => member.position === "Punong Barangay")
           .map((punongBarangay) => (
             <div
               key={punongBarangay.id}
-              className="flex flex-col mt-4 gap-2 items-center"
+              className="flex flex-col mt-4 lg:mt-12 gap-2 items-center"
             >
               <label className="text-blue-400 text-2xl lg:text-4xl">
                 Punong Barangay
@@ -25,47 +25,49 @@ export default function BarangayOfficials() {
             </div>
           ))}
 
-        <div className="flex flex-col mt-4 gap-2 items-center">
-          <label className="text-blue-400 text-2xl lg:text-3xl">
-            Kagawad Members
-          </label>
-          <div className="grid grid-cols-2 gap-2">
-            {committeeMembers
-              .filter((member) => member.position === "Kagawad")
-              .flatMap((kagawad) =>
-                kagawad.name.map((individualName, index) => (
+        <div className="flex flex-col xl:flex-row gap-10">
+          <div className="flex flex-col mt-4 gap-2 items-center">
+            <label className="text-blue-400 text-2xl lg:text-3xl">
+              Kagawad Members
+            </label>
+            <div className="grid grid-cols-2 gap-2">
+              {committeeMembers
+                .filter((member) => member.position === "Kagawad")
+                .flatMap((kagawad) =>
+                  kagawad.name.map((individualName, index) => (
+                    <div
+                      key={`${kagawad.id}-${index}`}
+                      className="flex flex-col w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 bg-slate-200 relative justify-center items-center"
+                    >
+                      <Image src={kagawad.img[index]} alt="Default Img" fill />
+                      <label className="flex text-xs sm:text-sm md:text-base z-50 text-white absolute -bottom-[0.5px] text-nowrap">
+                        {individualName}
+                      </label>
+                    </div>
+                  ))
+                )}
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-2 items-center">
+            <label className="text-blue-400 text-2xl lg:text-3xl">
+              Committee Members
+            </label>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+              {committeeMembers
+                .filter((member) => member.role === "Committee")
+                .map((committees) => (
                   <div
-                    key={`${kagawad.id}-${index}`}
-                    className="flex flex-col w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-52 lg:h-52 bg-slate-200 relative justify-center items-center"
+                    key={committees.id}
+                    className="flex w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 bg-slate-200 relative justify-center"
                   >
-                    <Image src={kagawad.img[index]} alt="Default Img" fill />
-                    <label className="flex text-xs sm:text-sm md:text-base lg:text-xl z-50 text-white absolute -bottom-[0.5px] lg:bottom-0.5 text-nowrap">
-                      {individualName}
+                    <Image src={committees.img[0]} alt="Default Img" fill />
+                    <label className="flex text-xs sm:text-sm md:text-base z-50 text-white absolute -bottom-[0.5px]">
+                      {committees.name}
                     </label>
                   </div>
-                ))
-              )}
-          </div>
-        </div>
-
-        <div className="flex flex-col mt-4 gap-2 items-center">
-          <label className="text-blue-400 text-2xl lg:text-3xl">
-            Committee Members
-          </label>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
-            {committeeMembers
-              .filter((member) => member.role === "Committee")
-              .map((committees) => (
-                <div
-                  key={committees.id}
-                  className="flex w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 bg-slate-200 relative justify-center"
-                >
-                  <Image src={committees.img[0]} alt="Default Img" fill />
-                  <label className="flex text-xs sm:text-sm md:text-base z-50 text-white absolute -bottom-[0.5px]">
-                    {committees.name}
-                  </label>
-                </div>
-              ))}
+                ))}
+            </div>
           </div>
         </div>
       </div>
