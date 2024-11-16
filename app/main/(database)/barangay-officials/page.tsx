@@ -1,4 +1,3 @@
-import Wrapper from "@/components/Wrapper";
 import Image from "next/image";
 import React from "react";
 import defaultFemaleImg from "@/public/female2.png";
@@ -6,7 +5,7 @@ import { committeeMembers } from "@/data/users/brgy-members";
 
 export default function BarangayOfficials() {
   return (
-    <Wrapper className="bg-white h-[1100px] lg:h-[1100px] mx-4">
+    <div className="flex items-center justify-center bg-white h-[950px] lg:h-[1100px] mx-4 w-full">
       <div className="flex flex-col font-bebas w-full h-auto items-center gap-10">
         {committeeMembers
           .filter((member) => member.position === "Punong Barangay")
@@ -15,7 +14,7 @@ export default function BarangayOfficials() {
               key={punongBarangay.id}
               className="flex flex-col mt-4 gap-2 items-center"
             >
-              <label className="text-blue-400 text-2xl">Punong Barangay</label>
+              <label className="text-blue-400 text-2xl lg:text-4xl">Punong Barangay</label>
               <div className="flex w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 bg-slate-200 relative justify-center">
                 <Image src={defaultFemaleImg} alt="Default Female Img" fill />
                 <label className="flex text-sm sm:text-base md:text-lg lg:text-xl z-50 text-white absolute bottom-0 lg:bottom-0.5">
@@ -26,7 +25,7 @@ export default function BarangayOfficials() {
           ))}
 
         <div className="flex flex-col mt-4 gap-2 items-center">
-          <label className="text-blue-400 text-2xl">Kagawad Members</label>
+          <label className="text-blue-400 text-2xl lg:text-3xl">Kagawad Members</label>
           <div className="grid grid-cols-2 gap-2">
             {committeeMembers
               .filter((member) => member.position === "Kagawad")
@@ -51,7 +50,7 @@ export default function BarangayOfficials() {
         </div>
 
         <div className="flex flex-col mt-4 gap-2 items-center">
-          <label className="text-blue-400 text-2xl">Committee Members</label>
+          <label className="text-blue-400 text-2xl lg:text-3xl">Committee Members</label>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
             {committeeMembers
               .filter((member) => member.role === "Committee")
@@ -66,6 +65,6 @@ export default function BarangayOfficials() {
           </div>
         </div>
       </div>
-    </Wrapper>
+    </div>
   );
 }

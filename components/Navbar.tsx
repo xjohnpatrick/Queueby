@@ -22,7 +22,7 @@ const Navbar = () => {
   const [profileIsOpen, setProfileIsOpen] = useState(false);
   const [documentOpen, setDocumentOpen] = useState(false);
   
-  const useIsActive = (linkPath: string | string[]) => {
+  const btnIsActive = (linkPath: string | string[]) => {
     const pathname = usePathname();
 
     // If linkPath is an array, check if any of the paths match or start with the current pathname
@@ -167,7 +167,7 @@ const Navbar = () => {
           <div className="hidden md:flex text-xl xl:text-3xl 2xl:text-4xl 2xl:gap-7 items-center absolute right-10">
             <Link href="/main/dashboard">
               <button
-                className={`flex gap-2 md:px-2 md:py-4 xl:py-8 rounded-xl hover:bg-blue-100 duration-400 ease-in-out ${useIsActive(
+                className={`flex gap-2 md:px-2 md:py-4 xl:py-8 rounded-xl hover:bg-blue-100 duration-400 ease-in-out ${btnIsActive(
                   "/main/dashboard"
                 )}`}
               >
@@ -180,7 +180,7 @@ const Navbar = () => {
               onClick={() => setDocumentIsOpen(!documentIsOpen)}
               className={`flex relative gap-2 md:px-2 md:py-4 xl:py-8 rounded-xl hover:bg-blue-100 duration-400 ease-in-out ${
                 documentIsOpen ? "bg-blue-400" : ""
-              } ${useIsActive("/main/documents-page")}`}
+              } ${btnIsActive("/main/documents-page")}`}
             >
               <ImFileText />
               Document
@@ -189,7 +189,7 @@ const Navbar = () => {
 
             <Link href="/main/records-page">
               <button
-                className={`flex gap-2 md:px-2 md:py-4 xl:py-8 rounded-xl hover:bg-blue-100 duration-400 ease-in-out ${useIsActive(
+                className={`flex gap-2 md:px-2 md:py-4 xl:py-8 rounded-xl hover:bg-blue-100 duration-400 ease-in-out ${btnIsActive(
                   "/main/records-page"
                 )}`}
               >
@@ -201,7 +201,7 @@ const Navbar = () => {
             <Link href="/main/user-information">
               <button
                 className={`flex gap-2 md:px-2 md:py-4 xl:py-8 rounded-xl hover:bg-blue-100 duration-400 ease-in-out 
-                  ${useIsActive([
+                  ${btnIsActive([
                     "/main/user-information",
                     "/main/user-transaction",
                     "/main/announcement",
@@ -216,7 +216,7 @@ const Navbar = () => {
 
             <Link href="/main/profile-page/profile">
               <button
-                className={`flex gap-2 md:px-2 md:py-4 xl:py-8 rounded-xl hover:bg-blue-100 duration-400 ease-in-out items-center ${useIsActive(
+                className={`flex gap-2 md:px-2 md:py-4 xl:py-8 rounded-xl hover:bg-blue-100 duration-400 ease-in-out items-center ${btnIsActive(
                   "/main/profile-page/profile"
                 )}`}
               >
