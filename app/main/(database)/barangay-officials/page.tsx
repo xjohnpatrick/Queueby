@@ -56,7 +56,7 @@ export default function BarangayOfficials() {
             {committeeMembers
               .filter((member) => member.role === "Committee")
               .map((committees) => (
-                <div className="flex w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 bg-slate-200 relative justify-center">
+                <div key={committees.id} className="flex w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 bg-slate-200 relative justify-center">
                   <Image src={defaultFemaleImg} alt="Default Female Img" fill />
                   <label className="flex text-xs sm:text-sm md:text-base z-50 text-white absolute -bottom-[0.5px]">
                     {committees.name}
