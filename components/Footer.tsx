@@ -87,7 +87,7 @@ const Footer = () => {
       </div>
 
       <div className="flex text-white text-lg sm:text-xl md:text-2xl w-full justify-center font-bebas">
-        © COPYRIGHT 2023 ALL RIGHTS RESERVED QUEUEBY
+        © COPYRIGHT 2022-2024 ALL RIGHTS RESERVED QUEUEBY
       </div>
     </footer>
   );
