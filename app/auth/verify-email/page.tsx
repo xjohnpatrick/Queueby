@@ -23,8 +23,8 @@ const VerifyEmail = () => {
                 Back
               </Button>
             </Link>
-            <div className="flex flex-col gap-2 mb-3 lg:mb-5 items-center font-bebas">
-              <div className="w-40 lg:w-60 relative">
+            <div className="flex gap-2 mb-3 lg:mb-5 items-center font-bebas">
+              <div className="w-56 h-40 lg:w-60 relative">
                 <Image src={verifyEmailImg} alt="Verify Email Logo" fill />
               </div>
             </div>
@@ -39,7 +39,7 @@ const VerifyEmail = () => {
             </div>
             <div className="flex flex-col mt-2 lg:mt-12 items-center">
               <input
-                className="mb-6 lg:mb-[71px] lg:w-[415px] h-12 rounded-lg border-2 border-gray px-4 font-montserrat"
+                className="mb-6 lg:mb-4 w-full md:w-96 lg:w-[415px] h-12 rounded-lg border-2 border-gray px-4 font-montserrat"
                 type="text"
                 placeholder="Input verification code"
               />
