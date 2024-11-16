@@ -52,9 +52,24 @@ export default function RecordPage() {
     });
   }, [statusFilter]);
 
+  const getTitle = () => {
+    switch (statusFilter) {
+      case "PENDING":
+        return "Pending Records";
+      case "COMPLETED":
+        return "Completed Records";
+      case "TO RECEIVE":
+        return "To Receive Records";
+      case "DECLINED":
+        return "Declined Records";
+      default:
+        return "All Records";
+    }
+  };
+
   return (
     <div className="flex flex-col items-center justify-center w-full h-[1000px] sm:h-[1100px] lg:h-[1500px]">
-      <div className="flex flex-col items-center w-[90vw] lg:w-[70vw] xl:w-[60vw]">
+      <div className="flex flex-col items-center w-[90vw] lg:w-[70vw] xl:w-[65vw]">
         <h1 className="flex text-4xl font-semibold my-8 font-montserrat text-center">
           Viewing All Records
         </h1>
@@ -84,7 +99,7 @@ export default function RecordPage() {
                     Tel. No. 7738-1883 / 7754-3045
                   </span>
                   <span className="text-base lg:text-4xl font-bold mt-6 sm:mt-4 lg:mt-10">
-                    All Records
+                    {getTitle()}
                   </span>
                 </div>
                 <div className="absolute right-2 sm:right-4 lg:right-10 top-4 sm:top-6 lg:top-10">
@@ -94,7 +109,7 @@ export default function RecordPage() {
                 </div>
               </div>
             </div>
-            <div className="flex-grow h-4/5 lg:h-3/4 items-center justify-center m-4 sm:mt-8 lg:mx-10 overflow-y-scroll scrollbar-hide">
+            <div className="flex-grow h-4/5 lg:h-3/4 items-center justify-center m-4 sm:mt-8 lg:mx-4 overflow-y-scroll scrollbar-hide">
               <DashboardTable
                 removeWrapper
                 dashboardRows={filteredItems}
