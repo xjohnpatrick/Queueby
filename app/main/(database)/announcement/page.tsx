@@ -33,7 +33,7 @@ export default function Announcement() {
               <div className="flex">
                 <input
                   className="w-[240px] sm:w-[400px] lg:w-[540px] placeholder:text-xl text-xl px-3 py-2 border-2 border-gray shadow-md outline-none rounded-lg font-montserrat"
-                  type="password"
+                  type="text"
                   placeholder={item.placeholder}
                 />
               </div>
