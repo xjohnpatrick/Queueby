@@ -113,7 +113,7 @@ export default function DashboardPage() {
       </Dropdown>
 
       <Suspense fallback={<Loading />}>
-        <div className="flex w-[90vw] lg:w-[70vw] xl:w-[75vw] 2xl:w-[80vw] h-[70vh] bg-white mt-8">
+        <div className="flex w-[90vw] lg:w-[70vw] xl:w-[75vw] 2xl:w-[80vw] h-[70vh] bg-white mt-4">
           <DashboardTable dashboardRows={filteredItems} />
         </div>
       </Suspense>

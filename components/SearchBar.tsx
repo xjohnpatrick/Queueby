@@ -18,7 +18,7 @@ export default function SearchBar({
 
   return (
     <div>
-      <div className="relative flex my-10 w-[320px] sm:w-[380px] md:w-[450px] lg:w-[540px] font-montserrat">
+      <div className="relative flex mt-10 mb-4 w-[320px] sm:w-[380px] md:w-[450px] lg:w-[540px] font-montserrat">
         <Input
           placeholder="Search Name Here"
           variant="bordered"
