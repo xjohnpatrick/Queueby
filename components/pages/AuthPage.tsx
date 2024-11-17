@@ -19,19 +19,18 @@ export default function AuthPage({
 }: AuthPageProps) {
   return (
     <main>
-      <div className="flex flex-col h-[100vh] lg:h-screen w-full relative items-center justify-center bg-gradient-to-tr from-blue-200 to-blue-200">
-        <div className="flex my-4 lg:my-0 lg:absolute lg:right-5 lg:top-5 bg-white rounded-md p-1 mx-4">
-          <span className="text-lg font-poppins">
-            The system is front-end only. Click &quot;Sign In&quot; to check out
-            its features.
-          </span>
-        </div>
+      <div className="flex flex-col h-[950px] xl:h-screen w-full relative items-center lg:justify-center bg-gradient-to-tr from-blue-200 to-blue-200">
         <Image
           className="object-cover h-full w-full absolute mix-blend-overlay opacity-50"
           src={makatiBg}
           alt="Makati Background"
         />
-
+        <div className="flex mt-20 mb-4 lg:my-0 lg:absolute lg:right-5 lg:top-5 bg-white rounded-md p-1 mx-4">
+          <span className="text-lg font-poppins text-center">
+            The system is front-end only. Click &quot;Sign In&quot; to check out
+            its features.
+          </span>
+        </div>
         <div className="flex flex-col lg:flex-row items-center z-10 shadow-lg shadow-slate-800 rounded-3xl w-[320px] sm:w-auto h-[600px]">
           <div className="flex w-full h-[400px] sm:w-[520px] md:w-[620px] lg:w-[400px] lg:h-full bg-gradient-to-br from-blue-100 to-blue rounded-t-3xl lg:rounded-none lg:rounded-l-3xl relative mx-auto">
             <Image
