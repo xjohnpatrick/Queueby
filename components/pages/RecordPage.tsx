@@ -66,12 +66,27 @@ export default function RecordPage() {
         return "All Records";
     }
   };
+  
+  const getHeaderTitle = () => {
+    switch (statusFilter) {
+      case "PENDING":
+        return "Viewing Pending Records";
+      case "COMPLETED":
+        return "Viewing Completed Records";
+      case "TO RECEIVE":
+        return "Viewing To Receive Records";
+      case "DECLINED":
+        return "Viewing Declined Records";
+      default:
+        return "Viewing All Records";
+    }
+  };
 
   return (
     <div className="flex flex-col items-center justify-center w-full h-[1000px] sm:h-[1100px] lg:h-[1500px]">
       <div className="flex flex-col items-center w-[90vw] lg:w-[70vw] xl:w-[65vw]">
         <h1 className="flex text-4xl font-semibold my-8 font-montserrat text-center">
-          Viewing All Records
+          {getHeaderTitle()}
         </h1>
         <Suspense fallback={<Loading />}>
           <div className="flex flex-col w-full h-[700px] sm:h-[800px] lg:h-[1250px] border border-black">
