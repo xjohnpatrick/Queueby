@@ -100,7 +100,7 @@ export default function DashboardModal({
               <ModalBody className={`text-xl p-8 ${bebasNeue.className} `}>
                 {selectedUser ? (
                   <>
-                    <div className="grid grid-cols-[80px_auto] sm:grid-cols-[120px_auto] w-full h-full">
+                    <div className="grid grid-cols-[80px_auto] sm:grid-cols-[120px_auto] w-full h-full overflow-x-scroll lg:scrollbar-hide pb-4">
                       <div className="flex flex-col text-sm sm:text-base md:text-lg">
                         <span className="text-blue-100">User ID:</span>
                         <span className="text-blue-100">Full Name:</span>

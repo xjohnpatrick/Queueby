@@ -4,7 +4,7 @@ import { committeeMembers } from "@/data/users/brgy-members";
 
 export default function BarangayOfficials() {
   return (
-    <div className="flex bg-white h-[950px] lg:h-[1050px] xl:h-[1000px] mx-4 w-full">
+    <div className="flex bg-white h-[950px] lg:h-[1050px] xl:h-[1000px] w-full">
       <div className="flex flex-col font-bebas w-full h-auto items-center gap-4 lg:gap-10">
         {committeeMembers
           .filter((member) => member.position === "Punong Barangay")

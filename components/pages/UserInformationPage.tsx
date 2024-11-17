@@ -18,7 +18,7 @@ export default function UserInformationPage() {
     );
   }, [searchValue]);
   return (
-    <div className="flex flex-col items-center justify-center w-full h-screen">
+    <div className="flex flex-col items-center w-full h-screen">
       <SearchBar filterValue={searchValue} onSearchChange={onSearchChange} />
 
       <Suspense fallback={<Loading />}>

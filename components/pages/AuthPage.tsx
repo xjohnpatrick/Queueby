@@ -20,7 +20,7 @@ export default function AuthPage({
   return (
     <main>
       <div className="flex h-screen w-full relative items-center justify-center bg-gradient-to-tr from-blue-200 to-blue-200">
-        <div className="flex absolute right-10 top-5 bg-white rounded-md p-1">
+        <div className="flex absolute top-10 lg:right-10 lg:top-5 bg-white rounded-md p-1 mx-4">
           <span className="text-lg font-poppins">
             The system is front-end only. Click &quot;Sign In&quot; to check out
             its features.

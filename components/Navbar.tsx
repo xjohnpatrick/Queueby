@@ -73,7 +73,7 @@ const Navbar = () => {
             </Button>
           </div>
           {profileIsOpen && (
-            <div className="md:hidden text-2xl absolute left-0 top-32 w-full z-10 bg-blue-200">
+            <div className="md:hidden text-2xl absolute left-0 top-32 w-full z-50 bg-blue-200">
               <div className="flex flex-col gap-4 p-4">
                 {[
                   {

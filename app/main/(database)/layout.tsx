@@ -13,7 +13,7 @@ export default function DatabaseLayout({
     <html lang="en">
       <body className={`${bebasNeue.variable} ${montserrat.variable}`}>
         <Navbar />
-        <div className="flex">
+        <div className="flex flex-col lg:flex-row w-full">
           <DatabaseSidebar />
           {children}
         </div>
