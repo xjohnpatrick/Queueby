@@ -19,8 +19,8 @@ export default function AuthPage({
 }: AuthPageProps) {
   return (
     <main>
-      <div className="flex flex-col h-screen w-full relative items-center justify-center bg-gradient-to-tr from-blue-200 to-blue-200">
-        <div className="flex mb-4 lg:mb-0 lg:absolute lg:right-10 lg:top-5 bg-white rounded-md p-1 mx-4">
+      <div className="flex flex-col h-[100vh] lg:h-screen w-full relative items-center justify-center bg-gradient-to-tr from-blue-200 to-blue-200">
+        <div className="flex my-4 lg:my-0 lg:absolute lg:right-5 lg:top-5 bg-white rounded-md p-1 mx-4">
           <span className="text-lg font-poppins">
             The system is front-end only. Click &quot;Sign In&quot; to check out
             its features.
