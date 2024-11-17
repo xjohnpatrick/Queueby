@@ -21,8 +21,11 @@ const Navbar = () => {
   const [documentIsOpen, setDocumentIsOpen] = useState(false);
   const [profileIsOpen, setProfileIsOpen] = useState(false);
   const [documentOpen, setDocumentOpen] = useState(false);
-  
-  const useIsActive = (linkPath: string | string[]) => {
+
+  const useIsActive = (
+    linkPath: string | string[],
+    activeBg: string = "bg-blue-100",
+  ): string => {
     const pathname = usePathname();
 
     // If linkPath is an array, check if any of the paths match or start with the current pathname
@@ -30,13 +33,13 @@ const Navbar = () => {
       return linkPath.some(
         (path) => pathname === path || pathname.startsWith(path)
       )
-        ? "bg-blue-100"
+        ? activeBg
         : "";
     }
 
     // If linkPath is a single string, compare directly
     return pathname === linkPath || pathname.startsWith(linkPath)
-      ? "bg-blue-100"
+      ? activeBg
       : "";
   };
 
@@ -106,7 +109,9 @@ const Navbar = () => {
                   item.href ? (
                     <Link href={item.href} key={index}>
                       <Button
-                        className="flex text-xl text-white bg-blue-400 w-full"
+                        className={`flex text-xl text-white bg-blue-400 w-full ${useIsActive(
+                          item.href
+                        )}`}
                         onClick={() => setProfileIsOpen(false)}
                       >
                         {item.label}
@@ -115,7 +120,9 @@ const Navbar = () => {
                   ) : (
                     <Button
                       key={index}
-                      className="flex text-xl text-white bg-blue-400 w-full"
+                      className={`flex text-xl text-white bg-blue-400 w-full ${useIsActive(
+                        "/main/documents-page"
+                      )}`}
                       onClick={item.onClick}
                     >
                       {item.label}
@@ -151,7 +158,9 @@ const Navbar = () => {
                       },
                     ].map((item, index) => (
                       <Button
-                        className={`flex text-xl text-white bg-blue-400 ${item.className}`}
+                        className={`flex text-xl text-white bg-blue-400 ${
+                          item.className
+                        } ${useIsActive(item.href, "bg-white text-blue-400")}`}
                         onClick={() => setProfileIsOpen(false)}
                         key={index}
                       >
