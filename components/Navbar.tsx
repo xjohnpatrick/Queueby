@@ -25,7 +25,6 @@ const Navbar = () => {
   const useIsActive = (
     linkPath: string | string[],
     activeBg: string = "bg-blue-100",
-    activeDocument: string = "bg-white text-blue-400",
   ): string => {
     const pathname = usePathname();
 

@@ -9,6 +9,13 @@ import React, { Suspense, useEffect, useMemo, useState } from "react";
 import { dashboardRows } from "@/data/users/rows";
 import Loading from "@/components/ui/loading-ui/SpinnerLoading";
 import { useButtonContext } from "@/context/ButtonContext";
+import { RxHamburgerMenu } from "react-icons/rx";
+import {
+  Dropdown,
+  DropdownTrigger,
+  DropdownMenu,
+  DropdownItem,
+} from "@nextui-org/dropdown";
 
 export default function RecordPage() {
   const { setButtons } = useButtonContext();
@@ -82,12 +89,64 @@ export default function RecordPage() {
     }
   };
 
+  const items = [
+    {
+      key: "ALL",
+      label: "ALL",
+    },
+    {
+      key: "PENDING",
+      label: "PENDING",
+    },
+    {
+      key: "COMPLETED",
+      label: "COMPLETED",
+    },
+    {
+      key: "TO RECEIVE",
+      label: "TO RECEIVE",
+    },
+    {
+      key: "DECLINED",
+      label: "DECLINED",
+    },
+  ];
+
   return (
     <div className="flex flex-col items-center justify-center w-full h-[1000px] sm:h-[1100px] lg:h-[1500px]">
       <div className="flex flex-col items-center w-[90vw] lg:w-[70vw] xl:w-[65vw]">
-        <h1 className="flex text-4xl font-semibold my-8 font-montserrat text-center">
+        <h1 className="flex text-4xl font-semibold mt-8 font-montserrat text-center">
           {getHeaderTitle()}
         </h1>
+
+        <Dropdown className="bg-blue-400">
+          <DropdownTrigger>
+            <Button
+              isIconOnly
+              className="flex lg:hidden bg-blue-400 text-white my-4"
+              title="Dashboard Sidebar Button"
+            >
+              <RxHamburgerMenu size={18} />
+            </Button>
+          </DropdownTrigger>
+          <DropdownMenu
+            aria-label="Dashboard Sidebar"
+            items={items}
+            onAction={(key) => setStatusFilter(key as string)}
+          >
+            {(item) => (
+              <DropdownItem
+                key={item.key}
+                className={`font-bebas text-white ${
+                  statusFilter === item.key ? "bg-white text-blue-400" : ""
+                }`}
+              >
+                {item.label}
+              </DropdownItem>
+            )}
+          </DropdownMenu>
+        </Dropdown>
+
         <Suspense fallback={<Loading />}>
           <div className="flex flex-col w-full h-[700px] sm:h-[800px] lg:h-[1250px] border border-black">
             <div className="h-1/5 lg:h-1/4">
