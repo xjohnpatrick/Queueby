@@ -28,7 +28,6 @@ const Navbar = () => {
   ): string => {
     const pathname = usePathname();
 
-    // If linkPath is an array, check if any of the paths match or start with the current pathname
     if (Array.isArray(linkPath)) {
       return linkPath.some(
         (path) => pathname === path || pathname.startsWith(path)
@@ -36,15 +35,13 @@ const Navbar = () => {
         ? activeBg
         : "";
     }
-
-    // If linkPath is a single string, compare directly
     return pathname === linkPath || pathname.startsWith(linkPath)
       ? activeBg
       : "";
   };
 
-  const activeClasses = (linkPath: string | string[]) => useIsActive(linkPath);
-  
+   const activeClasses = (linkPath: string | string[]) => useIsActive(linkPath);
+
   return (
     <nav className="flex flex-col no-print">
       <div className="flex h-32 bg-blue-200">
@@ -111,7 +108,7 @@ const Navbar = () => {
                   item.href ? (
                     <Link href={item.href} key={index}>
                       <Button
-                        className={`flex text-xl text-white bg-blue-400 w-full ${useIsActive(
+                        className={`flex text-xl text-white bg-blue-400 w-full ${activeClasses(
                           item.href
                         )}`}
                         onClick={() => setProfileIsOpen(false)}
@@ -122,7 +119,7 @@ const Navbar = () => {
                   ) : (
                     <Button
                       key={index}
-                      className={`flex text-xl text-white bg-blue-400 w-full ${useIsActive(
+                      className={`flex text-xl text-white bg-blue-400 w-full ${activeClasses(
                         "/main/documents-page"
                       )}`}
                       onClick={item.onClick}
@@ -162,7 +159,7 @@ const Navbar = () => {
                       <Button
                         className={`flex text-xl text-white bg-blue-400 ${
                           item.className
-                        } ${useIsActive(item.href, "bg-white text-blue-400")}`}
+                        }`}
                         onClick={() => setProfileIsOpen(false)}
                         key={index}
                       >
