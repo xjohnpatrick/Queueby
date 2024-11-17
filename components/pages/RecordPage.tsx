@@ -115,7 +115,7 @@ export default function RecordPage() {
   return (
     <div className="flex flex-col items-center justify-center w-full h-[1000px] sm:h-[1100px] lg:h-[1500px]">
       <div className="flex flex-col items-center w-[90vw] lg:w-[70vw] xl:w-[65vw]">
-        <h1 className="flex text-4xl font-semibold mt-8 font-montserrat text-center">
+        <h1 className="flex text-4xl font-semibold lg:mb-8 font-montserrat text-center">
           {getHeaderTitle()}
         </h1>
 
