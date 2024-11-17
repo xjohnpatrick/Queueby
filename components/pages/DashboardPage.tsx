@@ -32,22 +32,10 @@ export default function DashboardPage() {
   );
 
   useEffect(() => {
-    const storedStatusFilter = localStorage.getItem("statusFilter");
-    if (storedStatusFilter) {
-      setStatusFilter(storedStatusFilter);
-    } else {
-      setStatusFilter("ALL");
-    }
-  }, []);
-
-  useEffect(() => {
     setButtons(
       items.map((item) => ({
         text: item.label,
-        onClick: () => {
-          setStatusFilter(item.key);
-          localStorage.setItem("statusFilter", item.key);
-        },
+        onClick: () => setStatusFilter(item.key),
         isActive: statusFilter === item.key,
       }))
     );

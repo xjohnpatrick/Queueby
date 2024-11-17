@@ -1,11 +1,13 @@
 "use client";
 import { Button } from "@nextui-org/button";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useButtonContext } from "../../context/ButtonContext";
+import { usePathname } from "next/navigation";
 
 export default function Sidebar() {
   const { buttons, toggleButtonActive } = useButtonContext();
   const [activeButton, setActiveButton] = useState<string | null>(null);
+  const pathname = usePathname();
 
   const handleButtonClick = (
     buttonText: string,
@@ -22,6 +24,11 @@ export default function Sidebar() {
       toggleButtonActive(buttonText);
     }
   };
+
+  useEffect(() => {
+    setActiveButton(null); // Reset active button on route change
+  }, [pathname]);
+
   return (
     <aside className="hidden lg:flex h-auto w-60 bg-blue-400">
       <div className="flex flex-col w-full relative font-bebas">
