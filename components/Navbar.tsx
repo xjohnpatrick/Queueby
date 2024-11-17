@@ -24,7 +24,7 @@ const Navbar = () => {
 
   const useIsActive = (
     linkPath: string | string[],
-    activeBg: string = "bg-blue-100",
+    activeBg: string = "bg-blue-100"
   ): string => {
     const pathname = usePathname();
 
@@ -53,13 +53,14 @@ const Navbar = () => {
         ? activeDocument
         : "";
     }
-    return pathname === linkPath || pathname.startsWith(linkPath) 
+    return pathname === linkPath || pathname.startsWith(linkPath)
       ? activeDocument
       : "";
   };
 
-   const ActiveDocumentClasses = (linkPath: string | string[]) => useDocumentActive(linkPath);
-   const ActiveClasses = (linkPath: string | string[]) => useIsActive(linkPath);
+  const ActiveDocumentClasses = (linkPath: string | string[]) =>
+    useDocumentActive(linkPath);
+  const ActiveClasses = (linkPath: string | string[]) => useIsActive(linkPath);
 
   return (
     <nav className="flex flex-col no-print">
@@ -83,7 +84,7 @@ const Navbar = () => {
               </h1>
             </div>
           </div>
-
+          {/* HAMBURGER BTN */}
           <div className="md:hidden absolute right-4">
             <Button
               isIconOnly
@@ -190,6 +191,7 @@ const Navbar = () => {
               </div>
             </div>
           )}
+          {/* END OF HAMBURGER BTN */}
 
           <div className="hidden md:flex text-xl xl:text-3xl 2xl:text-4xl 2xl:gap-7 items-center absolute right-10">
             <Link href="/main/dashboard">
