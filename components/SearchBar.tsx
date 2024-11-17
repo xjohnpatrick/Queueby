@@ -14,7 +14,7 @@ export default function SearchBar({
 }: SearchBarProps) {
   const onClear = React.useCallback(() => {
     onSearchChange("");
-  }, []);
+  }, [onSearchChange]);
 
   return (
     <div>

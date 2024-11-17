@@ -42,7 +42,7 @@ export default function RecordPage() {
         isActive: statusFilter === "Declined Records",
       },
     ]);
-  }, [statusFilter]);
+  }, [statusFilter, setButtons]);
 
   const filteredItems = useMemo(() => {
     return dashboardRows.filter((user) => {
