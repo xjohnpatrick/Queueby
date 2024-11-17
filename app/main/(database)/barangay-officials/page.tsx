@@ -23,7 +23,7 @@ export default function BarangayOfficials() {
                   fill
                   className="rounded-lg"
                 />
-                <label className="flex text-sm sm:text-base md:text-lg lg:text-xl z-50 text-white absolute bottom-0 lg:bottom-0.5">
+                <label className="flex text-sm sm:text-base md:text-lg lg:text-xl z-40 text-white absolute bottom-0 lg:bottom-0.5">
                   {punongBarangay.name}
                 </label>
               </div>
@@ -50,7 +50,7 @@ export default function BarangayOfficials() {
                         fill
                         className="rounded-lg"
                       />
-                      <label className="flex text-xs sm:text-sm md:text-base z-50 text-white absolute -bottom-[0.5px] text-nowrap">
+                      <label className="flex text-xs sm:text-sm md:text-base z-40 text-white absolute -bottom-[0.5px] text-nowrap">
                         {individualName}
                       </label>
                     </div>
@@ -77,7 +77,7 @@ export default function BarangayOfficials() {
                       fill
                       className="rounded-lg"
                     />
-                    <label className="flex text-xs sm:text-sm md:text-base z-50 text-white absolute -bottom-[0.5px]">
+                    <label className="flex text-xs sm:text-sm md:text-base z-40 text-white absolute -bottom-[0.5px]">
                       {committees.name}
                     </label>
                   </div>

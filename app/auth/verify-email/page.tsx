@@ -16,7 +16,7 @@ const VerifyEmail = () => {
           <>
             <Link href="/auth/forgot-password">
               <Button
-                className="absolute top-1.5 right-2 lg:left-2 lg:right-auto bg-white md:text-lg lg:text-xl text-blue-400 font-montserrat"
+                className="absolute top-1.5 right-2 lg:left-2 lg:right-auto bg-white md:text-lg lg:text-xl text-blue-400 font-montserrat z-50"
                 size="sm"
               >
                 <FaArrowLeft />
