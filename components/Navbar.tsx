@@ -25,6 +25,7 @@ const Navbar = () => {
   const useIsActive = (
     linkPath: string | string[],
     activeBg: string = "bg-blue-100",
+    activeDocument: string = "bg-white text-blue-400",
   ): string => {
     const pathname = usePathname();
 
@@ -40,6 +41,25 @@ const Navbar = () => {
       : "";
   };
 
+  const useDocumentActive = (
+    linkPath: string | string[],
+    activeDocument: string = "bg-white text-blue-400"
+  ): string => {
+    const pathname = usePathname();
+
+    if (Array.isArray(linkPath)) {
+      return linkPath.some(
+        (path) => pathname === path || pathname.startsWith(path)
+      )
+        ? activeDocument
+        : "";
+    }
+    return pathname === linkPath || pathname.startsWith(linkPath) 
+      ? activeDocument
+      : "";
+  };
+
+   const ActiveDocumentClasses = (linkPath: string | string[]) => useDocumentActive(linkPath);
    const ActiveClasses = (linkPath: string | string[]) => useIsActive(linkPath);
 
   return (
@@ -157,7 +177,9 @@ const Navbar = () => {
                       },
                     ].map((item, index) => (
                       <Button
-                        className={`flex text-xl text-white bg-blue-400 ${item.className}`}
+                        className={`flex text-xl text-white bg-blue-400 ${
+                          item.className
+                        } ${ActiveDocumentClasses(item.href)}`}
                         onClick={() => setProfileIsOpen(false)}
                         key={index}
                       >
