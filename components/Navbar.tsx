@@ -40,8 +40,6 @@ const Navbar = () => {
       : "";
   };
 
-   const activeClasses = (linkPath: string | string[]) => useIsActive(linkPath);
-
   return (
     <nav className="flex flex-col no-print">
       <div className="flex h-32 bg-blue-200">
@@ -108,7 +106,7 @@ const Navbar = () => {
                   item.href ? (
                     <Link href={item.href} key={index}>
                       <Button
-                        className={`flex text-xl text-white bg-blue-400 w-full ${activeClasses(
+                        className={`flex text-xl text-white bg-blue-400 w-full ${useIsActive(
                           item.href
                         )}`}
                         onClick={() => setProfileIsOpen(false)}
@@ -119,7 +117,7 @@ const Navbar = () => {
                   ) : (
                     <Button
                       key={index}
-                      className={`flex text-xl text-white bg-blue-400 w-full ${activeClasses(
+                      className={`flex text-xl text-white bg-blue-400 w-full ${useIsActive(
                         "/main/documents-page"
                       )}`}
                       onClick={item.onClick}
