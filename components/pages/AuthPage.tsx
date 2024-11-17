@@ -12,10 +12,20 @@ interface AuthPageProps {
   content?: React.ReactNode;
 }
 
-export default function AuthPage({ heading1, heading2, content }: AuthPageProps) {
+export default function AuthPage({
+  heading1,
+  heading2,
+  content,
+}: AuthPageProps) {
   return (
     <main>
       <div className="flex h-screen w-full relative items-center justify-center bg-gradient-to-tr from-blue-200 to-blue-200">
+        <div className="flex absolute right-10 top-5 bg-white rounded-md p-1">
+          <span className="text-lg font-poppins">
+            The system is front-end only. Click 'Sign In' to check out
+            its features.
+          </span>
+        </div>
         <Image
           className="object-cover h-full w-full absolute mix-blend-overlay opacity-50"
           src={makatiBg}
@@ -73,7 +83,6 @@ export default function AuthPage({ heading1, heading2, content }: AuthPageProps)
                 {heading2}
               </h1>
             </div>
-
             {content}
           </div>
         </div>
