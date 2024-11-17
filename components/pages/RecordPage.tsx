@@ -19,37 +19,28 @@ import {
 
 export default function RecordPage() {
   const { setButtons } = useButtonContext();
-  const [statusFilter, setStatusFilter] = useState("ALL");
+  const [statusFilter, setStatusFilter] = useState<string>("ALL");
+
+  const items = useMemo(
+    () => [
+      { key: "ALL", label: "ALL RECORDS" },
+      { key: "PENDING", label: "PENDING RECORDS" },
+      { key: "COMPLETED", label: "COMPLETED RECORDS" },
+      { key: "TO RECEIVE", label: "TO RECEIVE RECORDS" },
+      { key: "DECLINED", label: "DECLINED RECORDS" },
+    ],
+    []
+  );
 
   useEffect(() => {
-    setButtons([
-      {
-        text: "All Records",
-        onClick: () => setStatusFilter("ALL"),
-        isActive: statusFilter === "All Records",
-      },
-      {
-        text: "Pending Records",
-        onClick: () => setStatusFilter("PENDING"),
-        isActive: statusFilter === "Pending Records",
-      },
-      {
-        text: "Completed Records",
-        onClick: () => setStatusFilter("COMPLETED"),
-        isActive: statusFilter === "Completed Records",
-      },
-      {
-        text: "To Receive Records",
-        onClick: () => setStatusFilter("TO RECEIVE"),
-        isActive: statusFilter === "To Receive Records",
-      },
-      {
-        text: "Declined Records",
-        onClick: () => setStatusFilter("DECLINED"),
-        isActive: statusFilter === "Declined Records",
-      },
-    ]);
-  }, [statusFilter, setButtons]);
+    setButtons(
+      items.map((item) => ({
+        text: item.label,
+        onClick: () => setStatusFilter(item.key),
+        isActive: statusFilter === item.key,
+      }))
+    );
+  }, [items, setButtons, statusFilter]);
 
   const filteredItems = useMemo(() => {
     return dashboardRows.filter((user) => {
@@ -59,64 +50,25 @@ export default function RecordPage() {
     });
   }, [statusFilter]);
 
-  const getTitle = () => {
-    switch (statusFilter) {
-      case "PENDING":
-        return "Pending Records";
-      case "COMPLETED":
-        return "Completed Records";
-      case "TO RECEIVE":
-        return "To Receive Records";
-      case "DECLINED":
-        return "Declined Records";
-      default:
-        return "All Records";
-    }
-  };
-  
-  const getHeaderTitle = () => {
-    switch (statusFilter) {
-      case "PENDING":
-        return "Viewing Pending Records";
-      case "COMPLETED":
-        return "Viewing Completed Records";
-      case "TO RECEIVE":
-        return "Viewing To Receive Records";
-      case "DECLINED":
-        return "Viewing Declined Records";
-      default:
-        return "Viewing All Records";
-    }
-  };
+  const getDynamicTitle = (prefix = "") => {
+    const titleMap = {
+      PENDING: "Pending Records",
+      COMPLETED: "Completed Records",
+      "TO RECEIVE": "To Receive Records",
+      DECLINED: "Declined Records",
+      ALL: "All Records",
+    };
 
-  const items = [
-    {
-      key: "ALL",
-      label: "ALL",
-    },
-    {
-      key: "PENDING",
-      label: "PENDING",
-    },
-    {
-      key: "COMPLETED",
-      label: "COMPLETED",
-    },
-    {
-      key: "TO RECEIVE",
-      label: "TO RECEIVE",
-    },
-    {
-      key: "DECLINED",
-      label: "DECLINED",
-    },
-  ];
+    return `${prefix}${
+      titleMap[statusFilter as keyof typeof titleMap] || titleMap.ALL
+    }`;
+  };
 
   return (
     <div className="flex flex-col items-center justify-center w-full h-[1000px] sm:h-[1100px] lg:h-[1500px]">
       <div className="flex flex-col items-center w-[90vw] lg:w-[70vw] xl:w-[65vw]">
         <h1 className="flex text-4xl font-semibold lg:mb-8 font-montserrat text-center">
-          {getHeaderTitle()}
+          {getDynamicTitle("Viewing ")}
         </h1>
 
         <Dropdown className="bg-blue-400">
@@ -173,7 +125,7 @@ export default function RecordPage() {
                     Tel. No. 7738-1883 / 7754-3045
                   </span>
                   <span className="text-base lg:text-4xl font-bold mt-6 sm:mt-4 lg:mt-10">
-                    {getTitle()}
+                    {getDynamicTitle()}
                   </span>
                 </div>
                 <div className="absolute right-2 sm:right-4 lg:right-10 top-4 sm:top-6 lg:top-10">

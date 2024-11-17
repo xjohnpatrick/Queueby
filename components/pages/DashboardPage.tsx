@@ -20,35 +20,26 @@ export default function DashboardPage() {
   const [searchValue, setSearchValue] = useState("");
   const [statusFilter, setStatusFilter] = useState("ALL");
 
+  const items = useMemo(
+    () => [
+      { key: "ALL", label: "ALL" },
+      { key: "PENDING", label: "PENDING" },
+      { key: "COMPLETED", label: "COMPLETED" },
+      { key: "TO RECEIVE", label: "TO RECEIVE" },
+      { key: "DECLINED", label: "DECLINED" },
+    ],
+    []
+  );
+
   useEffect(() => {
-    setButtons([
-      {
-        text: "ALL",
-        onClick: () => setStatusFilter("ALL"),
-        isActive: statusFilter === "ALL",
-      },
-      {
-        text: "PENDING",
-        onClick: () => setStatusFilter("PENDING"),
-        isActive: statusFilter === "PENDING",
-      },
-      {
-        text: "TO RECEIVE",
-        onClick: () => setStatusFilter("TO RECEIVE"),
-        isActive: statusFilter === "TO RECEIVE",
-      },
-      {
-        text: "COMPLETED",
-        onClick: () => setStatusFilter("COMPLETED"),
-        isActive: statusFilter === "COMPLETED",
-      },
-      {
-        text: "DECLINED",
-        onClick: () => setStatusFilter("DECLINED"),
-        isActive: statusFilter === "DECLINED",
-      },
-    ]);
-  }, [setButtons, statusFilter]);
+    setButtons(
+      items.map((item) => ({
+        text: item.label,
+        onClick: () => setStatusFilter(item.key),
+        isActive: statusFilter === item.key,
+      }))
+    );
+  }, [items, setButtons, statusFilter]);
 
   const filteredItems = useMemo(() => {
     return dashboardRows.filter((user) => {
@@ -60,29 +51,6 @@ export default function DashboardPage() {
       return matchesSearch && matchesStatus;
     });
   }, [searchValue, statusFilter]);
-
-  const items = [
-    {
-      key: "ALL",
-      label: "ALL",
-    },
-    {
-      key: "PENDING",
-      label: "PENDING",
-    },
-    {
-      key: "COMPLETED",
-      label: "COMPLETED",
-    },
-    {
-      key: "TO RECEIVE",
-      label: "TO RECEIVE",
-    },
-    {
-      key: "DECLINED",
-      label: "DECLINED",
-    },
-  ];
 
   return (
     <div className="flex flex-col items-center w-full h-screen">
