@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: {
     template: "%s | Cmembo App",
-    default: "Cmembo App",
+    default: "Sign In | Cmembo App",
   },
 };
 
