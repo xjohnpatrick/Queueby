@@ -265,41 +265,50 @@ const Navbar = () => {
       </div>
       {documentIsOpen && (
         <div
-          className="flex h-32 w-full justify-center items-center bg-blue-100 font-bebas"
+          className="hidden md:flex h-32 w-full justify-center items-center bg-blue-100 font-bebas"
           onMouseEnter={() => setDocumentIsOpen(true)}
           onMouseLeave={() => setDocumentIsOpen(false)}
         >
-          <div className="flex gap-10">
+          <div className="flex gap-2 lg:gap-10">
             {[
               {
                 label: "Barangay Permit",
                 href: "/main/documents-page/barangay-permit",
+                className: "text-sm xl:text-xl 2xl:text-2xl",
               },
               {
                 label: "Business Permit",
                 href: "/main/documents-page/business-permit",
+                className: "text-sm xl:text-xl 2xl:text-2xl",
               },
               {
-                label: "Barangay Certificate For First Time Job Seeker",
+                label: "Barangay Certificate",
+                label2: "For First Time Job Seeker",
                 href: "/main/documents-page/firstTimeJobSeeker",
-                className: "md:px-4 xl:text-xl 2xl:text-2xl",
+                className: "md:px-4 text-sm xl:text-xl 2xl:text-2xl",
               },
               {
                 label: "Barangay Certification",
                 href: "/main/documents-page/barangay-certification",
+                className: "text-sm xl:text-xl 2xl:text-2xl",
               },
               {
                 label: "Certificate of Clearance",
                 href: "/main/documents-page/certificateOfClearance",
-                className: "md:px-4 xl:text-xl 2xl:text-2xl",
+                className: "text-sm xl:text-xl 2xl:text-2xl",
               },
             ].map((item, index) => (
               <Link href={item.href} key={index}>
-                <button
-                  className={`flex bg-blue-400 text-white lg:w-[150px] md:px-12 md:h-16 xl:h-24 xl:w-[200px] 2xl:w-[240px] justify-center items-center rounded-xl text-2xl ${item.className}`}
+                <Button
+                  className={`hidden md:flex bg-blue-400 text-white md:w-36 lg:w-[150px] md:px-12 md:h-16 xl:h-24 xl:w-[200px] 2xl:w-[240px] justify-center items-center rounded-xl ${
+                    item.className
+                  } ${ActiveDocumentClasses(item.href)}`}
                 >
-                  {item.label}
-                </button>
+                  <div className="flex flex-col text-center">
+                    <span>{item.label}</span>
+                    <span>{item.label2}</span>
+                  </div>
+                </Button>
               </Link>
             ))}
           </div>
