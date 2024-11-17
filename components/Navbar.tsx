@@ -43,6 +43,8 @@ const Navbar = () => {
       : "";
   };
 
+  const activeClasses = (linkPath: string | string[]) => useIsActive(linkPath);
+  
   return (
     <nav className="flex flex-col no-print">
       <div className="flex h-32 bg-blue-200">
