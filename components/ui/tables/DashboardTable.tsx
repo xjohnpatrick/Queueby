@@ -31,7 +31,7 @@ interface DashboardTableProps {
 }
 
 export default function DashboardTable({
-  removeWrapper,
+  removeWrapper = false,
   dashboardRows,
   isUserIdClickable = true,
 }: DashboardTableProps) {
@@ -50,7 +50,7 @@ export default function DashboardTable({
         isStriped
         aria-label="Example table with dynamic content"
         style={{ height: "700px" }}
-        {...(removeWrapper && { removeWrapper: true })}
+        removeWrapper={removeWrapper}
       >
         <TableHeader columns={dashboardColumns}>
           {(column) => (

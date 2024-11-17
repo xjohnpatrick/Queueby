@@ -137,7 +137,7 @@ export default function RecordPage() {
             </div>
             <div className="flex-grow h-4/5 lg:h-3/4 items-center justify-center m-4 sm:mt-8 lg:mx-4 overflow-y-scroll scrollbar-hide">
               <DashboardTable
-                removeWrapper
+                removeWrapper= {true}
                 dashboardRows={filteredItems}
                 isUserIdClickable={false}
               />
