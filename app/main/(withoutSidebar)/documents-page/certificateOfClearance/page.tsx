@@ -10,7 +10,7 @@ const CertificateOfClearance = () => {
       </h1>
 
       <Suspense fallback={<Loading />}>
-        <Document title="Business Clearance" />
+        <Document title="Barangay Clearance" />
       </Suspense>
     </div>
   );
