@@ -2,4 +2,4 @@ Cmembo App is a comprehensive scheduling solution created by the Queueby team to
 
 ## Deployed on Vercel
 
-Check out the website built on front-end (https://queueby.vercel.app/).
+Check out the front-end of the Cmembo Web App: https://queueby.vercel.app/.
