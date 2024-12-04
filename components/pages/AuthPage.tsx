@@ -19,7 +19,7 @@ export default function AuthPage({
 }: AuthPageProps) {
   return (
     <main>
-      <div className="flex flex-col h-[950px] xl:h-screen w-full relative items-center justify-center bg-gradient-to-tr from-blue-200 to-blue-200">
+      <div className="flex flex-col h-[950px] xl:h-screen w-full relative items-center lg:justify-center bg-gradient-to-tr from-blue-200 to-blue-200">
         <Image
           className="object-cover h-full w-full absolute mix-blend-overlay opacity-50"
           src={makatiBg}
